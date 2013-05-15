@@ -1,0 +1,19 @@
+Development notes:
+
+Setting up unicorn:
+http://dave.is/unicorn.html
+
+Postgres configuration
+sudo -u postgres psql
+postgres=# \password
+postgres=# create user guy_on_stackoverflow with password 'keepitonthedl';
+postgres=# create database dcaclab_development owner guy_on_stackoverflow;
+
+Heroku Setup:
+https://devcenter.heroku.com/articles/rails3
+
+Heroku Debug:
+ssh-keygen -t rsa -C "your_email@youremail.com"
+heroku keys:add
+heroku keys:add ~/.ssh/id_rsa.pub
+

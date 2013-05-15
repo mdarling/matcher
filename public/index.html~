@@ -81,8 +81,7 @@
       }
 
       #about-content {
-	background-image: url("assets/unmlogo.jpg");
-	background-repeat:no-repeat;
+
         background-color: #ffd;
         border: 1px solid #fc0;
         margin-left: -55px;
@@ -118,6 +117,7 @@
 
 
       #getting-started {
+
         border-top: 1px solid #ccc;
         margin-top: 25px;
         padding-top: 15px;
@@ -173,6 +173,13 @@
 
       .filename {
         font-style: italic;
+      }
+      #footer {
+	background-image: url("assets/unmlogo.jpg");
+	background-repeat:no-repeat;
+height: 500px;
+width: 500px;
+
       }
     </style>
     <script type="text/javascript">

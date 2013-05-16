@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @student_profile.firstName %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @student_profile.lastName %>
+</p>
+
+<p>
+  <b>Unmid:</b>
+  <%= @student_profile.unmID %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @student_profile.email %>
+</p>
+
+<p>
+  <b>Phonenumber:</b>
+  <%= @student_profile.phoneNumber %>
+</p>
+
+<p>
+  <b>Academiclevel:</b>
+  <%= @student_profile.academicLevel %>
+</p>
+
+<p>
+  <b>Major:</b>
+  <%= @student_profile.major %>
+</p>
+
+<p>
+  <b>Minor:</b>
+  <%= @student_profile.minor %>
+</p>
+
+<p>
+  <b>Expectedgraduation:</b>
+  <%= @student_profile.expectedGraduation %>
+</p>
+
+<p>
+  <b>Interests:</b>
+  <%= @student_profile.interests %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
+<%= link_to 'Back', student_profiles_path %>

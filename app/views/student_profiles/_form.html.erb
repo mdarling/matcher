@@ -1,0 +1,57 @@
+<%= form_for(@student_profile) do |f| %>
+  <% if @student_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student_profile.errors.count, "error") %> prohibited this student_profile from being saved:</h2>
+
+      <ul>
+      <% @student_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstName %><br />
+    <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastName %><br />
+    <%= f.text_field :lastName %>
+  </div>
+  <div class="field">
+    <%= f.label :unmID %><br />
+    <%= f.text_field :unmID %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phoneNumber %><br />
+    <%= f.text_field :phoneNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :academicLevel %><br />
+    <%= f.text_field :academicLevel %>
+  </div>
+  <div class="field">
+    <%= f.label :major %><br />
+    <%= f.text_field :major %>
+  </div>
+  <div class="field">
+    <%= f.label :minor %><br />
+    <%= f.text_field :minor %>
+  </div>
+  <div class="field">
+    <%= f.label :expectedGraduation %><br />
+    <%= f.datetime_select :expectedGraduation %>
+  </div>
+  <div class="field">
+    <%= f.label :interests %><br />
+    <%= f.text_area :interests %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -20,3 +20,6 @@ heroku keys:add ~/.ssh/id_rsa.pub
 
 Renaming Heroku app:
 heroku apps:rename newname --app oldname
+
+Migrating Changes to Heroku:
+git push heroku master

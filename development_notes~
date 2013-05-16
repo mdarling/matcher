@@ -13,10 +13,8 @@ postgres=# create database dcaclab_development owner guy_on_stackoverflow;
 Heroku Setup:
 https://devcenter.heroku.com/articles/rails3
 
-Heroku keys Debug:
+Heroku Debug:
 ssh-keygen -t rsa -C "your_email@youremail.com"
 ssh-add ~/.ssh/id_rsa 
 heroku keys:add ~/.ssh/id_rsa.pub
 
-Renaming Heroku app:
-heroku apps:rename newname --app oldname

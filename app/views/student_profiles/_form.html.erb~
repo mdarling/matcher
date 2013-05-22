@@ -41,6 +41,9 @@
     <%= f.date_select :expectedGraduation, :class => 'textField' %>
   </div>
 
+ </div>
+ <div id="sidebar">
+
   <div class="field">
     <%= f.label :major %><br />
     <%= f.text_field :major, :class => 'textField' %>
@@ -55,9 +58,6 @@
 	<%= f.label(:academicLevel, "Undergraduate") %>
 	<%= f.radio_button(:academicLevel, "graduate") %>
 	<%= f.label(:academicLevel, "Graduate") %>
- </div>
- <div id="sidebar">
-
   
   </div>
 

@@ -1,5 +1,8 @@
 Development notes:
 
+Setting up Gedit:
+http://runningwithrails.com/2011/02/configuring-gedit-for-rails/
+
 Setting up unicorn:
 http://dave.is/unicorn.html
 Starting unicorn server: unicorn -c config/unicorn.rb
@@ -23,3 +26,14 @@ heroku apps:rename newname --app oldname
 
 Migrating Changes to Heroku:
 git push heroku master
+
+Running rake commands on Heroku: https://devcenter.heroku.com/articles/rake
+heroku run rake db:migrate
+
+According to heroku:
+After running a migration you’ll want to restart your app with "heroku restart" to reload the schema and pickup any schema changes.
+
+0515:
+Created Student Profile scaffold:
+rails generate scaffold StudentProfile firstName:string lastName:string unmID:string email:string phoneNumber:string academicLevel major:string minor:string expectedGraduation:datetime interests:text
+

@@ -2,15 +2,15 @@
 
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Unm id</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Unmid</th>
     <th>Email</th>
-    <th>Phone number</th>
-    <th>Academic level</th>
+    <th>Phonenumber</th>
+    <th>Academiclevel</th>
     <th>Major</th>
     <th>Minor</th>
-    <th>Expected graduation</th>
+    <th>Expectedgraduation</th>
     <th>Interests</th>
     <th></th>
     <th></th>

@@ -12,4 +12,8 @@
  *= require_tree .
  */
  
+ #dept_logo
+ {
+	 background: image-url("unm-logo.gif");
+ }
  

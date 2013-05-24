@@ -20,8 +20,8 @@
 
 <!-- Site Meta - put site specific css, javascript, etc. here-->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
-        <%= javascript_include_tag 'jquery', 'application' %>
-        <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'jquery', 'application' %>
+  <%= csrf_meta_tags %>
   
 </head>
 <body>
@@ -45,9 +45,7 @@
 </div>
 <div id="page">
   <div id="dept_header">
-    <div id="dept_logo"><% link_to image_tag( 'assets/unm-logo.gif'), 'http://uresearch.unm.edu' %></div>
-    
-   
+    <div id="dept_logo"><%= link_to image_tag('unm-logo.gif'), 'http://		uresearch.unm.edu' %></div>  
   </div>
   <div class="col2" id="container">
     <div id="primary_aside">

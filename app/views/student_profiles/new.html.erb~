@@ -1,15 +1,6 @@
-<h1>New student_profile</h1>
-<div id="wrap">
-<div id="header"></div>
-<div id="nav"></div>
+<!--> <h1>New Student Profile</h1> <-->
 
-<div id="main">
 	<%= render 'form' %>
-</div>
 
-<div id="sidebar"></div>
-<div id="footer"></div>
-</div>
+<% link_to 'Back', student_profiles_path %>
 
-
-<%= link_to 'Back', student_profiles_path %>

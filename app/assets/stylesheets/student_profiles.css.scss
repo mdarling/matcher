@@ -3,56 +3,62 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-    body,
-    html 
-   	{
-   		margin:0;
-    	padding:0;
-    	color:#000;
-    }
+body,
+html 
+{
+  margin:0;
+  padding:0;
+  color:#000;
+//  background:#a7a09a;
+}
 
-    #wrap 
-    {
-    	width:800px;
-    	margin:0 auto;
-    }
+#wrap 
+{
+  width:500px;
+  margin:0 auto;
+ // background:#99c;
+}
+
+#header 
+{
+	//background:#ddd;
+}
+    
+#nav 
+{
+	//background:#c99;
+}
+
+#main 
+{
+	//background:#9c9;
+	float:left;
+	width:250px;
+}
+ 
+#sidebar 
+{
+	//background:#c9c;
+	float:right;
+	width:250px;
+}
+
+#bottom 
+{
+	//width:300px;
+	//margin: 0 auto;
+	//background:#000;
+}
+
+
+.textField
+{
+ 	width:219px;
+}
 	
-    #header 
-    {
-    	background:#ddd;
-    }
-    #nav
-    {
-    	background:#c99;
-    }
-    
-    #main 
-    {
-    	float:left;
-		width:30%;
-		padding:10px;
-		
-    }
-    
-    #sidebar 
-    {
-    	float:right;
-		width:0%;
-		padding:10px;
-    }
-    #footer 
-    {
-    	background:#cc9;
-    }
-    
-	.textField
-	{
- 		width:219px;
-	}
-	
-		.textArea
-	{
- 		width:219px;
- 		height:107.5px;
-	}
+.textArea
+{
+	width:219px;
+	height:107.5px;
+}
 	

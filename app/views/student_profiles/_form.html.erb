@@ -1,74 +1,76 @@
 <div id="wrap">
+	
 	<div id="header">
 		<%= form_for(@student_profile) do |f| %>
   			<% if @student_profile.errors.any? %>
     			<div id="error_explanation">
-    	  			<h2><%= pluralize(@student_profile.errors.count, "error") %> 							prohibited this student_profile from being saved:</h2>
+    	  			<h2><%= pluralize(@student_profile.errors.count, "error") %> 							prohibited this student profile from being saved:</h2>
     	  			<ul>
 				    <% @student_profile.errors.full_messages.each do |msg| %>
     	    			<li><%= msg %></li>
     	  			<% end %>
     	  			</ul>
     			</div>
-  			<% end %>
+  			<% end %> <!-- End If -->
+	</div> <!-- End of header div -->
+	
+	<div id="nav">
+	</div>
+	
+	<div id="main">
+	  <div class="field">
+  	  <%= f.label "First Name" %><br />
+  	  <%= f.text_field :firstName, :class => 'textField' %>
+		</div>
+    <div class="field">
+      <%= f.label "Last Name" %><br />
+      <%= f.text_field :lastName, :class => 'textField' %>
     </div>
-    
-
-    
-<div id="main">
-  <div class="field">
-    <%= f.label :firstName %><br />
-    <%= f.text_field :firstName, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :lastName %><br />
-    <%= f.text_field :lastName, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :unmID %><br />
-    <%= f.text_field :unmID, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :phoneNumber %><br />
-    <%= f.text_field :phoneNumber, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :expectedGraduation %><br />
-    <%= f.date_select :expectedGraduation, :class => 'textField' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :major %><br />
-    <%= f.text_field :major, :class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label :minor %><br />
-    <%= f.text_field :minor, :class => 'textField' %>
-  </div>
     <div class="field">
-  
-	<%= f.radio_button(:academicLevel, "undergraduate") %>
-	<%= f.label(:academicLevel, "Undergraduate") %>
-	<%= f.radio_button(:academicLevel, "graduate") %>
-	<%= f.label(:academicLevel, "Graduate") %>
- </div>
- <div id="sidebar">
-
-  
-  </div>
-
+      <%= f.label "Banner Number" %><br />
+      <%= f.text_field :unmID, :class => 'textField' %>
+    </div>
     <div class="field">
-    <%= f.label :interests %><br />
-    <%= f.text_area :interests, :class => 'textArea' %>
- </div>
-    <div class="actions">
-    <%= f.submit %>
-  </div>
- </div>
+      <%= f.label :email %><br />
+      <%= f.text_field :email, :class => 'textField' %>
+    </div>
+    <div class="field">
+      <%= f.label "Phone Number" %><br />
+      <%= f.text_field :phoneNumber, :class => 'textField' %>
+    </div>
+	</div> <!-- End of main div -->
+	
+	<div id="sidebar">
+	    <div class="field">
+			<%= f.label :major %><br />
+			<%= f.text_field :major, :class => 'textField' %>
+		</div>
+ 	  <div class="field">
+  	  <%= f.label :minor %><br />
+  	  <%= f.text_field :minor, :class => 'textField' %>
+  	</div>
+ 	  <div class="field">
+  	 	 <%= f.label "Research Interests" %><br />
+  	 	 <%= f.text_area :interests, :class => 'textArea' %>
+ 		</div>
+ 		<div class="field"> 
+			<%= f.radio_button(:academicLevel, "undergraduate") %>
+			<%= f.label(:academicLevel, "Undergraduate") %>
+			<%= f.radio_button(:academicLevel, "graduate") %>
+			<%= f.label(:academicLevel, "Graduate") %>
+		</div>
+	</div> <!-- End of sidebar div -->
+	
+	<div id="bottom">
+	 		<div class="field">
+   		<%= f.label "Expected Graduation" %><br />
+   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true %>
+  	</div>
+		<%= f.submit %>
+	</div> <!-- End of bottom div -->
+	
+</div> <!-- End of wrapper class -->
 
 <% end %>
-</div>
+
+

@@ -1,0 +1,12 @@
+ ## inside views 
+ # app/views/users/_form.html.haml 
+ = form_for @user ||= User.new do |f|
+ = f.text_field :birth_date, :id => 'birthDate' 
+ = f.text_field :birth_time, :id => 'birthTime' 
+ = f.text_field :exam_on, :id => 'examOn' 
+ :javascript 
+ 	$(document).ready(function() { 
+ 			$("#birthDate").datepicker(); 
+ 			$("#birthTime").timepicker(); 
+ 			$("#examOn").datetimepicker(); 
+ 			$('#ui-datepicker-div').removeClass('ui-helper-hidden-accessible')

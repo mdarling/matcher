@@ -1,0 +1,6 @@
+class ProjectProfile < ActiveRecord::Base
+  attr_accessible :academic_level, :application_deadline, :assistants, 
+  :department, :email, :job_description, :listed, :minimum_gpa, 
+  :other_qualifications, :position_title, :posting_number, 
+  :required_classes, :title, :work_period
+end

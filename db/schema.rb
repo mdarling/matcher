@@ -11,7 +11,75 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516023921) do
+ActiveRecord::Schema.define(:version => 20130726154918) do
+
+  create_table "paid_grad_positions", :force => true do |t|
+    t.string   "unmJobs"
+    t.string   "postingNumber"
+    t.string   "positionTitle"
+    t.string   "workPeriod"
+    t.string   "weeklyTimeCommitment"
+    t.text     "deliverables"
+    t.text     "desiredSkills"
+    t.text     "desiredClasses"
+    t.datetime "recordBegin"
+    t.datetime "recordEnd"
+    t.string   "minimumGPA"
+    t.string   "academicLevel"
+    t.text     "jobDescription"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "paid_undergrad_positions", :force => true do |t|
+    t.string   "unmJobs"
+    t.string   "postingNumber"
+    t.string   "positionTitle"
+    t.string   "workPeriod"
+    t.string   "weeklyTimeCommitment"
+    t.text     "deliverables"
+    t.text     "desiredSkills"
+    t.text     "desiredClasses"
+    t.datetime "recordBegin"
+    t.datetime "recordEnd"
+    t.string   "minimumGPA"
+    t.string   "academicLevel"
+    t.text     "jobDescription"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "project_profiles", :force => true do |t|
+    t.string   "title"
+    t.string   "department"
+    t.string   "email"
+    t.boolean  "unpaid_undergrad"
+    t.boolean  "unpaid_grad"
+    t.boolean  "paid_grad"
+    t.string   "listed"
+    t.string   "posting_number"
+    t.string   "position_title"
+    t.datetime "work_period"
+    t.string   "academic_level"
+    t.string   "minimum_gpa"
+    t.string   "required_classes"
+    t.string   "other_qualifications"
+    t.string   "job_description"
+    t.datetime "application_deadline"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "project_surveys", :force => true do |t|
+    t.string   "projectTitle"
+    t.text     "projectDescription"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "department"
+    t.text     "researchArea"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "student_profiles", :force => true do |t|
     t.string   "firstName"
@@ -28,19 +96,34 @@ ActiveRecord::Schema.define(:version => 20130516023921) do
     t.datetime "updated_at",         :null => false
   end
 
-  create_table "student_surveys", :force => true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "unmID"
-    t.string   "email"
-    t.string   "phoneNumber"
+  create_table "unpaid_grad_positions", :force => true do |t|
+    t.string   "workPeriod"
+    t.string   "weeklyTimeCommitment"
+    t.text     "deliverables"
+    t.text     "desiredSkills"
+    t.text     "desiredClasses"
+    t.datetime "recordBegin"
+    t.datetime "recordEnd"
+    t.string   "minimumGPA"
     t.string   "academicLevel"
-    t.string   "major"
-    t.string   "minor"
-    t.datetime "expectedGraduation"
-    t.text     "interests"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.text     "jobDescription"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  create_table "unpaid_undergrad_positions", :force => true do |t|
+    t.string   "workPeriod"
+    t.string   "weeklyTimeCommitment"
+    t.text     "deliverables"
+    t.text     "desiredSkills"
+    t.text     "desiredClasses"
+    t.datetime "recordBegin"
+    t.datetime "recordEnd"
+    t.string   "minimumGPA"
+    t.string   "academicLevel"
+    t.text     "jobDescription"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
 end

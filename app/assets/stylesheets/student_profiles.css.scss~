@@ -45,9 +45,10 @@ html
 
 #bottom 
 {
-	width:300px;
-	margin: 0 auto;
+	//width:300px;
+	//margin: 0 auto;
 	//background:#000;
+	float:bottom;
 }
 
 

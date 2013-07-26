@@ -1,0 +1,3 @@
+class ProjectSurvey < ActiveRecord::Base
+  attr_accessible :department, :email, :phone, :projectDescription, :projectTitle, :researchArea
+end

@@ -1,0 +1,33 @@
+<h1>Listing project_surveys</h1>
+
+<table>
+  <tr>
+    <th>Projecttitle</th>
+    <th>Projectdescription</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Department</th>
+    <th>Researcharea</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @project_surveys.each do |project_survey| %>
+  <tr>
+    <td><%= project_survey.projectTitle %></td>
+    <td><%= project_survey.projectDescription %></td>
+    <td><%= project_survey.email %></td>
+    <td><%= project_survey.phone %></td>
+    <td><%= project_survey.department %></td>
+    <td><%= project_survey.researchArea %></td>
+    <td><%= link_to 'Show', project_survey %></td>
+    <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+    <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project survey', new_project_survey_path %>

@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @project_profile.title %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @project_profile.department %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @project_profile.email %>
+</p>
+
+<p>
+  <b>Unpaid undergrad:</b>
+  <%= @project_profile.unpaid_undergrad %>
+</p>
+
+<p>
+  <b>Unpaid grad:</b>
+  <%= @project_profile.unpaid_grad %>
+</p>
+
+<p>
+  <b>Paid grad:</b>
+  <%= @project_profile.paid_grad %>
+</p>
+
+<p>
+  <b>Unpaid grad:</b>
+  <%= @project_profile.unpaid_grad %>
+</p>
+
+<p>
+  <b>Listed:</b>
+  <%= @project_profile.listed %>
+</p>
+
+<p>
+  <b>Posting number:</b>
+  <%= @project_profile.posting_number %>
+</p>
+
+<p>
+  <b>Position title:</b>
+  <%= @project_profile.position_title %>
+</p>
+
+<p>
+  <b>Work period:</b>
+  <%= @project_profile.work_period %>
+</p>
+
+<p>
+  <b>Academic level:</b>
+  <%= @project_profile.academic_level %>
+</p>
+
+<p>
+  <b>Minimum gpa:</b>
+  <%= @project_profile.minimum_gpa %>
+</p>
+
+<p>
+  <b>Required classes:</b>
+  <%= @project_profile.required_classes %>
+</p>
+
+<p>
+  <b>Other qualifications:</b>
+  <%= @project_profile.other_qualifications %>
+</p>
+
+<p>
+  <b>Job description:</b>
+  <%= @project_profile.job_description %>
+</p>
+
+<p>
+  <b>Application deadline:</b>
+  <%= @project_profile.application_deadline %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_profile_path(@project_profile) %> |
+<%= link_to 'Back', project_profiles_path %>

@@ -1,0 +1,46 @@
+<div id="wrap">
+    
+    <div id="header">
+   		 <%= form_for(@project_profile) do |f| %>
+  		 <% if @project_profile.errors.any? %>
+    		 <div id="error_explanation">
+     		 <h2><%= pluralize(@project_profile.errors.count, "error") %> prohibited this project_profile from being saved:</h2>
+
+      		<ul>
+      		<% @project_profile.errors.full_messages.each do |msg| %>
+        		<li><%= msg %></li>
+     			 <% end %>
+      		</ul>
+   		 </div>
+  		 <% end %>
+    </div>
+    
+    <div id="nav"></div>
+    
+    <div id="main">
+     <div class="field">
+   		 <%= f.label :title %><br />
+    	 <%= f.text_field :title %>
+      </div>
+  	 <div class="field">
+    	<%= f.label :department %><br />
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :unpaid_undergrad %><br />
+    <%= f.check_box :unpaid_undergrad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid_grad %><br />
+    <%= f.check_box :unpaid_undergrad %>
+  </div>
+    
+    <div id="sidebar"></div>
+    <div id="footer"></div>
+</div>
+<% end %>

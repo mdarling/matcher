@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  workPeriod: MyString
+  weeklyTimeCommitment: MyString
+  deliverables: MyText
+  desiredSkills: MyText
+  desiredClasses: MyText
+  recordBegin: 2013-07-26 09:46:20
+  recordEnd: 2013-07-26 09:46:20
+  minimumGPA: MyString
+  academicLevel: MyString
+  jobDescription: MyText
+
+two:
+  workPeriod: MyString
+  weeklyTimeCommitment: MyString
+  deliverables: MyText
+  desiredSkills: MyText
+  desiredClasses: MyText
+  recordBegin: 2013-07-26 09:46:20
+  recordEnd: 2013-07-26 09:46:20
+  minimumGPA: MyString
+  academicLevel: MyString
+  jobDescription: MyText

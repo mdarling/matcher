@@ -8,6 +8,8 @@ http://dave.is/unicorn.html
 Starting unicorn server: unicorn -c config/unicorn.rb
 
 Postgres configuration
+http://pragtob.wordpress.com/2012/09/12/setting-up-postgresql-for-ruby-on-rails-on-linux/
+
 sudo -u postgres psql
 postgres=# \password
 postgres=# create user guy_on_stackoverflow with password 'keepitonthedl';

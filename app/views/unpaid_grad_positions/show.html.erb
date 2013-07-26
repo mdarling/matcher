@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Workperiod:</b>
+  <%= @unpaid_grad_position.workPeriod %>
+</p>
+
+<p>
+  <b>Weeklytimecommitment:</b>
+  <%= @unpaid_grad_position.weeklyTimeCommitment %>
+</p>
+
+<p>
+  <b>Deliverables:</b>
+  <%= @unpaid_grad_position.deliverables %>
+</p>
+
+<p>
+  <b>Desiredskills:</b>
+  <%= @unpaid_grad_position.desiredSkills %>
+</p>
+
+<p>
+  <b>Desiredclasses:</b>
+  <%= @unpaid_grad_position.desiredClasses %>
+</p>
+
+<p>
+  <b>Recordbegin:</b>
+  <%= @unpaid_grad_position.recordBegin %>
+</p>
+
+<p>
+  <b>Recordend:</b>
+  <%= @unpaid_grad_position.recordEnd %>
+</p>
+
+<p>
+  <b>Minimumgpa:</b>
+  <%= @unpaid_grad_position.minimumGPA %>
+</p>
+
+<p>
+  <b>Academiclevel:</b>
+  <%= @unpaid_grad_position.academicLevel %>
+</p>
+
+<p>
+  <b>Jobdescription:</b>
+  <%= @unpaid_grad_position.jobDescription %>
+</p>
+
+
+<%= link_to 'Edit', edit_unpaid_grad_position_path(@unpaid_grad_position) %> |
+<%= link_to 'Back', unpaid_grad_positions_path %>

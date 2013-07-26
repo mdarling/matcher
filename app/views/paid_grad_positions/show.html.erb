@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Unmjobs:</b>
+  <%= @paid_grad_position.unmJobs %>
+</p>
+
+<p>
+  <b>Postingnumber:</b>
+  <%= @paid_grad_position.postingNumber %>
+</p>
+
+<p>
+  <b>Positiontitle:</b>
+  <%= @paid_grad_position.positionTitle %>
+</p>
+
+<p>
+  <b>Workperiod:</b>
+  <%= @paid_grad_position.workPeriod %>
+</p>
+
+<p>
+  <b>Weeklytimecommitment:</b>
+  <%= @paid_grad_position.weeklyTimeCommitment %>
+</p>
+
+<p>
+  <b>Deliverables:</b>
+  <%= @paid_grad_position.deliverables %>
+</p>
+
+<p>
+  <b>Desiredskills:</b>
+  <%= @paid_grad_position.desiredSkills %>
+</p>
+
+<p>
+  <b>Desiredclasses:</b>
+  <%= @paid_grad_position.desiredClasses %>
+</p>
+
+<p>
+  <b>Recordbegin:</b>
+  <%= @paid_grad_position.recordBegin %>
+</p>
+
+<p>
+  <b>Recordend:</b>
+  <%= @paid_grad_position.recordEnd %>
+</p>
+
+<p>
+  <b>Minimumgpa:</b>
+  <%= @paid_grad_position.minimumGPA %>
+</p>
+
+<p>
+  <b>Academiclevel:</b>
+  <%= @paid_grad_position.academicLevel %>
+</p>
+
+<p>
+  <b>Jobdescription:</b>
+  <%= @paid_grad_position.jobDescription %>
+</p>
+
+
+<%= link_to 'Edit', edit_paid_grad_position_path(@paid_grad_position) %> |
+<%= link_to 'Back', paid_grad_positions_path %>

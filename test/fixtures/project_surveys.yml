@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  projectTitle: MyString
+  projectDescription: MyText
+  email: MyString
+  phone: MyString
+  department: MyString
+  researchArea: MyText
+
+two:
+  projectTitle: MyString
+  projectDescription: MyText
+  email: MyString
+  phone: MyString
+  department: MyString
+  researchArea: MyText

@@ -1,0 +1,47 @@
+<h1>Listing paid_undergrad_positions</h1>
+
+<table>
+  <tr>
+    <th>Unmjobs</th>
+    <th>Postingnumber</th>
+    <th>Positiontitle</th>
+    <th>Workperiod</th>
+    <th>Weeklytimecommitment</th>
+    <th>Deliverables</th>
+    <th>Desiredskills</th>
+    <th>Desiredclasses</th>
+    <th>Recordbegin</th>
+    <th>Recordend</th>
+    <th>Minimumgpa</th>
+    <th>Academiclevel</th>
+    <th>Jobdescription</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paid_undergrad_positions.each do |paid_undergrad_position| %>
+  <tr>
+    <td><%= paid_undergrad_position.unmJobs %></td>
+    <td><%= paid_undergrad_position.postingNumber %></td>
+    <td><%= paid_undergrad_position.positionTitle %></td>
+    <td><%= paid_undergrad_position.workPeriod %></td>
+    <td><%= paid_undergrad_position.weeklyTimeCommitment %></td>
+    <td><%= paid_undergrad_position.deliverables %></td>
+    <td><%= paid_undergrad_position.desiredSkills %></td>
+    <td><%= paid_undergrad_position.desiredClasses %></td>
+    <td><%= paid_undergrad_position.recordBegin %></td>
+    <td><%= paid_undergrad_position.recordEnd %></td>
+    <td><%= paid_undergrad_position.minimumGPA %></td>
+    <td><%= paid_undergrad_position.academicLevel %></td>
+    <td><%= paid_undergrad_position.jobDescription %></td>
+    <td><%= link_to 'Show', paid_undergrad_position %></td>
+    <td><%= link_to 'Edit', edit_paid_undergrad_position_path(paid_undergrad_position) %></td>
+    <td><%= link_to 'Destroy', paid_undergrad_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Paid undergrad position', new_paid_undergrad_position_path %>

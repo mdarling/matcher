@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130726165222) do
+ActiveRecord::Schema.define(:version => 20130726231257) do
 
   create_table "paid_grad_positions", :force => true do |t|
     t.string   "unmJobs"
@@ -76,10 +76,14 @@ ActiveRecord::Schema.define(:version => 20130726165222) do
     t.string   "email"
     t.string   "phone"
     t.string   "department"
-    t.text     "researchArea"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.string   "researchArea"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "researcher"
+    t.string   "unpaid_undergrads_needed"
+    t.string   "paid_undergrads_needed"
+    t.string   "unpaid_grads_needed"
+    t.string   "paid_grads_needed"
   end
 
   create_table "student_profiles", :force => true do |t|

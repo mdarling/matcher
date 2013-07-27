@@ -41,3 +41,7 @@ rails generate scaffold StudentProfile firstName:string lastName:string unmID:st
 
 CSS Layout:
 http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/
+
+Added column to table
+http://guides.rubyonrails.org/migrations.html
+$ rails generate migration AddPartNumberToProducts part_number:string

@@ -38,11 +38,8 @@
       <%= f.label "Phone Number" %><br />
       <%= f.text_field :phoneNumber, :class => 'textField' %>
     </div>
-		    	 		<div class="field">
-   		<%= f.label "Expected Graduation" %><br />
-   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true %>
-  	</div>
-  	<%= f.submit %>
+
+  	
 	</div> <!-- End of main div -->
 	
 	<div id="sidebar">
@@ -64,12 +61,16 @@
 			<%= f.radio_button(:academicLevel, "graduate") %>
 			<%= f.label(:academicLevel, "Graduate") %>
 		</div>
-
+		   <div class="field">
+   		<%= f.label "Expected Graduation" %><br />
+   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true %>
+  	</div>
+  	
 	</div> <!-- End of sidebar div -->
 	
 	<div id="bottom">
 
-		
+		<%= f.submit %>
 	</div> <!-- End of bottom div -->
 	
 </div> <!-- End of wrapper class -->

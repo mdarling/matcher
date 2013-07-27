@@ -21,7 +21,7 @@
     <td><%= project_survey.phone %></td>
     <td><%= project_survey.department %></td>
     <td><%= project_survey.researchArea %></td>
-    <td><%= project_survey.unpaid_undergrads_needed %></td>
+    <td><%= project_survey.unpaidUndergradsNeeded %></td>
     <td><%= link_to 'Show', project_survey %></td>
     <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
     <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>

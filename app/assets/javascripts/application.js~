@@ -16,7 +16,6 @@
 $(function(){  // $(document).ready shorthand
 
  $("#project_survey_unpaid_undergrads_needed").attr('checked', false)
- $("#project_survey_paid_undergrads_needed").attr('checked', false)
 
  $("#project_survey_unpaid_undergrads_needed").change(function()
   {

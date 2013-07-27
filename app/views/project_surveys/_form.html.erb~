@@ -1,42 +1,98 @@
-<%= form_for(@project_survey) do |f| %>
-  <% if @project_survey.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project_survey.errors.count, "error") %> prohibited this project_survey from being saved:</h2>
+  	<hr>
+  	<h3>The following information will be added to a searchable database.  Students interested in your job postings will contact you based on the information you provide.</h3>
+  	<hr>
+<div id="wrap">
 
-      <ul>
-      <% @project_survey.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+  <div id="header">
+		<%= form_for(@project_survey) do |f| %>
+		<% if @project_survey.errors.any? %>
+		  <div id="error_explanation">
+		    <h2><%= pluralize(@project_survey.errors.count, "error") %> prohibited this project_survey from being saved:</h2>
+
+		    <ul>
+		    <% @project_survey.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
   <% end %>
-	<h3>The following information will be added to a searchable database.  Students interested in your job postings will contact you based on the information you provide.</h3>
-  <div class="field">
-    <%= f.label "Title of Project" %><br />
-    <%= f.text_field :projectTitle %>
+
   </div>
-  <div class="field">
-    <%= f.label "Description of Project" %><br />
-    <%= f.text_area :projectDescription %>
+ 
+  <div id="main">
+		<h5> General Project contact information </h5>
+		<br />
+		<div class="field">
+		  <%= f.label "Principle Researcher's Name" %><br />
+		  <%= f.text_field :researcher, :class => 'textField' %>
+		</div>
+		
+		<div class="field">
+		  <%= f.label "Title of Project" %><br />
+		  <%= f.text_field :projectTitle, :class => 'textField' %>
+		</div>
+		
+		<div class="field">
+		  <%= f.label "Area of Research" %><br />
+		  <%= f.text_field :researchArea, :class => 'textField' %>
+		</div>
+		
+		<div class="field">
+		  <%= f.label "General Description of Project" %><br />
+		  <%= f.text_area :projectDescription, :class => 'textArea' %>
+		</div>
+
   </div>
-  <h2>Enter project contact information (optional) </h2>
-  <div class="field">
-    <%= f.label "Email address" %><br />
-    <%= f.text_field :email %>
+  
+  <div id="sidebar">
+		
+		<h5>Project contact information </h5>
+		<br />
+		<div class="field">
+		  <%= f.label "Email address" %><br />
+		  <%= f.text_field :email, :class => 'textField' %>
+		</div>
+		<div class="field">
+		  <%= f.label "Phone Number (optional)" %><br />
+		  <%= f.text_field :phone, :class => 'textField' %>
+		</div>
+		<div class="field">
+		  <%= f.label :department %><br />
+		  <%= f.text_field :department, :class => 'textField' %>
+  	</div>
+
+		<br />
+
+	</div> <!-- End of sidebar -->
+  
+  <div id="bottom">
+  		
+		<h5>What type of student researchers will you require for this 
+		project?</h5>
+  		<div class="field">
+
+  	  <%= f.check_box(:unpaid_undergrads_needed) %>
+			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergraduate") %>
+			<%= f.check_box(:paid_undergrads_needed) %>
+			<%= f.label(:unpaid_undergrads_needed, "Paid Undergraduate") %>
+  	</div>
+  	
+  	<div id="unpaidUnderGrad" style="display:none;">
+  	  Unpaid Undergrad
+  	</div>
+  	
+  	<div id="paidUnderGrad" >
+  		Paid Undergrad	
+  	</div>
+  	
+  	<br />
+		<div class="actions">
+		  <%= f.submit %>
+		</div>
+
   </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_field :department %>
-  </div>
-  <div class="field">
-    <%= f.label :researchArea %><br />
-    <%= f.text_area :researchArea %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	
+	<% end %>
+
+</div>
+

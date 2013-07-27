@@ -47,8 +47,8 @@ html
 {
 	//width:300px;
 	//margin: 0 auto;
-	//background:#000;
-	float:bottom;
+	//background:#000
+	clear:both;
 }
 
 
@@ -57,9 +57,5 @@ html
  	width:219px;
 }
 	
-.textArea
-{
-	width:219px;
-	height:107.5px;
-}
+
 	

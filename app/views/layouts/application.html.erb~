@@ -22,7 +22,13 @@
 	<%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag 'jquery', 'application' %>
   <%= csrf_meta_tags %>
-  
+  <script type="text/javaScript">
+  $(function(){  // $(document).ready shorthand
+
+$('#content').hide().slideDown('slow');
+
+});
+</script>
 </head>
 <body>
 <div id="unm_header">
@@ -45,9 +51,7 @@
 </div>
 <div id="page">
   <div id="dept_header">
-    <div id="dept_logo"><%= link_to image_tag('unm-logo.gif'), 'http://		uresearch.unm.edu' %></div>
-    
-   
+    <div id="dept_logo"><%= link_to image_tag('unm-logo.gif'), 'http://		uresearch.unm.edu' %></div>  
   </div>
   <div class="col2" id="container">
     <div id="primary_aside">

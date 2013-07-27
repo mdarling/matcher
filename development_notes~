@@ -8,6 +8,8 @@ http://dave.is/unicorn.html
 Starting unicorn server: unicorn -c config/unicorn.rb
 
 Postgres configuration
+http://pragtob.wordpress.com/2012/09/12/setting-up-postgresql-for-ruby-on-rails-on-linux/
+
 sudo -u postgres psql
 postgres=# \password
 postgres=# create user guy_on_stackoverflow with password 'keepitonthedl';
@@ -37,3 +39,9 @@ After running a migration you’ll want to restart your app with "heroku restart
 Created Student Profile scaffold:
 rails generate scaffold StudentProfile firstName:string lastName:string unmID:string email:string phoneNumber:string academicLevel major:string minor:string expectedGraduation:datetime interests:text
 
+CSS Layout:
+http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/
+
+Added column to table
+http://guides.rubyonrails.org/migrations.html
+$ rails generate migration AddPartNumberToProducts part_number:string

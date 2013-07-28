@@ -27,8 +27,8 @@ class ProjectSurveysController < ApplicationController
     @project_survey = ProjectSurvey.new
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
-		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
-		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
+		unpaid_undergrad_position = @project_survey.unpaid_undergrad_position.build
+		paid_undergrad_position = @project_survey.paid_undergrad_position.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @project_survey }

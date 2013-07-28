@@ -15,7 +15,7 @@
 		    <% end %>
 		    </ul>
 		  </div>
-  <% end %>
+   	<% end %>
 
   </div>
  
@@ -69,7 +69,7 @@
   		
 		<h5>What type of student researchers will you require for this 
 		project?</h5>
-  		<div class="field">
+  		<div class="field" >
 
   	  <%= f.check_box(:unpaid_undergrads_needed) %>
 			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergraduate") %>
@@ -77,21 +77,32 @@
 			<%= f.label(:unpaid_undergrads_needed, "Paid Undergraduate") %>
   	</div>
   	
-  	<div id="unpaidUnderGrad" style="display:none;">
-  	  Unpaid Undergrad
+  	<div id="unpaidUnderGrad" >
+  		<h5 style="padding:5px;">Unpaid Undergrad</h5>
+  	  	<%= f.fields_for :unpaid_undergrad_positions do |g| %>
+  	    	<%= render 'unpaid_undergrad_form', f: g %>
+  	  	<% end %>
+  	  
   	</div>
   	
-  	<div id="paidUnderGrad" style="display:none;">
-  		Paid Undergrad	
+  	<div id="paidUnderGrad" style="padding-left:1.5px;" >
+  		<h5 style="padding:5px;">Paid Undergrad</h5>
+  		 	<%= f.fields_for :paid_undergrad_positions do |h| %>
+  	    	<%= render 'paid_undergrad_form', f: h %>
+  	  	<% end %>
+  		
   	</div>
+  	<div id="lowerBottom"></div>
   	
-  	<br />
-		<div class="actions">
-		  <%= f.submit %>
-		</div>
 
   </div>
-	
+			<div class="baja">
+			<hr>
+			<div id="actions" style="float:right;" >
+		  <%= f.submit %>
+		  </div>
+		</div>
+
 	<% end %>
 
 </div>

@@ -1,0 +1,42 @@
+<fieldset>
+	<div class="field">
+		<%= f.label :workPeriod, "Work Period" %><br />
+   	<%= f.text_field :workPeriod,:class => 'textField' %>
+  <div class="field">
+    <%= f.label :weeklyTimeCommitment %><br />
+    <%= f.text_field :weeklyTimeCommitment,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label :deliverables %><br />
+    <%= f.text_area :deliverables,:class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label :desiredSkills %><br />
+    <%= f.text_area :desiredSkills, :class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label :desiredClasses %><br />
+    <%= f.text_area :desiredClasses,:class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label :recordBegin %><br />
+    <%= f.date_select :recordBegin %>
+  </div>
+  <div class="field">
+    <%= f.label :recordEnd %><br />
+    <%= f.date_select :recordEnd%>
+  </div>
+  <div class="field">
+    <%= f.label :minimumGPA %><br />
+    <%= f.text_field :minimumGPA,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label :academicLevel %><br />
+    <%= f.text_field :academicLevel,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label :jobDescription %><br />
+    <%= f.text_area :jobDescription,:class => 'textArea' %>
+  </div>
+</fieldset>
+  	  	

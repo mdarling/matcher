@@ -14,7 +14,7 @@ class UnpaidUndergradPositionsController < ApplicationController
   # GET /unpaid_undergrad_positions/1.json
   def show
   	@project_survey = ProjectSurvey.find(params[:project_survey_id])
-    @unpaid_undergrad_position = UnpaidUndergradPosition.where( :project_survey_id => @project_survey.id ).first
+    @unpaid_undergrad_position = UnpaidUndergradPosition.where( :project_survey_id => @project_survey.id )
 
     respond_to do |format|
       format.html # show.html.erb

@@ -3,8 +3,8 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-		@collegeSearch = College.search(params[:q])
-  	@colleges = @collegeSearch.result
+		@search = ProjectSurvey.search(params[:q])
+  	@project_surveys = @search.result
   	@departments = Department.all
     respond_to do |format|
       format.html # index.html.erb

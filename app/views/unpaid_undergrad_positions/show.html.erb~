@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <p>
   <b>Project Title:</b>
-  <%= @project_survey.projectTitle %>
+  <%= @project_survet.projectTitle %>
 </p>
 <p>
   <b>Workperiod:</b>

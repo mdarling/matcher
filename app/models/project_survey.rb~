@@ -24,7 +24,7 @@ class ProjectSurvey < ActiveRecord::Base
 
     def position_present
       if unpaid_undergrads_needed == "0" && paid_undergrads_needed == "0"
-        errors[:base] << "1You must select at least one type of undergrad position."
+        errors[:base] << "You must select at least one type of undergrad position."
       end
     end
 															

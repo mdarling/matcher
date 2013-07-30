@@ -3,7 +3,7 @@
 	<%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
-		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "all" , :selected => nil %>
+		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
 		<!-- <%= f.text_field :projectTitle_cont %> -->
 	</div>
 	<div class="actions">
@@ -11,7 +11,7 @@
 	</div>
 <% end %>
 <% if @searched %>
-<h2><%= @searched %> Department Search</h2>
+	<h2><%= @searched %> Department Search</h2>
 <% end %>
 <hr>
 <% if @project_surveys.length != 0 %>
@@ -33,8 +33,15 @@
 				<%= project_survey.projectDescription %>
 			</p>
 				<p>
-				<b>Unpaid Undergrads?</b>
-				<%= project_survey.unpaid_undergrads_needed %>
+				<% if project_survey.unpaid_undergrads_needed == "1" %>
+				<!--	<%= link_to 'Click Here to View Available Position', project_survey_path(project_survey.id) %> -->
+					<%= link_to 'Click Here to View Unpaid Position', project_survey_unpaid_undergrad_position_path(project_survey.id, UnpaidUndergradPosition.where( :project_survey_id => project_survey.id).first) %> 
+				<% end %>
+			</p>
+			<p>
+				<% if project_survey.unpaid_undergrads_needed == "1" %>
+					<%= link_to 'Click Here to View Paid Position', project_survey_paid_undergrad_positions_path(project_survey) %>
+				<% end %>
 			</p>
 			<hr>
 

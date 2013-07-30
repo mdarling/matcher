@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 		@search = ProjectSurvey.search(params[:q])
   	@project_surveys = @search.result
   	@departments = Department.all
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }

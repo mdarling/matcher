@@ -33,8 +33,15 @@
 				<%= project_survey.projectDescription %>
 			</p>
 				<p>
-				<b>Unpaid Undergrads?</b>
-				<%= project_survey.unpaid_undergrads_needed %>
+				<% if project_survey.unpaid_undergrads_needed == "1" %>
+				<!--	<%= link_to 'Click Here to View Available Position', project_survey_path(project_survey.id) %> -->
+					<%= link_to 'Click Here to View Unpaid Position', project_survey_unpaid_undergrad_position_path(project_survey.id, UnpaidUndergradPosition.where( :project_survey_id => project_survey.id)) %> 
+				<% end %>
+			</p>
+			<p>
+				<% if project_survey.unpaid_undergrads_needed == "1" %>
+					<%= link_to 'Click Here to View Paid Position', project_survey_paid_undergrad_positions_path(project_survey) %>
+				<% end %>
 			</p>
 			<hr>
 

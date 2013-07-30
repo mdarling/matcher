@@ -11,8 +11,8 @@ Matcher::Application.routes.draw do
 
 
   resources :project_surveys do
-  	resources :paid_grad_positions
-		resources :unpaid_grad_positions
+  	resources :paid_undergrad_positions
+		resources :unpaid_undergrad_positions
 	end
 
   resources :student_profiles

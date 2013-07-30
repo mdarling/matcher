@@ -44,7 +44,7 @@
 </div>
 <div id="page">
   <div id="dept_header">
-    <div id="dept_logo"><a href="http://uresearch.unm.edu"><img alt="Undergraduate Research Initiatives" src="assets/unmlogo.jpg" /></a></div>
+    <div id="dept_logo"><a href="http://uresearch.unm.edu"><img alt="Undergraduate Research Initiatives" src="assets/unm-logo.gif" /></a></div>
     
     
   </div>
@@ -72,7 +72,10 @@
         <div id="before_default_3" ></div>
         <div id="before_default_4" ></div> 
         <h1>UNM Research Opportunity Database</h1>
-        <p><h1>UNDER CONSTRUCTION</h1></p>
+        <p>
+        <%= button "Student Database", project_surveys_path, :method => "get" %>
+        <%= button "Project Database", student_profiles_path, :method => "get" %>
+        </p>
 
         <div id="after_default_1" ></div>
         <div id="after_default_2" ></div>

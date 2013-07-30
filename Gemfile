@@ -36,3 +36,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "rails-erd", "~> 1.1.0"
+gem 'ransack'

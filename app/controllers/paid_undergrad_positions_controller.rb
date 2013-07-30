@@ -40,7 +40,8 @@ class PaidUndergradPositionsController < ApplicationController
   # POST /paid_undergrad_positions
   # POST /paid_undergrad_positions.json
   def create
-    @paid_undergrad_position = PaidUndergradPosition.new(params[:paid_undergrad_position])
+    @project_survey = ProjectSurvey.find(params[:project_survey_id])
+    @paid_grad_position = @project_survey.paid_grad_position.create!(params[:qpaid_undergrad_position])
 
     respond_to do |format|
       if @paid_undergrad_position.save

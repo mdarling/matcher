@@ -1,0 +1,4 @@
+class AddCollgeIdToDepartment < ActiveRecord::Migration
+  def change
+  end
+end

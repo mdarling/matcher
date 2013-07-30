@@ -1,33 +1,49 @@
-<h1>Listing project_surveys</h1>
+<h1>Search for Available Research Positions</h1>
 
-<table>
-  <tr>
-    <th>Projecttitle</th>
-    <th>Projectdescription</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Department</th>
-    <th>Researcharea</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @project_surveys.each do |project_survey| %>
-  <tr>
-    <td><%= project_survey.projectTitle %></td>
-    <td><%= project_survey.projectDescription %></td>
-    <td><%= project_survey.email %></td>
-    <td><%= project_survey.phone %></td>
-    <td><%= project_survey.department %></td>
-    <td><%= project_survey.researchArea %></td>
-    <td><%= project_survey.unpaid_undergrads_needed %></td>
-    <td><%= link_to 'Show', project_survey %></td>
-    <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
-    <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	<%= search_form_for @search do |f| %>
+	<div class="field">
+		<%= f.label :department_cont, "Department" %><br />	
+		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
+		<!-- <%= f.text_field :projectTitle_cont %> -->
+	</div>
+	<div class="actions">
+	<%= f.submit "Search" %>
+	</div>
 <% end %>
-</table>
+<% if @searched %>
+	<h2><%= @searched %> Department Search</h2>
+<% end %>
+<hr>
+<% if @project_surveys.length != 0 %>
+
+	<% @project_surveys.each do |project_survey| %>
+
+				
+				<b>Projecttitle:</b>
+				<%= project_survey.projectTitle %>
+			</p>
+
+			<p>
+				<b>Researcharea:</b>
+				<%= project_survey.researchArea %>
+			</p>
+
+			<p>
+				<b>Projectdescription:</b>
+				<%= project_survey.projectDescription %>
+			</p>
+				<p>
+				<b>Unpaid Undergrads?</b>
+				<%= project_survey.unpaid_undergrads_needed %>
+			</p>
+			<hr>
+
+	<% end %>
+
+<% else %>
+		<h5>There are currently no ungdergraduate research positions in this department. </h5>
+		<hr>
+<% end %>
 
 <br />
 

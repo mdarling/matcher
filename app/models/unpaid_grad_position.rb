@@ -4,5 +4,6 @@ class UnpaidGradPosition < ActiveRecord::Base
   :weeklyTimeCommitment, :workPeriod, :project_survey_id
   
   belongs_to :project_survey
+  belongs_to :project
   
 end

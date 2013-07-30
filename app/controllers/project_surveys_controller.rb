@@ -2,8 +2,13 @@ class ProjectSurveysController < ApplicationController
   # GET /project_surveys
   # GET /project_surveys.json
   def index
-    @project_surveys = ProjectSurvey.all
-
+    #@project_surveys = ProjecstSurvey.all
+		@search = ProjectSurvey.search(params[:q])
+  	@project_surveys = @search.result
+ 		if params[:q]
+  		@searched = params[:q]["department_cont"]
+  	end
+  	@departments = Department.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @project_surveys }

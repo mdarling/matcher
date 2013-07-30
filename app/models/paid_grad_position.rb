@@ -5,4 +5,5 @@ class PaidGradPosition < ActiveRecord::Base
   :workPeriod, :project_survey_id
   
   belongs_to :project_survey
+  belongs_to :project
 end

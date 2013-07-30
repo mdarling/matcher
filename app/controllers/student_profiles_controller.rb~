@@ -1,9 +1,8 @@
-	class StudentProfilesController < ApplicationController
+class StudentProfilesController < ApplicationController
   # GET /student_profiles
   # GET /student_profiles.json
   def index
-    @student_profiles = StudentProfile.where( "\"expectedGraduation\" >= to_timestamp(?)
-    ", Date.today )
+    @student_profiles = StudentProfile.all
 
     respond_to do |format|
       format.html # index.html.erb

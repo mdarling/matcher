@@ -1,40 +1,60 @@
-<h1>Listing student_profiles</h1>
+<%= search_form_for @search do |f| %>
+	<div class="field">
+		<%= f.label :department_cont, "Department" %><br />	
+		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
 
-<table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Unmid</th>
-    <th>Email</th>
-    <th>Phonenumber</th>
-    <th>Academiclevel</th>
-    <th>Major</th>
-    <th>Minor</th>
-    <th>Expectedgraduation</th>
-    <th>Interests</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @student_profiles.each do |student_profile| %>
-  <tr>
-    <td><%= student_profile.firstName %></td>
-    <td><%= student_profile.lastName %></td>
-    <td><%= student_profile.unmID %></td>
-    <td><%= student_profile.email %></td>
-    <td><%= student_profile.phoneNumber %></td>
-    <td><%= student_profile.academicLevel %></td>
-    <td><%= student_profile.major %></td>
-    <td><%= student_profile.minor %></td>
-    <td><%= student_profile.expectedGraduation %></td>
-    <td><%= student_profile.interests %></td>
-    <td><%= link_to 'Show', student_profile %></td>
-    <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
-    <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+	</div>
+	<div class="actions">
+	<%= f.submit "Search" %>
+	</div>
 <% end %>
-</table>
+
+<h1>Listing Student Profiles</h1>
+
+<% if @searched %>
+	<h2><%= @searched %></h2>
+<% end %>
+<hr>
+<% if @student_profiles.length != 0 %>
+	<% @student_profiles.each do |student_profile| %>
+		<p>
+			<b>Firstname:</b>
+			<%= student_profile.firstName %>
+		</p>
+
+		<p>
+			<b>Lastname:</b>
+			<%= student_profile.lastName %>
+		</p>
+
+		<p>
+			<b>Academiclevel:</b>
+			<%= student_profile.academicLevel %>
+		</p>
+
+		<p>
+			<b>Major:</b>
+			<%= student_profile.major %>
+		</p>
+
+		<p>
+			<b>Interests:</b>
+			<%= student_profile.interests %>
+		</p>
+		
+		<%= link_to 'View Profile',student_profile_path %> 
+	<!--    <td><%= link_to 'Show', student_profile %></td>
+		  <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
+		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+ <hr>
+<% end %>
+
+<% else %>
+		<h5>There are currently no ungdergraduate research applicants this department. </h5>
+		<hr>
+<% end %>
+
+
 
 <br />
 

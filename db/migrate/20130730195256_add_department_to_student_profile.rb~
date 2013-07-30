@@ -1,0 +1,4 @@
+class AddDepartmentToStudentProfile < ActiveRecord::Migration
+  def change
+  end
+end

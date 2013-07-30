@@ -38,7 +38,11 @@
       <%= f.label "Phone Number" %><br />
       <%= f.text_field :phoneNumber, :class => 'textField' %>
     </div>
+    <div class="field">
+      <%= f.label "Department" %><br />
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
 
+    </div>
   	
 	</div> <!-- End of main div -->
 	
@@ -56,20 +60,15 @@
   	 	 <%= f.text_area :interests, :class => 'textArea' %>
  		</div>
  		<div class="field"> 
-			<%= f.radio_button(:academicLevel, "undergraduate") %>
-			<%= f.label(:academicLevel, "Undergraduate") %>
-			<%= f.radio_button(:academicLevel, "graduate") %>
-			<%= f.label(:academicLevel, "Graduate") %>
+ 		 	<%= f.label "Academic Standing" %><br />
+  	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophpmore", "Junior", "Senior"]) %>
+  	 
 		</div>
 		   <div class="field">
    		<%= f.label "Expected Graduation" %><br />
    		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true %>
   	</div>
   	
-    <div class="field">
-  	  <%= f.label :unpaid_undergrads_needed %><br />
-  	  <%= f.text_field :unpaid_undergrads_needed, :class => 'positions' %>
-  	</div>
 	</div> <!-- End of sidebar div -->
 	
 	<div id="bottom">

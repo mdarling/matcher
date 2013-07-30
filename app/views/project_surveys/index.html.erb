@@ -34,13 +34,14 @@
 			</p>
 				<p>
 				<% if project_survey.unpaid_undergrads_needed == "1" %>
-				<!--	<%= link_to 'Click Here to View Available Position', project_survey_path(project_survey.id) %> -->
-					<%= link_to 'Click Here to View Unpaid Position', project_survey_unpaid_undergrad_position_path(project_survey.id, UnpaidUndergradPosition.where( :project_survey_id => project_survey.id)) %> 
+
+					<%= link_to 'Click Here to View Unpaid Position', project_survey_unpaid_undergrad_position_path(project_survey.id, UnpaidUndergradPosition.where( :project_survey_id => project_survey.id).first) %> 
 				<% end %>
 			</p>
 			<p>
 				<% if project_survey.unpaid_undergrads_needed == "1" %>
-					<%= link_to 'Click Here to View Paid Position', project_survey_paid_undergrad_positions_path(project_survey) %>
+
+					<%= link_to 'Click Here to View Paid Position', project_survey_paid_undergrad_position_path(project_survey.id, PaidUndergradPosition.where( :project_survey_id => project_survey.id).first) %> 
 				<% end %>
 			</p>
 			<hr>

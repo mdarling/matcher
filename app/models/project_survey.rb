@@ -5,7 +5,7 @@ class ProjectSurvey < ActiveRecord::Base
   :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes
 	
 	belongs_to :project
-	has_one :unpaid_undergrad_positions
+	has_many :unpaid_undergrad_positions
 	has_many :paid_undergrad_positions
 	has_many :unpaid_grad_positions
 	has_many :paid_grad_positions

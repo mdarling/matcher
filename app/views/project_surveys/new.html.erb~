@@ -1,4 +1,4 @@
-<h1>New project_survey</h1>
+<h1>Research Opportunity Survey</h1>
 
 <%= render 'form' %>
 

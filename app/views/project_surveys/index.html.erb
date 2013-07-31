@@ -19,17 +19,17 @@
 	<% @project_surveys.each do |project_survey| %>
 
 				
-				<b>Projecttitle:</b>
+				<b>Project Title:</b>
 				<%= project_survey.projectTitle %>
 			</p>
 
 			<p>
-				<b>Researcharea:</b>
+				<b>Research Area:</b>
 				<%= project_survey.researchArea %>
 			</p>
 
 			<p>
-				<b>Projectdescription:</b>
+				<b>Project Description:</b>
 				<%= project_survey.projectDescription %>
 			</p>
 				<p>
@@ -39,11 +39,14 @@
 				<% end %>
 			</p>
 			<p>
-				<% if project_survey.unpaid_undergrads_needed == "1" %>
+				<% if project_survey.paid_undergrads_needed == "1" %>
 
 					<%= link_to 'Click Here to View Paid Position', project_survey_paid_undergrad_position_path(project_survey.id, PaidUndergradPosition.where( :project_survey_id => project_survey.id).first) %> 
 				<% end %>
 			</p>
+			<td><%= link_to 'Show', project_survey %></td>
+		  <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+		  <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
 			<hr>
 
 	<% end %>

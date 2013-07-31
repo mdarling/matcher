@@ -1,57 +1,42 @@
-<%= fields_for :unpaid_undergrad_position, @project_survey.unpaid_undergrad_position do |g| %>
-  <% if @unpaid_undergrad_position.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@unpaid_undergrad_position.errors.count, "error") %> prohibited this unpaid_undergrad_position from being saved:</h2>
-
-      <ul>
-      <% @unpaid_undergrad_position.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<fieldset>
+	<div class="field">
+		<%= f.label :workPeriod, "Work Period" %><br />
+   	<%= f.text_field :workPeriod,:class => 'textField' %>
   <div class="field">
-    <%= g.label :workPeriod %><br />
-    <%= g.text_field :workPeriod,:class => 'textField' %>
+    <%= f.label "Weekly Time Commitment" %><br />
+    <%= f.text_field :weeklyTimeCommitment,:class => 'textField' %>
   </div>
   <div class="field">
-    <%= g.label :weeklyTimeCommitment %><br />
-    <%= g.text_field :weeklyTimeCommitment,:class => 'textField' %>
+    <%= f.label "Deliverables" %><br />
+    <%= f.text_area :deliverables,:class => 'textArea' %>
   </div>
   <div class="field">
-    <%= g.label :deliverables %><br />
-    <%= g.text_area :deliverables,:class => 'textArea' %>
+    <%= f.label "Desired Skills" %><br />
+    <%= f.text_area :desiredSkills, :class => 'textArea' %>
   </div>
   <div class="field">
-    <%= g.label :desiredSkills %><br />
-    <%= g.text_area :desiredSkills, :class => 'textArea' %>
+    <%= f.label "Desired Classes" %><br />
+    <%= f.text_area :desiredClasses,:class => 'textArea' %>
   </div>
   <div class="field">
-    <%= g.label :desiredClasses %><br />
-    <%= g.text_area :desiredClasses,:class => 'textArea' %>
+    <%= f.label "When Should this opening be Posted?" %><br />
+    <%= f.date_select :recordBegin %>
   </div>
   <div class="field">
-    <%= g.label :recordBegin %><br />
-    <%= g.date_select :recordBegin %>
+    <%= f.label "When is the posting deadline?" %><br />
+    <%= f.date_select :recordEnd%>
   </div>
   <div class="field">
-    <%= g.label :recordEnd %><br />
-    <%= g.date_select :recordEnd%>
+    <%= f.label "Minimum GPA" %><br />
+    <%= f.text_field :minimumGPA,:class => 'textField' %>
   </div>
   <div class="field">
-    <%= g.label :minimumGPA %><br />
-    <%= g.text_field :minimumGPA,:class => 'textField' %>
+    <%= f.label "Desired Academic Standing" %><br />
+     	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophomore", "Junior", "Senior"]) %>
   </div>
   <div class="field">
-    <%= g.label :academicLevel %><br />
-    <%= g.text_field :academicLevel,:class => 'textField' %>
+    <%= f.label "General Job Description" %><br />
+    <%= f.text_area :jobDescription,:class => 'textArea' %>
   </div>
-  <div class="field">
-    <%= g.label :jobDescription %><br />
-    <%= g.text_area :jobDescription,:class => 'textArea' %>
-  </div>
-  <div class="actions">
-   
-  </div>
-<% end %>
+</fieldset>
+  	  	

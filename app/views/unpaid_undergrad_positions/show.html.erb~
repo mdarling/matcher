@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 <p>
   <b>Project Title:</b>
-  <%= @project_survet.projectTitle %>
+  <%= @project_survey.projectTitle %>
 </p>
 <p>
-  <b>Workperiod:</b>
+  <b>Work Period:</b>
   <%= @unpaid_undergrad_position.workPeriod %>
 </p>
 
 <p>
-  <b>Weeklytimecommitment:</b>
+  <b>Weekly Time Commitment:</b>
   <%= @unpaid_undergrad_position.weeklyTimeCommitment %>
 </p>
 
@@ -19,37 +19,37 @@
 </p>
 
 <p>
-  <b>Desiredskills:</b>
+  <b>Desired Skills:</b>
   <%= @unpaid_undergrad_position.desiredSkills %>
 </p>
 
 <p>
-  <b>Desiredclasses:</b>
+  <b>Desired Classes:</b>
   <%= @unpaid_undergrad_position.desiredClasses %>
 </p>
 
 <p>
-  <b>Recordbegin:</b>
+  <b>Position Posted On: </b>
   <%= @unpaid_undergrad_position.recordBegin %>
 </p>
 
 <p>
-  <b>Recordend:</b>
+  <b>Application Deadline:</b>
   <%= @unpaid_undergrad_position.recordEnd %>
 </p>
 
 <p>
-  <b>Minimumgpa:</b>
+  <b>Minimum GPA:</b>
   <%= @unpaid_undergrad_position.minimumGPA %>
 </p>
 
 <p>
-  <b>Academiclevel:</b>
+  <b>Academic Standing:</b>
   <%= @unpaid_undergrad_position.academicLevel %>
 </p>
 
 <p>
-  <b>Jobdescription:</b>
+  <b>Job Description:</b>
   <%= @unpaid_undergrad_position.jobDescription %>
 </p>
 

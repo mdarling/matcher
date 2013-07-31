@@ -11,24 +11,22 @@
 
 <h1>Listing Student Profiles</h1>
 
-<% if @searched %>
-	<h2><%= @searched %></h2>
-<% end %>
+
 <hr>
 <% if @student_profiles.length != 0 %>
 	<% @student_profiles.each do |student_profile| %>
 		<p>
-			<b>Firstname:</b>
+			<b>First Name:</b>
 			<%= student_profile.firstName %>
 		</p>
 
 		<p>
-			<b>Lastname:</b>
+			<b>Last Name:</b>
 			<%= student_profile.lastName %>
 		</p>
 
 		<p>
-			<b>Academiclevel:</b>
+			<b>Academic Standing:</b>
 			<%= student_profile.academicLevel %>
 		</p>
 
@@ -38,14 +36,14 @@
 		</p>
 
 		<p>
-			<b>Interests:</b>
+			<b>Research Interests:</b>
 			<%= student_profile.interests %>
 		</p>
 		
-		<%= link_to 'View Profile',student_profile_path %> 
-	<!--    <td><%= link_to 'Show', student_profile %></td>
+		<%= link_to 'View Profile',student_profile_path(student_profile.id) %> <br /> 
+	    <td><%= link_to 'Show', student_profile %></td>
 		  <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
-		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
  <hr>
 <% end %>
 

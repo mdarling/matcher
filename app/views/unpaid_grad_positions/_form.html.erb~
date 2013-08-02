@@ -20,6 +20,10 @@
     <%= f.text_field :weeklyTimeCommitment %>
   </div>
   <div class="field">
+    <%= f.label :deliverables %><br />
+    <%= f.text_area :deliverables %>
+  </div>
+  <div class="field">
     <%= f.label :desiredSkills %><br />
     <%= f.text_area :desiredSkills %>
   </div>

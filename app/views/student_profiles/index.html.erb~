@@ -1,16 +1,18 @@
 <%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
-		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
+		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name", @searched), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
 
 	</div>
 	<div class="actions">
 	<%= f.submit "Search" %>
 	</div>
 <% end %>
-
-<h1>Listing Student Profiles</h1>
-
+<% if @searched != "" %>
+	<h1> Listing Student Profiles for<%= @searched %></h1>
+<% else %>
+	<h1>Listing Student Profiles</h1>
+<% end %>
 
 <hr>
 <% if @student_profiles.length != 0 %>
@@ -40,15 +42,15 @@
 			<%= student_profile.interests %>
 		</p>
 		
-		<%= link_to 'View Profile',student_profile_path(student_profile.id) %> <br /> 
-	    <td><%= link_to 'Show', student_profile %></td>
+		<%= link_to 'View Profile',student_profile %> <br /> 
+	  
 		  <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
 		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
  <hr>
 <% end %>
 
 <% else %>
-		<h5>There are currently no ungdergraduate research applicants this department. </h5>
+		<h5>There are currently no ungdergraduate applicants this department. </h5>
 		<hr>
 <% end %>
 

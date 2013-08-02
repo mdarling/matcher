@@ -40,7 +40,7 @@
     </div>
     <div class="field">
       <%= f.label "Department" %><br />
-      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => nil %>
 
     </div>
   	
@@ -59,6 +59,10 @@
   	 	 <%= f.label "Research Interests" %><br />
   	 	 <%= f.text_area :interests, :class => 'textArea' %>
  		</div>
+ 		 	  <div class="field">
+  	 	 <%= f.label "Previous Research Experience" %><br />
+  	 	 <%= f.text_area :experience, :class => 'textArea' %>
+ 		</div>
  		<div class="field"> 
  		 	<%= f.label "Academic Standing" %><br />
   	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophpmore", "Junior", "Senior"]) %>
@@ -66,7 +70,7 @@
 		</div>
 		   <div class="field">
    		<%= f.label "Expected Graduation" %><br />
-   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true %>
+   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true, :use_month_names => "Freshman", "Sophpmore", "Junior", "Senior"] %>
   	</div>
   	
 	</div> <!-- End of sidebar div -->

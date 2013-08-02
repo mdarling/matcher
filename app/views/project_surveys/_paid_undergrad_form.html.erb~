@@ -1,6 +1,6 @@
  <fieldset>
   <div class="field">
-    <%= f.label "Have you posted this position to UNM jobs?" %><br />
+    <%= f.label "Is this position posted on UNM jobs?" %><br />
     <%= f.text_field :unmJobs,:class => 'textField' %>
   </div>
   <div class="field">

@@ -1,16 +1,28 @@
-<%= form_for(@unpaid_grad_position) do |f| %>
-  <% if @unpaid_grad_position.errors.any? %>
+<%= form_for(@paid_undergrad_position) do |f| %>
+  <% if @paid_undergrad_position.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@unpaid_grad_position.errors.count, "error") %> prohibited this unpaid_grad_position from being saved:</h2>
+      <h2><%= pluralize(@paid_undergrad_position.errors.count, "error") %> prohibited this paid_undergrad_position from being saved:</h2>
 
       <ul>
-      <% @unpaid_grad_position.errors.full_messages.each do |msg| %>
+      <% @paid_undergrad_position.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :unmJobs %><br />
+    <%= f.text_field :unmJobs %>
+  </div>
+  <div class="field">
+    <%= f.label :postingNumber %><br />
+    <%= f.text_field :postingNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :positionTitle %><br />
+    <%= f.text_field :positionTitle %>
+  </div>
   <div class="field">
     <%= f.label :workPeriod %><br />
     <%= f.text_field :workPeriod %>

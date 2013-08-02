@@ -5,9 +5,7 @@ class StudentProfilesController < ApplicationController
     #@project_surveys = ProjecstSurvey.all
 		@search = StudentProfile.search(params[:q])
   	@student_profiles = @search.result
- 		if params[:q]
-  		@searched = params[:q]["department_cont"]
-  	end
+	
   	@departments = Department.all
 
     respond_to do |format|

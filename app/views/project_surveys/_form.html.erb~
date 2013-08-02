@@ -23,7 +23,7 @@
 		<h5> General Project contact information </h5>
 		<br />
 		<div class="field">
-		  <%= f.label "Principle Researcher's Name" %><br />
+		  <%= f.label "Contact Name" %><br />
 		  <%= f.text_field :researcher, :class => 'textField' %>
 		</div>
 		
@@ -57,9 +57,9 @@
 		  <%= f.text_field :phone, :class => 'textField' %>
 		</div>
 		<div class="field">
-		  <%= f.label :department %><br />
-		  <%= f.text_field :department, :class => 'textField' %>
-  	</div>
+   <%= f.label "Department" %><br />
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => nil %>
+    </div>
 
 		<br />
 
@@ -70,7 +70,7 @@
 		<h5>What type of student researchers will you require for this 
 		project?</h5>
   		<div class="field" >
-check_box(object_name, method, options = {}, checked_value = "1", unchecked_value = "0")
+
   	  <%= f.check_box(:unpaid_undergrads_needed) %>
 			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergraduate") %>
 			<%= f.check_box(:paid_undergrads_needed) %>

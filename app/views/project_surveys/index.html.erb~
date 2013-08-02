@@ -3,7 +3,7 @@
 	<%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
-		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
+		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name", @searched), :style => "width:100px;", :include_blank => "All Departments" , :selected => "Biology" %>
 		<!-- <%= f.text_field :projectTitle_cont %> -->
 	</div>
 	<div class="actions">
@@ -46,7 +46,7 @@
 			</p>
 			<td><%= link_to 'Show', project_survey %></td>
 		  <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
-		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+		  <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
 			<hr>
 
 	<% end %>
@@ -58,4 +58,4 @@
 
 <br />
 
-<%= link_to 'New Project survey', new_project_survey_path %>
+<%= link_to 'Submit New Project', new_project_survey_path %>

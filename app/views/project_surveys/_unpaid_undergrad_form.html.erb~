@@ -32,7 +32,7 @@
   </div>
   <div class="field">
     <%= f.label "Desired Academic Standing" %><br />
-     	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophomore", "Junior", "Senior"]) %>
+    <%= f.text_field :academicLevel,:class => 'textField' %>
   </div>
   <div class="field">
     <%= f.label "General Job Description" %><br />

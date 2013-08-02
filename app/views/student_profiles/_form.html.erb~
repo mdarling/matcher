@@ -70,7 +70,7 @@
 		</div>
 		   <div class="field">
    		<%= f.label "Expected Graduation" %><br />
-   		<%= f.date_select :expectedGraduation, :start_year => 		Time.now.year, :discard_day => true, :use_month_names => "Freshman", "Sophpmore", "Junior", "Senior"] %>
+   		<%= f.date_select :expectedGraduation, :discard_day => true %>
   	</div>
   	
 	</div> <!-- End of sidebar div -->

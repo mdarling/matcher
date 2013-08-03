@@ -15,7 +15,7 @@
 //= require_tree .
 $(function(){  // $(document).ready shorthand
 	$('#content').animate({opacity: 1}, 1000);
-	$( "student_profile_expectedGraduation_2i" ).datepicker();
+	
   //$('#content').css('visibility','visible').hide().fadeIn('slow');
  $("#project_survey_unpaid_undergrads_needed").attr('checked', false)
  $("#project_survey_paid_undergrads_needed").attr('checked', false)

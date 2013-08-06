@@ -16,8 +16,8 @@
 	<div id="sidebar" >
 	<% if admin_signed_in? %>
 		<%= button_to "View Student Database", student_profiles_path, :method => "get" %>
-	<% end %>
-	<%	if research_user_signed_in? && !user_signed_in? %>
+
+	<%	elsif research_user_signed_in? && !user_signed_in? %>
 		<%= button_to "Register Project", new_project_survey_path, :method => "get" %>
 	<% elsif !research_user_signed_in? && !user_signed_in? %>
 		<%= button_to "Register Project", new_research_user_session_path, :method => "get" %>
@@ -39,7 +39,7 @@
 <% if !user_signed_in? && !research_user_signed_in? %> 
 	<div id="left">
 			
-		<h5>Feel free to browse the project database.<br /> For more information, <br/><%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</h5>
+		<h5>Feel free to browse the project database.<br /> For more information, <%= link_to "login", new_user_session_path %> <br />or <%= link_to "sign up", new_user_registration_path %>.</h5>
 			
 	</div>
 	<div id="right">

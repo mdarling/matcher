@@ -58,19 +58,55 @@
     </div>
     
     <div id="content_top">
+  
+				
       <div class="content">
-        <ul id="unm_breadcrumbs"><li class="unm_home"><a href="http://www.unm.edu">UNM</a></li><li><span class="breadcrumb-div">»</span>Home</li></ul>
+      
+        <%= link_to "Database Home", home_path %>
+            			<div id="user_info" style="float:right;padding-right:20px;">
+       	<% if user_signed_in? && !research_user_signed_in? %>
+  					Logged in as <strong><%= current_user.email %></strong>. 
+  					
+  					<% if current_user.student_profile  %>
+  						<%= link_to 'Edit profile', edit_student_profile_path(current_user.student_profile.id) %>
+  					<% else %>
+  						<%= link_to 'Create profile', new_student_profile_path %>
+  					<% end %>
+  					 |
+ 						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			
+			 <% end %>
+			 		<% if !signed_in?  %>
+  					<%= link_to "Sign up", new_user_registration_path %> |
+  					<%= link_to "Login", new_user_session_path %>
+					<% end %>
+			 <% if research_user_signed_in? %>
+			 	<%= link_to "Logout", destroy_research_user_session_path, method: :delete %>
+			 <% end %>
+			 		|	 <% if !user_signed_in? %>
+			 	<%= link_to "Admin login", new_admin_session_path %>
+			 <% end %>
+			 </div>
+
+        <hr style="color:#f00;">
+
         
       </div>
     </div>
  
     <div id="content">
+
       <div class="content">
         <div id="before_default_1" ></div>
         <div id="before_default_2" ></div>
         <div id="before_default_3" ></div>
-        <div id="before_default_4" ></div> 
-				<%= yield %>
+        <div id="before_default_4" ></div>
+				  	
+        	<!-- <p class="notice"><%= notice %></p> -->
+       		<!-- <p class="alert"><%= alert %></p> -->
+					<%= yield %>
+					
+
         <div id="after_default_1" ></div>
         <div id="after_default_2" ></div>
         <div id="after_default_3" ></div>

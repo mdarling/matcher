@@ -50,7 +50,7 @@
   <div class="col2" id="container">
     <div id="primary_aside">
     <div class="content">
-      <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a class="active" href="index.html">Home</a></li><li><a href="on-campus-opportunity.html">On-Campus Opportunity</a></li><li><a href="off-campus-opportunity.html">Off-Campus Opportunity</a></li></ul></div>
+      <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a class="active" href="index.html">Home</a></li><li><a href="http://uresearch.unm.edu/on-campus-opportunity.html">On-Campus Opportunity</a></li><li><a href="http://uresearch.unm.edu/off-campus-opportunity.html">Off-Campus Opportunity</a></li></ul></div>
       <div id="primary_aside_2" ></div>
       <div id="primary_aside_3" ></div>
       <div id="primary_aside_4"><div class="vcard leftnav_contact"><a class="fn organization-unit url" href="http://uresearch.unm.edu">Undergraduate Research</a><p class="adr"><span class="extended-address">MSC06 3680</span><br /><span class="extended-address">University Advisement &amp; Enrichment Center, University College Suite 180</span><br /><span class="street-address">1 University of New Mexico</span><br /><span class="locality">Albuquerque</span>, <abbr class="region" title="New Mexico">NM</abbr> <span class="postal-code">87131</span></p><p><span class="tel"><span class="type hidden">Work</span> Phone: <span class="value">505-277-0428</span><br /></span><span><a class="email" href="mailto:uresearch@unm.edu">uresearch@unm.edu</a></span></p></div></div>
@@ -58,19 +58,55 @@
     </div>
     
     <div id="content_top">
+  
+				
       <div class="content">
-        <ul id="unm_breadcrumbs"><li class="unm_home"><a href="http://www.unm.edu">UNM</a></li><li><span class="breadcrumb-div">»</span>Home</li></ul>
+      
+        <%= link_to "Database Home", home_path %>
+            			<div id="user_info" style="float:right;padding-right:20px;">
+       	<% if user_signed_in? && !research_user_signed_in? %>
+  					Logged in as <strong><%= current_user.email %></strong>. 
+  					
+  					<% if current_user.student_profile  %>
+  						<%= link_to 'Edit profile', edit_student_profile_path(current_user.student_profile.id) %>
+  					<% else %>
+  						<%= link_to 'Create profile', new_student_profile_path %>
+  					<% end %>
+  					 |
+ 						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+			
+			 <% end %>
+			 		<% if !signed_in?  %>
+  					<%= link_to "Sign up", new_user_registration_path %> |
+  					<%= link_to "Login", new_user_session_path %>
+					<% end %>
+			 <% if research_user_signed_in? %>
+			 	<%= link_to "Logout", destroy_research_user_session_path, method: :delete %>
+			 <% end %>
+			 		|	 <% if !user_signed_in? %>
+			 	<%= link_to "admin login", new_admin_session_path %>
+			 <% end %>
+			 </div>
+
+        <hr style="color:#f00;">
+
         
       </div>
     </div>
  
     <div id="content">
+
       <div class="content">
         <div id="before_default_1" ></div>
         <div id="before_default_2" ></div>
         <div id="before_default_3" ></div>
-        <div id="before_default_4" ></div> 
-				<%= yield %>
+        <div id="before_default_4" ></div>
+				  	
+        	<!-- <p class="notice"><%= notice %></p> -->
+       		<!-- <p class="alert"><%= alert %></p> -->
+					<%= yield %>
+					
+
         <div id="after_default_1" ></div>
         <div id="after_default_2" ></div>
         <div id="after_default_3" ></div>

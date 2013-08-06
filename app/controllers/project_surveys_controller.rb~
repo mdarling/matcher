@@ -19,7 +19,13 @@ class ProjectSurveysController < ApplicationController
   # GET /project_surveys/1.json
   def show
     @project_survey = ProjectSurvey.find(params[:id])
-
+    if @project_survey.unpaid_undergrads_needed == "1"
+			@unpaid_undergrad_position = UnpaidUndergradPosition.where( :project_survey_id => @project_survey.id).first
+		end
+		if @project_survey.paid_undergrads_needed == "1"
+			@paid_undergrad_position = paidUndergradPosition.where( :project_survey_id => @project_survey.id).first
+		end
+		
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project_survey }
@@ -32,8 +38,8 @@ class ProjectSurveysController < ApplicationController
     @project_survey = ProjectSurvey.new
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
-		unpaid_undergrad_position = @project_survey.unpaid_undergrad_position.build
-		paid_undergrad_position = @project_survey.paid_undergrad_position.build
+		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
+		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @project_survey }

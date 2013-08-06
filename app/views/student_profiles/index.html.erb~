@@ -9,7 +9,7 @@
 	</div>
 <% end %>
 <% if @searched != "" %>
-	<h1> Listing Student Profiles for<%= @searched %></h1>
+	<h1> Listing Student Profiles for <%= @searched %></h1>
 <% else %>
 	<h1>Listing Student Profiles</h1>
 <% end %>

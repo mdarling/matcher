@@ -46,7 +46,9 @@ class StudentProfilesController < ApplicationController
   # POST /student_profiles
   # POST /student_profiles.json
   def create
+  	@user = current_user
     @student_profile = StudentProfile.new(params[:student_profile])
+    @student_profile.user_id = @user.id
 
     respond_to do |format|
       if @student_profile.save
@@ -78,8 +80,8 @@ class StudentProfilesController < ApplicationController
   # DELETE /student_profiles/1
   # DELETE /student_profiles/1.json
   def destroy
-    @student_profile = StudentProfile.find(params[:id])
-    @student_profile.destroy
+    current_user.student_profile.destroy
+    
 
     respond_to do |format|
       format.html { redirect_to student_profiles_url }

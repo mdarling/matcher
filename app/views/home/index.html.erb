@@ -1,5 +1,88 @@
 <h1>Welcome to UNM's Undergraduate Research Opportunity Database</h1>
 <div id="wrap">
-	<div id="main"><%= button_to "Project Database", project_surveys_path, :method => "get" %></div>
-	<div id="sidebar"> <%= button_to "Student Database", student_profiles_path, :method => "get" %></div>
+  <!-- 	<% if user_signed_in? %>
+  					Logged in as <strong><%= current_user.email %></strong>.
+  					<%= link_to 'Edit profile', edit_user_registration_path %> |
+ 						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<% else %>
+  					<%= link_to "Sign up", new_user_registration_path %> |
+  					<%= link_to "Login", new_user_session_path %>
+					<% end %>-->	
+	<div id="main">
+		<%= button_to "View Projects", project_surveys_path, :method => "get" %>
+		
+	
+	</div>
+	<div id="sidebar" >
+	<% if admin_signed_in? %>
+		<%= button_to "View Student Database", student_profiles_path, :method => "get" %>
+	<% end %>
+	<%	if research_user_signed_in? && !user_signed_in? %>
+		<%= button_to "Register Project", new_project_survey_path, :method => "get" %>
+	<% elsif !research_user_signed_in? && !user_signed_in? %>
+		<%= button_to "Register Project", new_research_user_session_path, :method => "get" %>
+	<% end %>
+	
+		<% if user_signed_in? && !admin_signed_in? %>
+		<% if current_user.student_profile %>
+			<%= button_to "Edit Profile", edit_student_profile_path(current_user.student_profile.id), :method => "get" %>
+		<% else %>
+			<%= button_to "Create Profile", new_student_profile_path, :method => "get" %>
+		<% end %>
+	<% end %>
+	</div>
+	<div id ="bottom">
+	
+	</div>
+
 </div>
+<% if !user_signed_in? && !research_user_signed_in? %> 
+	<div id="left">
+			
+		<h5>Feel free to browse the project database. <br />For more information, <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</h5>
+			
+	</div>
+	<div id="right">
+			
+		<h5>If you are a researcher who would like to add your project to the database.</h5>
+			
+	</div>
+<% else %>
+	<div id="left">
+			<% if !admin_signed_in? %>
+		<h5>Browse the project database for available positions.</h5>
+			
+	</div>
+	<div id="right">
+			
+		<h5>Your profile will be available for hiring researchers to view.</h5>
+			<% end %>	
+	</div>
+<% end %>
+
+<div id="baja">
+	<div id="main">
+	<!--<% if admin_signed_in? %> 
+		<%= button_to "Admin Console", project_surveys_path, :method => "get" %>
+	<% end %> -->
+	<% if research_user_signed_in? %>
+		<%= button_to "Edit My Projects", project_surveys_path, :method => "get" %>
+	<% end %>
+	<% if user_signed_in? && !admin_signed_in? %>
+		<% if current_user.student_profile %>
+			<%= button_to 'Delete My Profile', student_profile_path(current_user.student_profile.id), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+		<% end %>
+	<% end %>
+	</div>
+	
+	<div id="right" style="padding-left:22px;">
+		<% if research_user_signed_in? %>
+			<%= button_to "Logout", destroy_research_user_session_path, method: :delete %>	
+		<% end %>
+
+		<% if user_signed_in? %>
+			<%= button_to "Logout", destroy_user_session_path, method: :delete %>	
+		<% end %>
+	</div>
+</div>
+

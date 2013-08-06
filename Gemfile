@@ -41,3 +41,7 @@ gem 'jquery-rails'
 
 gem "rails-erd", "~> 1.1.0"
 gem 'ransack'
+
+gem 'devise'
+
+gem 'cancan'

@@ -23,7 +23,7 @@ class ProjectSurveysController < ApplicationController
 			@unpaid_undergrad_position = UnpaidUndergradPosition.where( :project_survey_id => @project_survey.id).first
 		end
 		if @project_survey.paid_undergrads_needed == "1"
-			@paid_undergrad_position = paidUndergradPosition.where( :project_survey_id => @project_survey.id).first
+			@paid_undergrad_position = PaidUndergradPosition.where( :project_survey_id => @project_survey.id).first
 		end
 		
     respond_to do |format|
@@ -38,6 +38,7 @@ class ProjectSurveysController < ApplicationController
     @project_survey = ProjectSurvey.new
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
+		
 		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
 		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
     respond_to do |format|
@@ -54,8 +55,12 @@ class ProjectSurveysController < ApplicationController
   # POST /project_surveys
   # POST /project_surveys.json
   def create
+   	@user = current_research_user
     @project_survey = ProjectSurvey.new(params[:project_survey])
-
+		@project_survey.research_user_id = @user.id
+		if @project_survey.unpaid_undergrads_needed == "0"
+    	@project_survey.unpaid_undergrad_positions.destroy
+		end
     respond_to do |format|
       if @project_survey.save
         format.html { redirect_to @project_survey, notice: 'Project survey was successfully created.' }

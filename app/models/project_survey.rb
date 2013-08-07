@@ -2,7 +2,10 @@ class ProjectSurvey < ActiveRecord::Base
   attr_accessible :department, :email, :phone, :projectDescription, 
   :projectTitle, :researchArea, :researcher, :unpaid_grads_needed, 
   :paid_grads_needed, :unpaid_undergrads_needed, :paid_undergrads_needed,
-  :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes
+  :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes, :lead_researcher
+  :research_user_id
+  
+  validates :research_user_id, :presence => true
 	
 	belongs_to :research_user
 	has_many :unpaid_undergrad_positions
@@ -27,5 +30,21 @@ class ProjectSurvey < ActiveRecord::Base
         errors[:base] << "You must select at least one type of undergrad position."
       end
     end
+    
+    
+    
+  after_create do
+  	if unpaid_undergrads_needed == "0"
+  		unpaid_undergrad_positions = UnpaidUndergradPosition.where( :project_survey_id => self.id ).first
+  		unpaid_undergrad_positions.destroy
+  	end
+  end
+			
+	after_create do
+  	if paid_undergrads_needed == "0"
+  		paid_undergrad_positions = PaidUndergradPosition.where( :project_survey_id => self.id ).first
+  		paid_undergrad_positions.destroy
+  	end
+  end
 															
 end

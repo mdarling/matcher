@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130806014028) do
+ActiveRecord::Schema.define(:version => 20130807025536) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -118,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20130806014028) do
     t.string   "paid_undergrads_needed"
     t.string   "unpaid_grads_needed"
     t.string   "paid_grads_needed"
+    t.string   "lead_researcher"
+    t.integer  "research_user_id"
   end
 
   create_table "projects", :force => true do |t|

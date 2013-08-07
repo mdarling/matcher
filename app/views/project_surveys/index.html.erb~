@@ -10,15 +10,17 @@
 	<%= f.submit "Search" %> 
 	
 	</div>
-<% end %>
+<% end %> <!-- End search do -->
 
 
 <% if @searched %>
 	<h2><%= @searched %> Department Search</h2>
+<% end %> <!-- End if @searched -->
+
+<% if !signed_in? %>
+	<h5>To view more information about these projects, please <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %></h5>
 <% end %>
-<% if !user_signed_in? && !admin_signed_in? && !research_user_signed_in? %>
-	<h5>To view more information about these projects, please <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>
-<% end %>
+
 <% if admin_signed_in? || research_user_signed_in? %>
 
 	<%= link_to 'Submit New Project', new_project_survey_path %>
@@ -28,7 +30,7 @@
 
 	<% @project_surveys.each do |project_survey| %>
 
-				
+				<p>
 				<b>Project Title:</b>
 				<%= project_survey.projectTitle %>
 			</p>
@@ -42,16 +44,17 @@
 				<b>Project Description:</b>
 				<%= project_survey.projectDescription %>
 			</p>
-				<p>
+				
 			<% if user_signed_in? || admin_signed_in? || research_user_signed_in? %>
 				<% if project_survey.unpaid_undergrads_needed == "1" || project_survey.paid_undergrads_needed == "1" %>
 
-					<%= link_to 'Project Information and Available Positions', project_survey_path(project_survey.id) %> 
+					<%= link_to 'Project Information and Available Positions', project_survey_path(project_survey.id) %> <br />
 				<% end %>
 			<% end %>
 			<% if admin_signed_in? %>
-		  <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
-		  <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+		  	<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+		  	<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  	
 		  <% end %>
 			<hr>
 
@@ -62,6 +65,6 @@
 		<hr>
 <% end %>
 
-<br />
+
 
 

@@ -20,11 +20,11 @@
   </div>
  
   <div id="main">
-		<h5> General Project contact information </h5>
+		<h5> General Project information </h5>
 		<br />
 		<div class="field">
-		  <%= f.label "Contact Name" %><br />
-		  <%= f.text_field :researcher, :class => 'textField' %>
+		  <%= f.label "Lead Researcher" %><br />
+		  <%= f.text_field :lead_researcher, :class => 'textField' %>
 		</div>
 		
 		<div class="field">
@@ -48,6 +48,10 @@
 		
 		<h5>Project contact information </h5>
 		<br />
+		<div class="field">
+		  <%= f.label "Contact Name (If not lead researcher)" %><br />
+		  <%= f.text_field :researcher, :class => 'textField' %>
+		</div>
 		<div class="field">
 		  <%= f.label "Email address" %><br />
 		  <%= f.text_field :email, :class => 'textField' %>

@@ -38,6 +38,7 @@ class ProjectSurveysController < ApplicationController
     @project_survey = ProjectSurvey.new
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
+		
 		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
 		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
     respond_to do |format|
@@ -54,7 +55,9 @@ class ProjectSurveysController < ApplicationController
   # POST /project_surveys
   # POST /project_surveys.json
   def create
+   	@user = current_research_user
     @project_survey = ProjectSurvey.new(params[:project_survey])
+		@project_survey.research_user_id = @user.id
 
     respond_to do |format|
       if @project_survey.save

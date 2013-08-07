@@ -1,0 +1,4 @@
+class AddResearchUserIdToProjectSurvey < ActiveRecord::Migration
+  def change
+  end
+end

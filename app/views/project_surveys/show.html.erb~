@@ -6,6 +6,7 @@
 
 	<div id="nav">
 		<h1><%= @project_survey.projectTitle %></h1>
+		<h3><%= @project_survey.department %></h3>
 	</div> <!-- End of nav div -->
 		<hr>
 	<div id="projectMain"	>
@@ -18,10 +19,15 @@
 	
 	<div id="projectSidebar">
 		<div id="projectLeft">
-				<p>
-		<b>Contact:</b>
-			<%= @project_survey.researcher %>
-		</p>
+			<p>
+				
+			<b>Contact:</b><br />
+			<% if @project_survey.researcher != "" %>
+				<%= @project_survey.researcher %>
+			<% else %>
+				<%= @project_survey.lead_researcher %>
+			<% end %>
+			</p>
 			
 			<b>Email:</b>
 			<%= @project_survey.email %>
@@ -223,6 +229,8 @@
 	
 </div>
 <div id="projectBaja">
-	<%= link_to 'Edit', edit_project_survey_path(@project_survey) %> |
-	<%= link_to 'Back', project_surveys_path %>
+	<% if admin_signed_in? %>
+		<%= link_to 'Edit', edit_project_survey_path(@project_survey) %> |
+		<%= link_to 'Back', project_surveys_path %>
+	<% end %>
 	</div>

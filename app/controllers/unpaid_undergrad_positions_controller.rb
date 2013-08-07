@@ -41,6 +41,7 @@ class UnpaidUndergradPositionsController < ApplicationController
   # POST /unpaid_undergrad_positions
   # POST /unpaid_undergrad_positions.json
   def create
+  
     @unpaid_undergrad_position = UnpaidUndergradPosition.new(params[:unpaid_undergrad_position])
 
     respond_to do |format|
@@ -57,6 +58,7 @@ class UnpaidUndergradPositionsController < ApplicationController
   # PUT /unpaid_undergrad_positions/1
   # PUT /unpaid_undergrad_positions/1.json
   def update
+  	
     @unpaid_undergrad_position = UnpaidUndergradPosition.find(params[:id])
 
     respond_to do |format|

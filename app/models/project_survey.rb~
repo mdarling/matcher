@@ -8,10 +8,10 @@ class ProjectSurvey < ActiveRecord::Base
   validates :research_user_id, :presence => true
 	
 	belongs_to :research_user
-	has_many :unpaid_undergrad_positions
-	has_many :paid_undergrad_positions
-	has_many :unpaid_grad_positions
-	has_many :paid_grad_positions
+	has_one :unpaid_undergrad_positions, :dependent => :destroy
+	has_one :paid_undergrad_positions, :dependent => :destroy
+	has_one :unpaid_grad_positions, :dependent => :destroy
+	has_one :paid_grad_positions, :dependent => :destroy
 	has_many :departments
 	
 	accepts_nested_attributes_for :unpaid_undergrad_positions, 
@@ -22,7 +22,6 @@ class ProjectSurvey < ActiveRecord::Base
 																
 	
   validate :position_present
-  validate :desired_classes_present
 
   private
 
@@ -32,16 +31,7 @@ class ProjectSurvey < ActiveRecord::Base
       end
     end
     
-      private
-
-    def position_present
-    	unpaid_undergrad_positions = UnpaidUndergradPosition.where( :project_survey_id => self.id ).first
-    	paid_undergrad_positions = PaidUndergradPosition.where( :project_survey_id => self.id ).first
-      
-      if unpaid_undergrads_needed == "1" && paid_undergrad
-        errors[:base] << "You must select at least one type of undergrad position."
-      end
-    end
+    
     
   after_create do
   	if unpaid_undergrads_needed == "0"

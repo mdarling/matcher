@@ -17,8 +17,8 @@ $(function(){  // $(document).ready shorthand
 	$('#content').animate({opacity: 1}, 1000);
 	
   //$('#content').css('visibility','visible').hide().fadeIn('slow');
- $("#project_survey_unpaid_undergrads_needed").attr('checked', false)
- $("#project_survey_paid_undergrads_needed").attr('checked', false)
+// $("#project_survey_unpaid_undergrads_needed").attr('checked', false)
+// $("#project_survey_paid_undergrads_needed").attr('checked', false)
 
  $("#project_survey_unpaid_undergrads_needed").change(function()
   {
@@ -29,6 +29,16 @@ $(function(){  // $(document).ready shorthand
   {
  		this.checked ? $('#paidUnderGrad').slideDown() : $('#paidUnderGrad').slideUp();
   });
+  
+  $("#project_survey_paid_undergrads_needed").change(function()
+  {
+ 		this.checked ? $('#paidUnderGrad').slideDown() : $('#paidUnderGrad').slideUp();
+  });
+	
+ $('.projectTitle').click(function() {
+    $('.editProjectSurvey').slideToggle();
+	});
+
 
 });
 

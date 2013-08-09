@@ -8,10 +8,10 @@ class ProjectSurvey < ActiveRecord::Base
   validates :research_user_id, :presence => true
 	
 	belongs_to :research_user
-	has_many :unpaid_undergrad_positions
-	has_many :paid_undergrad_positions
-	has_many :unpaid_grad_positions
-	has_many :paid_grad_positions
+	has_many :unpaid_undergrad_positions, :dependent => :destroy
+	has_many :paid_undergrad_positions, :dependent => :destroy
+	has_many :unpaid_grad_positions, :dependent => :destroy
+	has_many :paid_grad_positions, :dependent => :destroy
 	has_many :departments
 	
 	accepts_nested_attributes_for :unpaid_undergrad_positions, 

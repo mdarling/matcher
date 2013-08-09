@@ -20,7 +20,7 @@
   </div>
  
   <div id="main">
-		<h5> General Project contact information </h5>
+		<h5> General Project information </h5>
 		<br />
 		<div class="field">
 		  <%= f.label "Lead Researcher" %><br />
@@ -62,7 +62,8 @@
 		</div>
 		<div class="field">
    <%= f.label "Department" %><br />
-      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => nil %>
+   
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => @project_survey.department %>
     </div>
 
 		<br />

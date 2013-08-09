@@ -39,7 +39,7 @@
 {
 	//background:#c9c;
 	float:right;
-	width:270px;
+	width:250px;
 	
 }
 
@@ -74,4 +74,30 @@
 	width:325px;
 }
 
+#editProjectSurvey
+{
+	width:575px;
+  margin:0 auto;
+  display:none;
+  margin-left:30px;
+  
+}
+
+.button#projectEditButton
+{
+	width:650px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 32px;
+	font-size:17px;
+	padding:0px;
+	margin-left:10px;
+}
+
+#editProjectSidebar 
+{
+	//background:#c9c;
+	float:right;
+	margin-left:100px;
+}
 

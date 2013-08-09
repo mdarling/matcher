@@ -81,7 +81,7 @@ html
 #paidUnderGrad
 {
 float:right;
-display:none;
+//display:none;
 border-left:solid;
 border-color:gray;
 border-width:2px;
@@ -90,14 +90,14 @@ border-width:2px;
 #content
 {
 //visibility:hidden;
-opacity:0; 
+//opacity:0; 
 
 }
 
 #unpaidUnderGrad
 {
 float:left;
-display:none;
+//display:none;
 
 }
 
@@ -105,7 +105,7 @@ display:none;
 {
 clear:both;
 padding:40px;
-
+padding-left:80px;
 }
 
 	

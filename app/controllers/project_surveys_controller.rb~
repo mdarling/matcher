@@ -58,9 +58,7 @@ class ProjectSurveysController < ApplicationController
    	@user = current_research_user
     @project_survey = ProjectSurvey.new(params[:project_survey])
 		@project_survey.research_user_id = @user.id
-		if @project_survey.unpaid_undergrads_needed == "0"
-    	@project_survey.unpaid_undergrad_positions.destroy
-		end
+
     respond_to do |format|
       if @project_survey.save
         format.html { redirect_to @project_survey, notice: 'Project survey was successfully created.' }

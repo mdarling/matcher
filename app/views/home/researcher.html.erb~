@@ -1,25 +1,29 @@
-  	<hr>
-  	<h3>The following information will be added to a searchable database.  Students interested in your job postings will contact you based on the information you provide.</h3>
-  	<hr>
-<div id="wrap">
+<% if @project_surveys %>
+	
+	<% @project_surveys.each do |project_survey| %>
+	
+		<div class = "button" id="projectEditButton">
+			
+			Edit <%= project_survey.projectTitle %>
+		</div>
+	</div>
+		<div id = "editProjectSurvey">
+		
+			<%= form_for (project_survey) do |f| %>
+				<% if project_survey.errors.any? %>
+		 			<div id="error_explanation">
+		    		<h2><%= pluralize(project_survey.errors.count, "error") %> prohibited this project  from being saved:</h2>
 
-  <div id="header">
-		<%= form_for(@project_survey) do |f| %>
-		<% if @project_survey.errors.any? %>
-		  <div id="error_explanation">
-		    <h2><%= pluralize(@project_survey.errors.count, "error") %> prohibited this project_survey from being saved:</h2>
-
-		    <ul>
-		    <% @project_survey.errors.full_messages.each do |msg| %>
-		      <li><%= msg %></li>
-		    <% end %>
-		    </ul>
-		  </div>
-   	<% end %>
-
-  </div>
- 
-  <div id="main">
+		    		<ul>
+				    	<% project_survey.errors.full_messages.each do |msg| %>
+		      			<li><%= msg %></li>
+		   			  <% end %>
+		    		</ul>
+		 		  </div>
+   			<% end %>
+   		
+   			
+					<div id="main">
 		<h5> General Project information </h5>
 		<br />
 		<div class="field">
@@ -44,7 +48,7 @@
 
   </div>
   
-  <div id="sidebar">
+  <div id="editProjectSidebar">
 		
 		<h5>Project contact information </h5>
 		<br />
@@ -62,7 +66,7 @@
 		</div>
 		<div class="field">
    <%= f.label "Department" %><br />
-      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name", @project_survey.department ), :style => "width:100px;", :include_blank => true , :selected => nil%>
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name", project_survey.department ), :style => "width:100px;", :include_blank => true , :selected => nil%>
     </div>
 
 		<br />
@@ -97,17 +101,25 @@
   		
   	</div>
   	<div id="lowerBottom"></div>
+  	<div id="actions"  >
+		  <%= f.submit "Update This Project" %>
+		  </div>
   	
 
   </div>
-			<div class="baja">
+			<div class="baja" style="clear:both;">
+			
 			<hr>
-			<div id="actions" style="float:right;" >
-		  <%= f.submit "Post this Project" %>
-		  </div>
+			
 		</div>
+		
+			 <% end %>
+		</div>
+		
+	<% end %> <!-- End do loop -->
+<% else %> <!-- If @project_surveys -->
+	<h2>You have no projects listed currently.</h2>
+<% end %><!-- If @project_surveys -->
 
-	<% end %>
-
-</div>
-
+<%= button_to "Create New Project Listing", new_project_survey_path, :method => :get %>
+	

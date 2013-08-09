@@ -49,7 +49,7 @@ class ProjectSurveysController < ApplicationController
 
   # GET /project_surveys/1/edit
   def edit
-    @project_survey = ProjectSurvey.find(params[:id])
+    @project_survey = ProjectSurvey.where( :research_user_id => current_research_user )
   end
 
   # POST /project_surveys

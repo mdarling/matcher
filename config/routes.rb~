@@ -1,4 +1,8 @@
 Matcher::Application.routes.draw do
+  devise_for :admins
+
+  devise_for :research_users
+
   devise_for :users
 
   resources :projects

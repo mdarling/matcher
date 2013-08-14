@@ -1,4 +1,4 @@
-
+<% link_to "Back", home_path %>
 <div id="projectWrap">
 	<% if notice %>
 <div id="notice"><%= notice %></div><br />
@@ -21,7 +21,7 @@
 		<div id="projectLeft">
 			<p>
 				
-			<b>Contact:</b><br />
+			<b>Contact:</b>
 			<% if @project_survey.researcher != "" %>
 				<%= @project_survey.researcher %>
 			<% else %>

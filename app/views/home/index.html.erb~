@@ -47,6 +47,8 @@
 			<h5  style="padding-left:30px;">If you are a researcher who would like to add your project to the database.</h5>
 		<% elsif admin_signed_in? %>
 			<h5 style="padding-left:50px;">Browse the project database for available positions.</h5>
+		<% else %>
+		<h5  style="padding-left:30px;">If you are a researcher who would like to add your project to the database.</h5>
 		<% end %>	
 	</div>
 <% else %>

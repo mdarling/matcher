@@ -103,7 +103,7 @@
 	
 		<div id="workPosition">
 			<% if @project_survey.paid_undergrads_needed != "0" %>
-				<h1 style="font-size:120%;">Work Position Available</h1>
+				<h1 style="font-size:130%;">Paid Position Available</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
 					<%= @paid_undergrad_position.unmJobs %>

@@ -23,7 +23,7 @@ class ProjectSurvey < ActiveRecord::Base
 	
   validate :position_present
 
-
+	
 
   private
 

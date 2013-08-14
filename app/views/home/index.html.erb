@@ -43,9 +43,11 @@
 			
 	</div>
 	<div id="right">
-			
-		<h5>If you are a researcher who would like to add your project to the database.</h5>
-			
+		<% if research_user_signed_in? %>	
+			<h5  style="padding-left:30px;">If you are a researcher who would like to add your project to the database.</h5>
+		<% elsif admin_signed_in? %>
+			<h5 style="padding-left:50px;">Browse the project database for available positions.</h5>
+		<% end %>	
 	</div>
 <% else %>
 	<div id="left">
@@ -54,8 +56,11 @@
 			
 	</div>
 	<div id="right">
-			
-		<h5>Your profile will be available for hiring researchers to view.</h5>
+				<% if user_signed_in? %>
+					<h5 style="padding-left:20px;">Your profile will be available for hiring researchers to view.</h5>
+				<% elsif research_user_signed_in? %>
+					<h5  style="padding-left:30px;">Post a new project to the database.</h5>		
+				<% end %>	
 			<% end %>	
 	</div>
 <% end %>

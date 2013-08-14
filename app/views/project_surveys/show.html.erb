@@ -53,7 +53,7 @@
 	
 	<div id="volunteerPostion">
 		<% if @project_survey.unpaid_undergrads_needed == "1" %>
-			<h1 style="font-size:120%;">Volunteer Position Available</h1>
+			<h1 style="font-size:130%;">Unpaid Position Available</h1>
 			<p>
 				<b>Work Period:</b>
 				<%= @unpaid_undergrad_position.workPeriod %>
@@ -103,7 +103,7 @@
 	
 		<div id="workPosition">
 			<% if @project_survey.paid_undergrads_needed != "0" %>
-				<h1 style="font-size:120%;">Work Position Available</h1>
+				<h1 style="font-size:130%;">Paid Position Available</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
 					<%= @paid_undergrad_position.unmJobs %>

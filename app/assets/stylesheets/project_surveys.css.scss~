@@ -18,7 +18,7 @@
 	//background:#9c9;
 	float:left;
 	width:175px;
-	padding-left:50px;
+	padding-left:0px;
 }
  
 #projectSidebar 
@@ -50,6 +50,7 @@
 	//margin: 0 auto;
 	//background:#000
 	clear:both;
+	padding-left:50px;
 }
 
 #projectBaja 

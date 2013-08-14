@@ -1,4 +1,4 @@
-<%= link_to "Back", home_path %>
+
 <div id="projectWrap">
 	<% if notice %>
 <div id="notice"><%= notice %></div><br />
@@ -229,8 +229,10 @@
 	
 </div>
 <div id="projectBaja">
+<hr>
+<%= link_to "Back", home_path %>
 	<% if admin_signed_in? %>
 		<%= link_to 'Edit', edit_project_survey_path(@project_survey) %> |
-		<%= link_to 'Back', project_surveys_path %>
+
 	<% end %>
 	</div>

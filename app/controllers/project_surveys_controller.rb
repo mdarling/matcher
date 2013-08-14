@@ -39,7 +39,7 @@ class ProjectSurveysController < ApplicationController
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
 		
-		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
+		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build	
 		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +49,8 @@ class ProjectSurveysController < ApplicationController
 
   # GET /project_surveys/1/edit
   def edit
-    @project_survey = ProjectSurvey.where( :research_user_id => current_research_user )
+    @project_survey = ProjectSurvey.find(params[:id])
+ 
   end
 
   # POST /project_surveys
@@ -93,7 +94,7 @@ class ProjectSurveysController < ApplicationController
     @project_survey.destroy
 
     respond_to do |format|
-      format.html { redirect_to project_surveys_url }
+      format.html { redirect_to home_path }
       format.json { head :no_content }
     end
   end

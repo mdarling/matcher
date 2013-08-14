@@ -39,7 +39,7 @@ class ProjectSurveysController < ApplicationController
 		#@paid_undergrad_position = PaidUndergradPosition.new
 		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
 		
-		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build
+		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build	
 		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
     respond_to do |format|
       format.html # new.html.erb
@@ -50,6 +50,7 @@ class ProjectSurveysController < ApplicationController
   # GET /project_surveys/1/edit
   def edit
     @project_survey = ProjectSurvey.find(params[:id])
+ 
   end
 
   # POST /project_surveys

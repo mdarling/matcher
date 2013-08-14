@@ -66,7 +66,7 @@
 		<%= button_to "Admin Console", project_surveys_path, :method => "get" %>
 	<% end %> -->
 	<% if research_user_signed_in? %>
-		<%= button_to "Edit My Projects", home_researcher_path, :method => "get" %>
+		<%= button_to "View Student Database", student_profiles_path, :method => "get" %>
 	<% end %>
 	<% if user_signed_in? && !admin_signed_in? %>
 		<% if current_user.student_profile %>
@@ -75,7 +75,7 @@
 	<% end %>
 	</div>
 	
-	<div id="right" style="padding-left:22px;">
+	<div id="right" style="padding-left:102px;">
 		<% if research_user_signed_in? %>
 			<%= button_to "Logout", destroy_research_user_session_path, method: :delete %>	
 		<% end %>
@@ -84,5 +84,35 @@
 			<%= button_to "Logout", destroy_user_session_path, method: :delete %>	
 		<% end %>
 	</div>
+	<% if research_user_signed_in? %>
+		<% if @project_surveys %>
+			<div id="bottom">
+				<hr>
+				<h1>My Current Projects:</h1>
+				<table>
+			<tr>
+				<th>Project Title</th>
+				<th>Project Description</th>
+
+				<th>Show</th>
+				<th>Edit</th>
+				<th>Destroy</th>
+			</tr>
+
+		<% @project_surveys.each do |project_survey| %>
+			<tr>
+				<td><%= project_survey.projectTitle %></td>
+				<td><%= project_survey.projectDescription %></td>
+				<td><%= link_to 'Show', project_survey_path(project_survey) %></td>
+				<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+				<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		<% end %>
+		</table>
+
+		<br />
+			</div>
+		<% end %> <!-- if @project_surveys -->
+	<% end %>
 </div>
 

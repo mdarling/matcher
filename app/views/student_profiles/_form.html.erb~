@@ -40,7 +40,7 @@
     </div>
     <div class="field">
       <%= f.label "Department" %><br />
-      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => nil %>
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name",  @student_profile.department), :style => "width:100px;", :include_blank => true , :selected => nil %>
 
     </div>
   	
@@ -65,7 +65,7 @@
  		</div>
  		<div class="field"> 
  		 	<%= f.label "Academic Standing" %><br />
-  	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophpmore", "Junior", "Senior"]) %>
+  	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophmore", "Junior", "Senior"], @student_profile.academicLevel) %>
   	 
 		</div>
 		   <div class="field">

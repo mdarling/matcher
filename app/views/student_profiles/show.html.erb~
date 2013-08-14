@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Firstname:</b>
+  <b>First Name:</b>
   <%= @student_profile.firstName %>
 </p>
 
 <p>
-  <b>Lastname:</b>
+  <b>Last Name:</b>
   <%= @student_profile.lastName %>
 </p>
-
-<p>
-  <b>Unmid:</b>
-  <%= @student_profile.unmID %>
-</p>
-
 <p>
   <b>Email:</b>
   <%= @student_profile.email %>
 </p>
 
+<% if admin_signed_in? %>
+
 <p>
-  <b>Phonenumber:</b>
-  <%= @student_profile.phoneNumber %>
+  <b>Banner ID:</b>
+  <%= @student_profile.unmID %>
 </p>
 
 <p>
-  <b>Academiclevel:</b>
+  <b>Phone Number:</b>
+  <%= @student_profile.phoneNumber %>
+</p>
+<% end %>
+
+<p>
+  <b>Academic Standing:</b>
   <%= @student_profile.academicLevel %>
 </p>
 
@@ -41,8 +43,8 @@
 </p>
 
 <p>
-  <b>Expectedgraduation:</b>
-  <%= @student_profile.expectedGraduation %>
+  <b>Expected Graduation:</b>
+  <%= @student_profile.expectedGraduation.recordBegin.strftime("%m-%d-%Y") %>
 </p>
 
 <p>

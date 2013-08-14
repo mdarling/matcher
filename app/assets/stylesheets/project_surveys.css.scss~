@@ -18,6 +18,7 @@
 	//background:#9c9;
 	float:left;
 	width:175px;
+	padding-left:50px;
 }
  
 #projectSidebar 
@@ -78,7 +79,7 @@
 {
 	width:575px;
   margin:0 auto;
-  display:none;
+  //display:none;
   margin-left:30px;
   
 }

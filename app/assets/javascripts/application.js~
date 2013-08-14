@@ -13,12 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
 $(function(){  // $(document).ready shorthand
 	$('#content').animate({opacity: 1}, 1000);
-	
+
+	//$("#project_survey_unpaid_undergrads_needed").attr("checked",true);
   //$('#content').css('visibility','visible').hide().fadeIn('slow');
- $("#project_survey_unpaid_undergrads_needed").attr('checked', false)
- $("#project_survey_paid_undergrads_needed").attr('checked', false)
+
+ //$("#project_survey_paid_undergrads_needed").attr('checked', false)
 
  $("#project_survey_unpaid_undergrads_needed").change(function()
   {
@@ -38,6 +40,7 @@ $(function(){  // $(document).ready shorthand
  $('.projectTitle').click(function() {
     $('.editProjectSurvey').slideToggle();
 	});
+
 
 
 });

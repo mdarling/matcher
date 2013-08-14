@@ -1,6 +1,8 @@
 <h1>Editing project_survey</h1>
 
-<%= render 'edit_form' %>
+<%= render 'form' %>
 
 <%= link_to 'Show', @project_survey %> |
-<%= link_to 'Back', project_surveys_path %>
+<%= link_to 'Back', projects_path %>
+
+

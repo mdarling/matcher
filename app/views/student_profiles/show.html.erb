@@ -9,6 +9,12 @@
   <b>Last Name:</b>
   <%= @student_profile.lastName %>
 </p>
+<p>
+  <b>Email:</b>
+  <%= @student_profile.email %>
+</p>
+
+<% if admin_signed_in? %>
 
 <p>
   <b>Banner ID:</b>
@@ -16,14 +22,10 @@
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @student_profile.email %>
-</p>
-
-<p>
   <b>Phone Number:</b>
   <%= @student_profile.phoneNumber %>
 </p>
+<% end %>
 
 <p>
   <b>Academic Standing:</b>
@@ -42,7 +44,7 @@
 
 <p>
   <b>Expected Graduation:</b>
-  <%= @student_profile.expectedGraduation %>
+  <%= @student_profile.expectedGraduation.strftime("%m-%d-%Y") %>
 </p>
 
 <p>

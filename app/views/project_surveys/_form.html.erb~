@@ -62,8 +62,7 @@
 		</div>
 		<div class="field">
    <%= f.label "Department" %><br />
-   
-      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name"), :style => "width:100px;", :include_blank => true , :selected => @project_survey.department %>
+      <%= f.select :department,  options_from_collection_for_select(Department.all, "name", "name", @project_survey.department ), :style => "width:100px;", :include_blank => true , :selected => nil%>
     </div>
 
 		<br />
@@ -71,14 +70,16 @@
 	</div> <!-- End of sidebar -->
   
   <div id="bottom">
-  		
+  
 		<h5>What type of student researchers will you require for this 
 		project?</h5>
   		<div class="field" >
 
-  	  <%= f.check_box(:unpaid_undergrads_needed) %>
-			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergraduate") %>
-			<%= f.check_box(:paid_undergrads_needed) %>
+  	 			<%= f.check_box :unpaid_undergrads_needed, 	 {}, "1", "0" %>
+	  
+			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergrad" )%>
+			<%= f.check_box :paid_undergrads_needed, 	 {}, '1', '0' %>
+
 			<%= f.label(:unpaid_undergrads_needed, "Paid Undergraduate") %>
   	</div>
   	
@@ -98,7 +99,28 @@
   		
   	</div>
   	<div id="lowerBottom"></div>
-  	
+  							<% if @project_survey.unpaid_undergrads_needed == "1" %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_unpaid_undergrads_needed").prop("checked", true);
+  			 $('#unpaidUnderGrad').slideDown(); 	
+				<% end %>
+			<% else %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_unpaid_undergrads_needed").prop("checked", false);
+				 
+				<% end %>
+			<% end %>
+			
+			<% if @project_survey.paid_undergrads_needed == "1" %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_paid_undergrads_needed").prop("checked", true);
+				 $('#paidUnderGrad').slideDown(); 
+				<% end %>
+			<% else %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_paid_undergrads_needed").prop("checked", false);
+				<% end %>
+			<% end %>
 
   </div>
 			<div class="baja">

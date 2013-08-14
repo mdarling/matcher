@@ -23,7 +23,7 @@
    			<% end %>
    		
    			
-		<div id="main">
+		<div id="projectMain">
 		<h5> General Project information </h5>
 		<br />
 		<div class="field">
@@ -73,15 +73,20 @@
 
 	</div> <!-- End of sidebar -->
   
-  <div id="bottom">
+  <div id="projectBottom">
   		
 		<h5>What type of student researchers will you require for this 
 		project?</h5>
-  		<div class="field" >
+    <div class="field" >
 
-  	  <%= f.check_box(:unpaid_undergrads_needed) %>
-			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergraduate") %>
-			<%= f.check_box(:paid_undergrads_needed) %>
+
+
+			<%= f.check_box :unpaid_undergrads_needed, 	 {}, "1", "0" %>
+  	  <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<!--<%= f.check_box (:unpaid_undergrads_needed ) %> --> 	  
+			<%= f.label(:unpaid_undergrads_needed, "blah" )%>
+			<%= f.check_box :paid_undergrads_needed, 	 {}, '1', '0' %>
+
 			<%= f.label(:unpaid_undergrads_needed, "Paid Undergraduate") %>
   	</div>
   	
@@ -101,10 +106,11 @@
   		
   	</div>
   	<div id="lowerBottom"></div>
+
   	<div id="actions"  >
 		  <%= f.submit "Update This Project" %>
 		  </div>
-  	
+  
 
   </div>
 			<div class="baja" style="clear:both;">

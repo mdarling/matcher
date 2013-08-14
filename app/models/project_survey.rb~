@@ -8,10 +8,10 @@ class ProjectSurvey < ActiveRecord::Base
   validates :research_user_id, :presence => true
 	
 	belongs_to :research_user
-	has_one :unpaid_undergrad_positions, :dependent => :destroy
-	has_one :paid_undergrad_positions, :dependent => :destroy
-	has_one :unpaid_grad_positions, :dependent => :destroy
-	has_one :paid_grad_positions, :dependent => :destroy
+	has_many :unpaid_undergrad_positions
+	has_many :paid_undergrad_positions
+	has_many :unpaid_grad_positions
+	has_many :paid_grad_positions
 	has_many :departments
 	
 	accepts_nested_attributes_for :unpaid_undergrad_positions, 
@@ -33,18 +33,8 @@ class ProjectSurvey < ActiveRecord::Base
     
     
     
-  after_create do
-  	if unpaid_undergrads_needed == "0"
-  		unpaid_undergrad_positions = UnpaidUndergradPosition.where( :project_survey_id => self.id ).first
-  		unpaid_undergrad_positions.destroy
-  	end
-  end
-			
-	after_create do
-  	if paid_undergrads_needed == "0"
-  		paid_undergrad_positions = PaidUndergradPosition.where( :project_survey_id => self.id ).first
-  		paid_undergrad_positions.destroy
-  	end
-  end
+
+  
+
 															
 end

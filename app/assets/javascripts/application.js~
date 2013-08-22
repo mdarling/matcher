@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require project_survey.validations
 
 $(function(){  // $(document).ready shorthand
 	$('#content').animate({opacity: 1}, 1000);

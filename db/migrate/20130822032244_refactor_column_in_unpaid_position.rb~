@@ -1,0 +1,5 @@
+class RefactorColumnInUnpaidPosition < ActiveRecord::Migration
+ def change
+ 
+ end
+end

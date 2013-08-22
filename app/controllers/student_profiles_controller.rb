@@ -4,7 +4,8 @@ class StudentProfilesController < ApplicationController
   def index
     #@project_surveys = ProjecstSurvey.all
 		@search = StudentProfile.search(params[:q])
-  	@student_profiles = @search.result
+  	@results = @search.result
+  	@student_profiles = @results #.where( ['expected_graduation > ?', DateTime.now] )
 	 	if params[:q]
   		@searched = params[:q]["department_cont"]
   	end

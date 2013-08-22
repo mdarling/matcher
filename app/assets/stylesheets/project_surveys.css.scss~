@@ -50,7 +50,7 @@
 	//margin: 0 auto;
 	//background:#000
 	clear:both;
-	padding-left:50px;
+	padding-left:0px;
 }
 
 #projectBaja 
@@ -101,5 +101,13 @@
 	//background:#c9c;
 	float:right;
 	margin-left:100px;
+}
+
+#submit_notice
+{
+	border:solid;
+	border-color:red;
+	background:gray;
+	
 }
 

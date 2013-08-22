@@ -5,13 +5,13 @@
 <% end %>
 
 	<div id="nav">
-		<h1><%= @project_survey.projectTitle %></h1>
+		<h1><%= @project_survey.project_title %></h1>
 		<h3><%= @project_survey.department %></h3>
 	</div> <!-- End of nav div -->
 		<hr>
 	<div id="projectMain"	>
 			<p>
-			<b>Research Area: </b><br /><%= @project_survey.researchArea %>
+			<b>Research Area: </b><br /><%= @project_survey.research_area %>
 		</p>
 		
 				
@@ -44,7 +44,7 @@
 	</div>
 	</div>		
 	<div id="projectBottom">
-		<b>Project Description: </b><br /><%= @project_survey.projectDescription %>
+		<b>Project Description: </b><br /><%= @project_survey.project_description %>
 	<hr>
 	</div>
 </div><br />
@@ -56,49 +56,49 @@
 			<h1 style="font-size:130%;">Unpaid Position Available</h1>
 			<p>
 				<b>Work Period:</b>
-				<%= @unpaid_undergrad_position.workPeriod %>
+				<%= @unpaid_undergrad_position.work_period %>
 			</p>
 
 			<p>
 				<b>Weekly Time Commitment:</b>
-				<%= @unpaid_undergrad_position.weeklyTimeCommitment %>
+				<%= @unpaid_undergrad_position.weekly_time_commitment %>
 			</p>
 
 			<p>
 				<b>Desired Skills:</b>
-				<%= @unpaid_undergrad_position.desiredSkills %>
+				<%= @unpaid_undergrad_position.desired_skills %>
 			</p>
 
 			<p>
 				<b>Desired Classes:</b>
-				<%= @unpaid_undergrad_position.desiredClasses %>
+				<%= @unpaid_undergrad_position.desired_classes %>
 			</p>
 
 			<p>
 				<b>Position Posted On: </b>
-				<%= @unpaid_undergrad_position.recordBegin.strftime("%m-%d-%Y") %>
+				<%= @unpaid_undergrad_position.record_begin.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Application Deadline:</b>
-				<%= @unpaid_undergrad_position.recordEnd.strftime("%m-%d-%Y") %>
+				<%= @unpaid_undergrad_position.record_end.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Minimum GPA:</b>
-				<%= @unpaid_undergrad_position.minimumGPA %>
+				<%= @unpaid_undergrad_position.minimum_gpa %>
 			</p>
 
 			<p>
 				<b>Academic Standing:</b>
-				<%= @unpaid_undergrad_position.academicLevel %>
+				<%= @unpaid_undergrad_position.academic_level %>
 			</p>
 
 			<p>
 				<b>Job Description:</b>
-				<%= @unpaid_undergrad_position.jobDescription %>
+				<%= @unpaid_undergrad_position.job_description %>
 			</p>
-		
+
 		</div>
 	
 		<div id="workPosition">
@@ -106,36 +106,36 @@
 				<h1 style="font-size:130%;">Paid Position Available</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
-					<%= @paid_undergrad_position.unmJobs %>
+					<%= @paid_undergrad_position.unm_jobs %>
 				</p>
 				<p>
 					<b>UNM Jobs Posting Number:</b>
-					<%= @paid_undergrad_position.postingNumber %>
+					<%= @paid_undergrad_position.posting_number %>
 				</p>
 
 				<p>
 					<b>Position Title:</b>
-					<%= @paid_undergrad_position.positionTitle %>
+					<%= @paid_undergrad_position.position_title %>
 				</p>
 
 				<p>
 					<b>Work Period:</b>
-					<%= @paid_undergrad_position.workPeriod %>
+					<%= @paid_undergrad_position.work_period %>
 				</p>
 
 				<p>
 					<b>Weekly Time Commitment:</b>
-					<%= @paid_undergrad_position.weeklyTimeCommitment %>
+					<%= @paid_undergrad_position.weekly_time_commitment %>
 				</p
 
 				<p>
 					<b>Desired Skills:</b>
-					<%= @paid_undergrad_position.desiredSkills %>
+					<%= @paid_undergrad_position.desired_skills %>
 				</p>
 
 				<p>
 					<b>Desired Classes:</b>
-					<%= @paid_undergrad_position.desiredClasses %>
+					<%= @paid_undergrad_position.desired_classes %>
 				</p>
 
 				<p>
@@ -145,22 +145,22 @@
 
 				<p>
 					<b>Application Deadline:</b>
-					<%= @paid_undergrad_position.recordEnd.strftime("%m-%d-%Y") %>
+					<%= @paid_undergrad_position.record_end.strftime("%m-%d-%Y") %>
 				</p>
 
 				<p>
 					<b>Minimum GPA:</b>
-					<%= @paid_undergrad_position.minimumGPA %>
+					<%= @paid_undergrad_position.minimum_gpa %>
 				</p>
 
 				<p>
 					<b>Academic Standing:</b>
-					<%= @paid_undergrad_position.academicLevel %>
+					<%= @paid_undergrad_position.academic_level %>
 				</p>
 
 				<p>
 					<b>Job Description:</b>
-					<%= @paid_undergrad_position.jobDescription %>
+					<%= @paid_undergrad_position.job_description %>
 				</p>
 
 
@@ -168,60 +168,60 @@
 		<% end %>
 	<% else %>
 		<div id="projectMain" %>
-			<h1 style="font-size:120%;">Work Position Available</h1>
+			<h1 style="font-size:120%;">Paid Position Available</h1>
 			<p>
 				<b>UNM Jobs Posting Number:</b>
-				<%= @paid_undergrad_position.postingNumber %>
+				<%= @paid_undergrad_position.posting_number %>
 			</p>
 
 			<p>
 				<b>Position Title:</b>
-				<%= @paid_undergrad_position.positionTitle %>
+				<%= @paid_undergrad_position.position_title %>
 			</p>
 
 			<p>
 				<b>Work Period:</b>
-				<%= @paid_undergrad_position.workPeriod %>
+				<%= @paid_undergrad_position.work_period %>
 			</p>
 
 			<p>
 				<b>Weekly Time Commitment:</b>
-				<%= @paid_undergrad_position.weeklyTimeCommitment %>
+				<%= @paid_undergrad_position.weekly_time_commitment %>
 			</p>
 
 			<p>
 				<b>Desired Skills:</b>
-				<%= @paid_undergrad_position.desiredSkills %>
+				<%= @paid_undergrad_position.desired_skills %>
 			</p>
 
 			<p>
 				<b>Desired Classes:</b>
-				<%= @paid_undergrad_position.desiredClasses %>
+				<%= @paid_undergrad_position.desired_classes %>
 			</p>
 
 			<p>
 				<b>Position Posted On:</b>
-				<%= @paid_undergrad_position.recordBegin.strftime("%m-%d-%Y") %>
+				<%= @paid_undergrad_position.record_begin.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Application Deadline:</b>
-				<%= @paid_undergrad_position.recordEnd.strftime("%m-%d-%Y") %>
+				<%= @paid_undergrad_position.record_end.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Minimum GPA:</b>
-				<%= @paid_undergrad_position.minimumGPA %>
+				<%= @paid_undergrad_position.minimum_gpa %>
 			</p>
 
 			<p>
 				<b>Academic Standing:</b>
-				<%= @paid_undergrad_position.academicLevel %>
+				<%= @paid_undergrad_position.academic_level %>
 			</p>
 
 			<p>
 				<b>Job Description:</b>
-				<%= @paid_undergrad_position.jobDescription %>
+				<%= @paid_undergrad_position.job_description %>
 			</p>
 
 

@@ -23,7 +23,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -43,3 +42,8 @@ gem "rails-erd", "~> 1.1.0"
 gem 'ransack'
 
 gem 'devise'
+
+gem 'cancan'
+gem 'client_side_validations', :github => 'bcardarella/client_side_validations', :branch => '3-2-stable'
+
+

@@ -44,7 +44,7 @@
 
 <p>
   <b>Expected Graduation:</b>
-  <%= @student_profile.expectedGraduation.strftime("%m-%d-%Y") %>
+  <%= @student_profile.expected_graduation.strftime("%m-%d-%Y") %>
 </p>
 
 <p>
@@ -53,5 +53,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_student_profile_path(@student_profile) %> |
+
 <%= link_to 'Back', student_profiles_path %>

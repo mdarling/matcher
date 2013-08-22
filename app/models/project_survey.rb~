@@ -1,6 +1,6 @@
 class ProjectSurvey < ActiveRecord::Base
-  attr_accessible :department, :email, :phone, :projectDescription, 
-  :projectTitle, :researchArea, :researcher, :unpaid_grads_needed, 
+  attr_accessible :department, :email, :phone, :project_description, 
+  :project_title, :research_area, :researcher, :unpaid_grads_needed, 
   :paid_grads_needed, :unpaid_undergrads_needed, :paid_undergrads_needed,
   :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes, :lead_researcher
   :research_user_id
@@ -23,7 +23,7 @@ class ProjectSurvey < ActiveRecord::Base
 	
   validate :position_present
 
-
+	
 
   private
 

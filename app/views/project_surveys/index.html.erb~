@@ -10,17 +10,15 @@
 	<%= f.submit "Search" %> 
 	
 	</div>
-<% end %> <!-- End search do -->
+<% end %>
 
 
 <% if @searched %>
 	<h2><%= @searched %> Department Search</h2>
-<% end %> <!-- End if @searched -->
-
-<% if !signed_in? %>
+<% end %>
+<% if !user_signed_in? && !admin_signed_in? && !research_user_signed_in? %>
 	<h5>To view more information about these projects, please <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %></h5>
 <% end %>
-
 <% if admin_signed_in? || research_user_signed_in? %>
 
 	<%= link_to 'Submit New Project', new_project_survey_path %>
@@ -32,17 +30,17 @@
 
 				<p>
 				<b>Project Title:</b>
-				<%= project_survey.projectTitle %>
+				<%= project_survey.project_title %>
 			</p>
 
 			<p>
 				<b>Research Area:</b>
-				<%= project_survey.researchArea %>
+				<%= project_survey.research_area %>
 			</p>
 
 			<p>
 				<b>Project Description:</b>
-				<%= project_survey.projectDescription %>
+				<%= project_survey.project_description %>
 			</p>
 				
 			<% if user_signed_in? || admin_signed_in? || research_user_signed_in? %>
@@ -52,9 +50,8 @@
 				<% end %>
 			<% end %>
 			<% if admin_signed_in? %>
-		  	<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
-		  	<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		  	
+		  <td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+		  <td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
 		  <% end %>
 			<hr>
 

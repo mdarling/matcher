@@ -4,7 +4,7 @@
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
 		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name", @searched), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
-		<!-- <%= f.text_field :projectTitle_cont %> -->
+
 	</div>
 	<div class="actions">
 	<%= f.submit "Search" %> 
@@ -30,17 +30,17 @@
 
 				<p>
 				<b>Project Title:</b>
-				<%= project_survey.projectTitle %>
+				<%= project_survey.project_title %>
 			</p>
 
 			<p>
 				<b>Research Area:</b>
-				<%= project_survey.researchArea %>
+				<%= project_survey.research_area %>
 			</p>
 
 			<p>
 				<b>Project Description:</b>
-				<%= project_survey.projectDescription %>
+				<%= project_survey.project_description %>
 			</p>
 				
 			<% if user_signed_in? || admin_signed_in? || research_user_signed_in? %>

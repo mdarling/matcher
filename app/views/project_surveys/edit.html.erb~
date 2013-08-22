@@ -3,6 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @project_survey %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', project_surveys_path %>
 
 

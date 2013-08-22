@@ -1,3 +1,8 @@
+<%= javascript_tag do %>
+
+<% end %>
+  	
+  	
   	<hr>
   	<h3>The following information will be added to a searchable database.  Students interested in your job postings will contact you based on the information you provide.</h3>
   	<hr>
@@ -29,17 +34,17 @@
 		
 		<div class="field">
 		  <%= f.label "Title of Project" %><br />
-		  <%= f.text_field :projectTitle, :class => 'textField' %>
+		  <%= f.text_field :project_title, :class => 'textField' %>
 		</div>
 		
 		<div class="field">
-		  <%= f.label "Area of Research" %><br />
-		  <%= f.text_field :researchArea, :class => 'textField' %>
+		  <%= f.label "Research Keywords" %><br />
+		  <%= f.text_field :research_area, :class => 'textField' %>
 		</div>
 		
 		<div class="field">
 		  <%= f.label "General Description of Project" %><br />
-		  <%= f.text_area :projectDescription, :class => 'textArea' %>
+		  <%= f.text_area :project_description, :class => 'textArea' %>
 		</div>
 
   </div>
@@ -99,7 +104,7 @@
   		
   	</div>
   	<div id="lowerBottom"></div>
-  							<% if @project_survey.unpaid_undergrads_needed == "1" %>
+  		<% if @project_survey.unpaid_undergrads_needed == "1" %>
 				<%= javascript_tag do %>			  
 				 $("#project_survey_unpaid_undergrads_needed").prop("checked", true);
   			 $('#unpaidUnderGrad').slideDown(); 	
@@ -125,10 +130,15 @@
   </div>
 			<div class="baja">
 			<hr>
-			<div id="actions" style="float:right;" >
-		  <%= f.submit "Post this Project" %>
+
+			<div id="error_explanation" style="display:none;float:right;">
+</div>
+			<div id="actions" style="float:right;",  >
+				
+		  	<%= f.submit "Post this Project", :onclick => "return validateForm()" %>
 		  </div>
 		</div>
+	
 
 	<% end %>
 

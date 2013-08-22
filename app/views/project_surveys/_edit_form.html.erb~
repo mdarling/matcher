@@ -29,17 +29,17 @@
 		
 		<div class="field">
 		  <%= f.label "Title of Project" %><br />
-		  <%= f.text_field :projectTitle, :class => 'textField' %>
+		  <%= f.text_field :project_title, :class => 'textField' %>
 		</div>
 		
 		<div class="field">
 		  <%= f.label "Area of Research" %><br />
-		  <%= f.text_field :researchArea, :class => 'textField' %>
+		  <%= f.text_field :research_area, :class => 'textField' %>
 		</div>
 		
 		<div class="field">
 		  <%= f.label "General Description of Project" %><br />
-		  <%= f.text_area :projectDescription, :class => 'textArea' %>
+		  <%= f.text_area :project_description, :class => 'textArea' %>
 		</div>
 
   </div>

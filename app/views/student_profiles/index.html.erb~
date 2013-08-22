@@ -43,9 +43,11 @@
 		</p>
 		
 		<%= link_to 'View Profile',student_profile %> <br /> 
-	  
+		
+	  <% if admin_signed_in? %>
 		  <td><%= link_to 'Edit', edit_student_profile_path(student_profile) %></td>
 		  <td><%= link_to 'Destroy', student_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+		<% end %>
  <hr>
 <% end %>
 

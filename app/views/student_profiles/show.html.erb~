@@ -44,7 +44,7 @@
 
 <p>
   <b>Expected Graduation:</b>
-  <%= @student_profile.expectedGraduation.recordBegin.strftime("%m-%d-%Y") %>
+  <%= @student_profile.expected_graduation.strftime("%m-%d-%Y") %>
 </p>
 
 <p>

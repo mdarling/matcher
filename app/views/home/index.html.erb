@@ -15,7 +15,7 @@
 	</div>
 	<div id="sidebar" >
 	<% if admin_signed_in? %>
-		<%= button_to "View Student Database", student_profiles_path, :method => "get" %>
+		<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get" %>
 
 	<%	elsif research_user_signed_in? && !user_signed_in? %>
 		<%= button_to "Register Project", new_project_survey_path, :method => "get" %>
@@ -73,7 +73,7 @@
 		<%= button_to "Admin Console", project_surveys_path, :method => "get" %>
 	<% end %> -->
 	<% if research_user_signed_in? %>
-		<%= button_to "View Student Database", student_profiles_path, :method => "get" %>
+		<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get" %>
 	<% end %>
 	<% if user_signed_in? && !admin_signed_in? %>
 		<% if current_user.student_profile %>
@@ -108,8 +108,8 @@
 
 		<% @project_surveys.each do |project_survey| %>
 			<tr>
-				<td><%= project_survey.projectTitle %></td>
-				<td><%= project_survey.projectDescription %></td>
+				<td><%= project_survey.project_title %></td>
+				<td><%= project_survey.project_description %></td>
 				<td><%= link_to 'Show', project_survey_path(project_survey) %></td>
 				<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
 				<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>

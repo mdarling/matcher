@@ -98,10 +98,7 @@
 				<b>Job Description:</b>
 				<%= @unpaid_undergrad_position.job_description %>
 			</p>
-					<p>
-				<b>Academic Credit:</b>
-				<%= @unpaid_undergrad_position.academic_credit %>
-			</p>
+
 		</div>
 	
 		<div id="workPosition">

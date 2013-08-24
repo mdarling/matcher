@@ -141,7 +141,7 @@
 </div>
 			<div id="actions" style="float:right;",  >
 				
-		  	<%= f.submit "Post this Project", :onclick => "return validateForm()" %>
+		  	<%= f.submit "Post this Project" %>
 		  </div>
 		</div>
 	

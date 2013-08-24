@@ -5,7 +5,8 @@ class ProjectSurvey < ActiveRecord::Base
   :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes, :lead_researcher
   :research_user_id
   
-  validates :research_user_id, :presence => true
+  validates :research_user_id, :researche, :project_title, :research_area, 
+  :project_description, :email, :department, :presence => true
 	
 	belongs_to :research_user
 	has_many :unpaid_undergrad_positions

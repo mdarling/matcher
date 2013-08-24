@@ -1,5 +1,6 @@
 <div id="wrap">
-	
+	<h1>Editing Profile</h1>
+
 	<div id="header">
 		<%= form_for @student_profile, :validate => true do |f| %>
   			<% if @student_profile.errors.any? %>
@@ -77,7 +78,6 @@
 	</div> <!-- End of sidebar div -->
 	
 	<div id="bottom">
-
 		<%= f.submit %>
 	</div> <!-- End of bottom div -->
 	

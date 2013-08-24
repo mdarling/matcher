@@ -77,7 +77,6 @@
 	</div> <!-- End of sidebar div -->
 	
 	<div id="bottom">
-
 		<%= f.submit %>
 	</div> <!-- End of bottom div -->
 	

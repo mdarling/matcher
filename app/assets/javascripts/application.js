@@ -17,7 +17,7 @@
 
 $(function(){  // $(document).ready shorthand
 	$('#content').animate({opacity: 1}, 1000);
-
+	
 	//$("#project_survey_unpaid_undergrads_needed").attr("checked",true);
   //$('#content').css('visibility','visible').hide().fadeIn('slow');
 
@@ -41,9 +41,6 @@ $(function(){  // $(document).ready shorthand
  $('.projectTitle').click(function() {
     $('.editProjectSurvey').slideToggle();
 	});
-
-
-
 });
 
 

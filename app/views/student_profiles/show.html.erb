@@ -1,13 +1,15 @@
+<% breadcrumb :student_profile, @student_profile %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>First Name:</b>
-  <%= @student_profile.firstName %>
+  <%= @student_profile.first_name %>
 </p>
 
 <p>
   <b>Last Name:</b>
-  <%= @student_profile.lastName %>
+  <%= @student_profile.last_name %>
 </p>
 <p>
   <b>Email:</b>
@@ -18,18 +20,18 @@
 
 <p>
   <b>Banner ID:</b>
-  <%= @student_profile.unmID %>
+  <%= @student_profile.unm_id %>
 </p>
 
 <p>
   <b>Phone Number:</b>
-  <%= @student_profile.phoneNumber %>
+  <%= @student_profile.phone_number %>
 </p>
 <% end %>
 
 <p>
   <b>Academic Standing:</b>
-  <%= @student_profile.academicLevel %>
+  <%= @student_profile.academic_level %>
 </p>
 
 <p>

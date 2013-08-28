@@ -44,6 +44,7 @@ gem 'ransack'
 gem 'devise'
 
 gem 'cancan'
-gem 'client_side_validations', :github => 'bcardarella/client_side_validations', :branch => '3-2-stable'
 
+#For Breadcrumbs
+gem 'gretel
 

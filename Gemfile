@@ -45,5 +45,6 @@ gem 'devise'
 
 gem 'cancan'
 
-
+#For Breadcrumbs
+gem 'gretel'
 

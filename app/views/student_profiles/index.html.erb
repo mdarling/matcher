@@ -1,3 +1,5 @@
+<% breadcrumb :student_profiles %>
+
 <%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
@@ -19,17 +21,17 @@
 	<% @student_profiles.each do |student_profile| %>
 		<p>
 			<b>First Name:</b>
-			<%= student_profile.firstName %>
+			<%= student_profile.first_name %>
 		</p>
 
 		<p>
 			<b>Last Name:</b>
-			<%= student_profile.lastName %>
+			<%= student_profile.last_name %>
 		</p>
 
 		<p>
 			<b>Academic Standing:</b>
-			<%= student_profile.academicLevel %>
+			<%= student_profile.academic_level %>
 		</p>
 
 		<p>

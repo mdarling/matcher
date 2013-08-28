@@ -19,18 +19,18 @@
 	</div>
 	
 	<div id="main">
-	<%= yield(:user_validators) %>
+
 	  <div class="field">
-  	  <%= f.label :firstName %><br />
-  	  <%= f.text_field :firstName, :validate => { :presence => true }, :class => 'textField' %>
+  	  <%= f.label :first_name %><br />
+  	  <%= f.text_field :first_name, :class => 'textField' %>
 		</div>
     <div class="field">
       <%= f.label "Last Name" %><br />
-      <%= f.text_field :lastName, :class => 'textField' %>
+      <%= f.text_field :last_name, :class => 'textField' %>
     </div>
     <div class="field">
       <%= f.label "Banner Number" %><br />
-      <%= f.text_field :unmID, :class => 'textField' %>
+      <%= f.text_field :unm_id, :class => 'textField' %>
     </div>
     <div class="field">
       <%= f.label :email %><br />
@@ -38,7 +38,7 @@
     </div>
     <div class="field">
       <%= f.label "Phone Number" %><br />
-      <%= f.text_field :phoneNumber, :class => 'textField' %>
+      <%= f.text_field :phone_number, :class => 'textField' %>
     </div>
     <div class="field">
       <%= f.label "Department" %><br />
@@ -67,7 +67,7 @@
  		</div>
  		<div class="field"> 
  		 	<%= f.label "Academic Standing" %><br />
-  	  <%= f.select :academicLevel, options_for_select([["Select One", ""], "Freshman", "Sophmore", "Junior", "Senior"], @student_profile.academicLevel) %>
+  	  <%= f.select :academic_level, options_for_select([["Select One", ""], "Freshman", "Sophmore", "Junior", "Senior"], @student_profile.academic_level) %>
   	 
 		</div>
 		   <div class="field">

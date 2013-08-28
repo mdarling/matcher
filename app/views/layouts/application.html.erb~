@@ -61,9 +61,11 @@
   
 				
       <div class="content">
-      
-        <%= link_to "Database Home", home_path %>
-            			<div id="user_info" style="float:right;padding-right:20px;">
+<div id="bc" style="float:left;">
+        <%= breadcrumbs :pretext => "",:separator => " &rsaquo;&rsaquo; " %>
+            			</div>
+            			<div id="user_info" style="float:right;padding-right:20px;padding-bottom:px;">
+            			
        	<% if user_signed_in? && !research_user_signed_in? %>
   					Logged in as <strong><%= current_user.email %></strong>. 
   					
@@ -90,8 +92,9 @@
 			 	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 			 <% end %>
 			 </div>
-
+				<div id="content_hr" style="clear:both;">
         <hr style="color:#f00;">
+        </div>
 
         
       </div>

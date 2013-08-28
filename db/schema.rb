@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822035640) do
+ActiveRecord::Schema.define(:version => 20130828221749) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -146,12 +146,12 @@ ActiveRecord::Schema.define(:version => 20130822035640) do
   add_index "research_users", ["reset_password_token"], :name => "index_research_users_on_reset_password_token", :unique => true
 
   create_table "student_profiles", :force => true do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "unmID"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "unm_id"
     t.string   "email"
-    t.string   "phoneNumber"
-    t.string   "academicLevel"
+    t.string   "phone_number"
+    t.string   "academic_level"
     t.string   "major"
     t.string   "minor"
     t.datetime "expected_graduation"

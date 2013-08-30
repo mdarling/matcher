@@ -14,7 +14,7 @@ html
 
 #wrap 
 {
-  width:550px;
+  width:650px;
   margin:0 auto;
  // background:#99c;
 }
@@ -33,23 +33,15 @@ html
 {
 	//background:#9c9;
 	float:left;
-	width:250px;
+	width:50%;
 }
  
 #sidebar 
 {
 	//background:#c9c;
 	float:right;
-	width:250px;
+	width:50%;
 }
-
-#main-left
-{
-	float:left;
-	width:100%;
-}
-
-
 
 
 #left 
@@ -70,10 +62,11 @@ html
 
 #bottom 
 {
-	//width:300px;
+	width:600px;
 	//margin: 0 auto;
 	//background:#000
 	clear:both;
+	
 }
 
 

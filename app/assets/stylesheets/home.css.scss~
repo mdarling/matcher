@@ -6,16 +6,16 @@
 #lcell
 {
 	float:left;
-	width:32%;
+	width:26%;
 }
 
 #rcell
 {
-	width:68%;
+	width:74%;
 	float:right;
 }
 
 #row
 {
-	margin-top:40px;
+	margin-top:42px;
 }

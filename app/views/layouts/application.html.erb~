@@ -64,7 +64,7 @@
 <div id="bc" style="float:left;">
         <%= breadcrumbs :pretext => "",:separator => " &rsaquo;&rsaquo; " %>
             			</div>
-            			<div id="user_info" style="float:right;padding-right:20px;padding-bottom:px;">
+            			<div id="user_info" style="float:right;padding-right:20px;padding-bottom:2px;">
             			
        	<% if user_signed_in? && !research_user_signed_in? %>
   					Logged in as <strong><%= current_user.email %></strong>. 

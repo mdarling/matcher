@@ -3,8 +3,8 @@ class StudentProfile < ActiveRecord::Base
 	:interests, :lastName, :major, :minor, :phoneNumber, :unmID, :department, 
 	:experience, :user_id
 
-	validates :academicLevel, :expected_graduation, :firstName, 
-	:interests, :lastName, :major, :minor, :phoneNumber, :unmID, :department, :user_id, :presence => true
+	validates :academic_level, :expected_graduation, :first_name, 
+	:interests, :last_name, :major, :minor, :phone_number, :unm_id, :department, :user_id, :presence => true
 	
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 	validates_uniqueness_of :email

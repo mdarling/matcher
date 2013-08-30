@@ -1,126 +1,190 @@
+<% breadcrumb :home %>
 
-<h1>Welcome to UNM's Undergraduate Research Opportunity Database</h1>
 <div id="wrap">
-  <!-- 	<% if user_signed_in? %>
-  					Logged in as <strong><%= current_user.email %></strong>.
-  					<%= link_to 'Edit profile', edit_user_registration_path %> |
- 						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-					<% else %>
-  					<%= link_to "Sign up", new_user_registration_path %> |
-  					<%= link_to "Login", new_user_session_path %>
-					<% end %>-->	
-	<div id="main">
-		<%= button_to "View Projects", project_surveys_path, :method => "get" %>
-		
-	
-	</div>
-	<div id="sidebar" >
 	<% if admin_signed_in? %>
-		<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get" %>
+		
+		<div id="main">
+			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
 
-	<%	elsif research_user_signed_in? && !user_signed_in? %>
-		<%= button_to "Register Project", new_project_survey_path, :method => "get" %>
-	<% elsif !research_user_signed_in? && !user_signed_in? %>
-		<%= button_to "Register Project", new_research_user_session_path, :method => "get" %>
-	<% end %>
+			<%= button_to "Projects Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Positions Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
+		</div><!--End of "main"> -->
+		
+		<div id="sidebar">
+			<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Students Table", student_profiles_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Researchers Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
+		</div> <!-- End of "sidebar" -->
+
 	
-		<% if user_signed_in? && !admin_signed_in? %>
+	<% elsif research_user_signed_in? %>
+	<% @project_survey = @project_surveys.first %>
+		<h1>Welcome 			<% if @project_survey.researcher != "" %>
+				<%= @project_survey.researcher %>
+			<% else %>
+				<%= @project_survey.lead_researcher %>
+			<% end %></h1>
+				<div id="lcell">
+					<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => "width:160px;" %>
+					<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
+					<%= button_to "Submit New Project", new_project_survey_path, :method => "get", :style => "width:160px;" %>
+					<%= button_to "Logout", destroy_research_user_session_path, method: :delete, :style => "width:160px;" %>
+				</div>
+				
+				<div id="rcell">
+					<p>
+						<h5>View available students by department.</h5>
+					</p>
+					<div id="row">
+						<h5>View current projects by department.</h5> 
+					</div>
+					<div id="row">
+						<h5>Submit new project to database.</h5> 
+					</div>
+					<div id="row">
+						<h5>End this session.</h5> 
+					</div>
+				</div>
+		<hr>
+			<% if @project_surveys.length > 0 %>
+				<div id="bottom">
+					<hr>
+					<h1>Your Current Projects:</h1>
+					<table>
+				<tr>
+					<th>Project Title</th>
+					<th>Project Description</th>
+
+					<th>Show</th>
+					<th>Edit</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @project_surveys.each do |project_survey| %>
+				<tr>
+					<td><%= project_survey.project_title %></td>
+					<td><%= project_survey.project_description %></td>
+					<td><%= link_to 'Show', project_survey_path(project_survey) %></td>
+					<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
+					<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+			</table>
+
+			<br />
+				</div>
+			<% end %> <!-- if @project_surveys -->
+		</div>
+	<% elsif user_signed_in? %>
 		<% if current_user.student_profile %>
-			<%= button_to "Edit Profile", edit_student_profile_path(current_user.student_profile.id), :method => "get" %>
+			<h1>Welcome <%= current_user.student_profile.first_name %> <%= current_user.student_profile.last_name %> </h1>
 		<% else %>
-			<%= button_to "Create Profile", new_student_profile_path, :method => "get" %>
+			<h1>Welcome New User, create a profile.</h1>
 		<% end %>
-	<% end %>
-	</div>
-	<div id ="bottom">
-	
-	</div>
-
-</div>
-<% if !user_signed_in? && !research_user_signed_in? %> 
-	<div id="left">
-			
-		<h5>Feel free to browse the project database.<br /> For more information, <%= link_to "login", new_user_session_path %> <br />or <%= link_to "sign up", new_user_registration_path %>.</h5>
-			
-	</div>
-	<div id="right">
-		<% if research_user_signed_in? %>	
-			<h5  style="padding-left:30px;">If you are a researcher who would like to add your project to the database.</h5>
-		<% elsif admin_signed_in? %>
-			<h5 style="padding-left:50px;">Browse the project database for available positions.</h5>
+		<div id="lcell">
+			<% if current_user.student_profile %>
+			<%= button_to "Edit Profile", edit_student_profile_path(current_user.student_profile.id), :method => "get", :style => "width:160px;" %>
 		<% else %>
-			<h5  style="padding-left:30px;">If you are a researcher who would like to add your project to the database.</h5>
-		<% end %>	
-	</div>
-<% else %>
-	<div id="left">
-			<% if !admin_signed_in? %>
-		<h5>Browse the project database for available positions.</h5>
-			
-	</div>
-	<div id="right">
-				<% if user_signed_in? %>
-					<h5 style="padding-left:20px;">Your profile will be available for hiring researchers to view.</h5>
-				<% elsif research_user_signed_in? %>
-					<h5  style="padding-left:30px;">Post a new project to the database.</h5>		
-				<% end %>	
-			<% end %>	
-	</div>
-<% end %>
-
-<div id="baja">
-	<div id="main">
-	<!--<% if admin_signed_in? %> 
-		<%= button_to "Admin Console", project_surveys_path, :method => "get" %>
-	<% end %> -->
-	<% if research_user_signed_in? %>
-		<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get" %>
-	<% end %>
-	<% if user_signed_in? && !admin_signed_in? %>
-		<% if current_user.student_profile %>
-			<%= button_to 'Delete My Profile', student_profile_path(current_user.student_profile.id), method: :delete, data: { confirm: 'Are you sure you want to delete your profile?' } %>
+			<%= button_to "Create Profile", new_student_profile_path, :method => "get", :style => "width:160px;" %>
 		<% end %>
-	<% end %>
-	</div>
-	
-	<div id="right" style="padding-left:102px;">
-		<% if research_user_signed_in? %>
-			<%= button_to "Logout", destroy_research_user_session_path, method: :delete %>	
-		<% end %>
+			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Logout", destroy_user_session_path, method: :delete, :style => "width:160px;" %>
 
-		<% if user_signed_in? %>
-			<%= button_to "Logout", destroy_user_session_path, method: :delete %>	
-		<% end %>
-	</div>
-	<% if research_user_signed_in? %>
-		<% if @project_surveys.length > 0 %>
-			<div id="bottom">
-				<hr>
-				<h1>My Current Projects:</h1>
-				<table>
-			<tr>
-				<th>Project Title</th>
-				<th>Project Description</th>
-
-				<th>Show</th>
-				<th>Edit</th>
-				<th>Destroy</th>
-			</tr>
-
-		<% @project_surveys.each do |project_survey| %>
-			<tr>
-				<td><%= project_survey.project_title %></td>
-				<td><%= project_survey.project_description %></td>
-				<td><%= link_to 'Show', project_survey_path(project_survey) %></td>
-				<td><%= link_to 'Edit', edit_project_survey_path(project_survey) %></td>
-				<td><%= link_to 'Destroy', project_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-			</tr>
-		<% end %>
-		</table>
-
-		<br />
+		</div>
+				
+		<div id="rcell">
+			<p>
+				<h5>Your profile will be viewed by hiring researchers.</h5>
+			</p>
+			<div id="row">
+				<h5>View current projects by department.</h5> 
 			</div>
-		<% end %> <!-- if @project_surveys -->
-	<% end %>
-</div>
+			<div id="row">
+				<h5>End this session.</h5> 
+			</div>
+			
+		</div>
+		
+		<% if current_user.student_profile %>
+			<% @student_profile = current_user.student_profile %>
 
+			<div id="bottom">
+				<br />
+				<hr>
+				<h1>Your Current Profile:</h1>
+				<p>
+					<b>First Name:</b>
+					<%= @student_profile.first_name %>
+				</p>
+
+				<p>
+					<b>Last Name:</b>
+					<%= @student_profile.last_name %>
+				</p>
+				<p>
+					<b>Email:</b>
+					<%= @student_profile.email %>
+				</p>
+
+				<p>
+					<b>Banner ID:</b>
+					<%= @student_profile.unm_id %>
+				</p>
+
+				<p>
+					<b>Phone Number:</b>
+					<%= @student_profile.phone_number %>
+				</p>
+
+				<p>
+					<b>Academic Standing:</b>
+					<%= @student_profile.academic_level %>
+				</p>
+
+				<p>
+					<b>Major:</b>
+					<%= @student_profile.major %>
+				</p>
+
+				<p>
+					<b>Minor:</b>
+					<%= @student_profile.minor %>
+				</p>
+
+				<p>
+					<b>Expected Graduation:</b>
+					<%= @student_profile.expected_graduation.strftime("%m-%d-%Y") %>
+				</p>
+
+				<p>
+					<b>Interests:</b>
+					<%= @student_profile.interests %>
+				</p>
+				<hr>
+			</div>
+		<% end %>
+	
+	<% else %>
+		<h1>Welcome To UNM's Research Opportunity Database!</h1>
+		<h4>Connecting students to research opportunities.</h4>
+		<div id="lcell">
+		<%= button_to "Researcher Sign In", new_research_user_session_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Student Sign In", new_user_session_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
+		</div>
+				
+		<div id="rcell">
+			<p>
+			<h5>Add your projects to the database.</h5> 	
+			</p>
+			<div id="row">
+				<h5><%= link_to "Sign up", new_user_registration_path %> to add your profile to the database.</h5>
+			</div>
+			<div id="row">
+				<h5>Browse the project database. For more information, <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</h5>
+			</div>
+			
+		</div>
+	<% end %> <!-- End "if research_user_signed_in?" -->
+	
+</div> <!-- end of "wrap"-->

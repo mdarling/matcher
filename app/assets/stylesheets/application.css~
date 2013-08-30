@@ -11,9 +11,9 @@
  *= require_self
  *= require_tree .
  */
- 
- #dept_logo
- {
-	 background: image-url("unm-logo.gif");
- }
+ .button
+{
+	text-decoration:none;
+	width:600px;
+}
  

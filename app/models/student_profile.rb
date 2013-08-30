@@ -1,6 +1,6 @@
 class StudentProfile < ActiveRecord::Base
-  attr_accessible :academicLevel, :email, :expected_graduation, :firstName, 
-	:interests, :lastName, :major, :minor, :phoneNumber, :unmID, :department, 
+  attr_accessible :academic_level, :email, :expected_graduation, :first_name, 
+	:interests, :last_name, :major, :minor, :phone_number, :unm_id, :department, 
 	:experience, :user_id
 
 	validates :academic_level, :expected_graduation, :first_name, 

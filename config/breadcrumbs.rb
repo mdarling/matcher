@@ -31,6 +31,11 @@ crumb :new_project_survey do |project|
   link "New", project_surveys_path(project)
   parent :project_surveys 
 end
+
+crumb :new_user_session do 
+  link "Sign In", new_user_session_path
+  parent :home 
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end

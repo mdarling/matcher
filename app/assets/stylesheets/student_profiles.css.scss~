@@ -43,6 +43,15 @@ html
 	width:250px;
 }
 
+#main-left
+{
+	float:left;
+	width:100%;
+}
+
+
+
+
 #left 
 {
 	//background:#9c9;
@@ -90,7 +99,7 @@ display:none;
 #content
 {
 //visibility:hidden;
-//opacity:0; 
+opacity:0; 
 
 }
 

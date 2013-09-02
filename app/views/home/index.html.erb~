@@ -6,12 +6,12 @@
 		<div id="main">
 			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
 
-			<%= button_to "Projects Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
-			<%= button_to "Positions Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "Projects Table", project_surveys_path, :method => "get", :style => width %>
+			<%= button_to "Positions Table", project_surveys_path, :method => "get", :style => width %>
 		</div><!--End of "main"> -->
 		
 		<div id="sidebar">
-			<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => width %>
 			<%= button_to "Students Table", student_profiles_path, :method => "get", :style => width %>
 			<%= button_to "Researchers Table", project_surveys_path, :method => "get", :style => width %>
 		</div> <!-- End of "sidebar" -->
@@ -22,7 +22,7 @@
 				<div id="lcell">
 					<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => width %>
 					<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
-					<%= button_to "Submit New Project", new_project_survey_path, :method => "get", :style => "width:160px;" %>
+					<%= button_to "Submit New Project", new_project_survey_path, :method => "get", :style => width %>
 					<%= button_to "Logout", destroy_research_user_session_path, method: :delete, :style => width %>
 				</div>
 				

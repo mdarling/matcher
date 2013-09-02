@@ -62,7 +62,7 @@
 				
       <div class="content">
 <div id="bc" style="float:left;">
-        <%= breadcrumbs :pretext => "",:separator => " &rsaquo;&rsaquo; " %>
+        <%= breadcrumbs :pretext => "",:separator => " &rsaquo; " %>
             			</div>
             			<div id="user_info" style="float:right;padding-right:20px;padding-bottom:2px;">
             			
@@ -108,8 +108,10 @@
         <div id="before_default_3" ></div>
         <div id="before_default_4" ></div>
 				  	
-        	<!-- <p class="notice"><%= notice %></p> -->
-       		<!-- <p class="alert"><%= alert %></p> -->
+        	<p class="notice" style="color:green;"><%= notice %></p>
+        	<% if alert %>
+       			<p class="alert"><%= alert %></p>
+       		<% end %>
 					<%= yield %>
 					
 

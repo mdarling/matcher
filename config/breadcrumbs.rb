@@ -36,6 +36,11 @@ crumb :new_user_session do
   link "Sign In", new_user_session_path
   parent :home 
 end
+
+crumb :new_user_signup do 
+  link "Sign Up", new_user_registration_path
+  parent :home 
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end

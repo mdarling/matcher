@@ -1,0 +1,4 @@
+class AddUnconfirmedEmailToResearchUser < ActiveRecord::Migration
+  def change
+  end
+end

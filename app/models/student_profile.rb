@@ -7,6 +7,8 @@ class StudentProfile < ActiveRecord::Base
 	:interests, :last_name, :major, :minor, :phone_number, :unm_id, :department, :user_id, :presence => true
 	
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+
+
 	validates_uniqueness_of :email
 	validates_presence_of :email
 	

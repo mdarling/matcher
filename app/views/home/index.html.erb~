@@ -18,12 +18,14 @@
 
 	
 	<% elsif research_user_signed_in? %>
+	<!-- <% if @project_surveys %>
 	<% @project_survey = @project_surveys.first %>
 		<h1>Welcome 			<% if @project_survey.researcher != "" %>
 				<%= @project_survey.researcher %>
 			<% else %>
 				<%= @project_survey.lead_researcher %>
 			<% end %></h1>
+	<% end %> -->
 				<div id="lcell">
 					<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => "width:160px;" %>
 					<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
@@ -181,7 +183,7 @@
 				<h5><%= link_to "Sign up", new_user_registration_path %> to add your profile to the database.</h5>
 			</div>
 			<div id="row">
-				<h5>Browse the project database. For more information, <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</h5>
+				<h5>Browse the project database. For more information,<br /> <%= link_to "login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %>.</h5>
 			</div>
 			
 		</div>

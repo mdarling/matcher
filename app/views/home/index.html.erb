@@ -1,10 +1,10 @@
 <% breadcrumb :home %>
-
+<% width = "width:180px;" %>
 <div id="wrap">
 	<% if admin_signed_in? %>
 		
 		<div id="main">
-			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
+			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
 
 			<%= button_to "Projects Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
 			<%= button_to "Positions Table", project_surveys_path, :method => "get", :style => "width:160px;" %>
@@ -21,7 +21,7 @@
 
 				<div id="lcell">
 					<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => "width:160px;" %>
-					<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
+					<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
 					<%= button_to "Submit New Project", new_project_survey_path, :method => "get", :style => "width:160px;" %>
 					<%= button_to "Logout", destroy_research_user_session_path, method: :delete, :style => "width:160px;" %>
 				</div>
@@ -163,7 +163,7 @@
 		<h1>Welcome To UNM's Research Opportunity Database!</h1>
 		<h4>Connecting students to research opportunities.</h4>
 		<div id="lcell">
-		<%= button_to "Researcher Sign In", new_research_user_session_path, :method => "get", :style => "width:160px;" %>
+		<%= button_to "Researcher Sign In", new_research_user_session_path, :method => "get", :style => width %>
 			<%= button_to "Student Sign In", new_user_session_path, :method => "get", :style => "width:160px;" %>
 			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => "width:160px;" %>
 		</div>

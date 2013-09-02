@@ -34,7 +34,7 @@
 						<h5>View current projects by department.</h5> 
 					</div>
 					<div id="row">
-						<h5>Submit new project to database.</h5> 
+						<h5>Submit new project to the database.</h5> 
 					</div>
 					<div id="row">
 						<h5>End this session.</h5> 
@@ -69,7 +69,7 @@
 			<br />
 				</div>
 			<% end %> <!-- if @project_surveys -->
-		</div>
+
 	<% elsif user_signed_in? %>
 		<% if current_user.student_profile %>
 			<h1>Welcome <%= current_user.student_profile.first_name %> <%= current_user.student_profile.last_name %> </h1>

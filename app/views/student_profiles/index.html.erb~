@@ -1,4 +1,5 @@
 <% breadcrumb :student_profiles %>
+
 <%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	

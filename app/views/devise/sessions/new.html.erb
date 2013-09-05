@@ -1,7 +1,12 @@
 <% breadcrumb :new_user_session %>
-<div id="main">
-	<h2>Sign in</h2>
+<% userType = request.path %>
 
+<div id="main">
+<% if userType == "/users/sign_in" %>
+	<h1>Student Sign in</h1>
+<% else %>
+	<h1>Researcher Sign In</h1>
+<% end %>
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 		<div><%= f.label :email %><br />
 		<%= f.email_field :email %></div>
@@ -16,5 +21,12 @@
 		<div><%= f.submit "Sign in" %></div>
 	<% end %>
 	<%= render "devise/shared/links" %>
+<% if userType == "/users/sign_in" %>
+	<h5>Researchers Sign in <%= link_to  'here.', new_research_user_session_path %></h5>
+<% else %>
+	<h5>Students Sign in <%= link_to  'here.', new_user_session_path %></h5>
+<% end %>
+
 </div>
+
 

@@ -78,7 +78,7 @@
 		<% end %>
 		<div id="lcell">
 			<% if current_user.student_profile %>
-			<%= button_to "Edit Profile", edit_student_profile_path(current_user.student_profile.id), :method => "get", :style => "width:160px;" %>
+			<%= button_to "Edit Profile", edit_student_profile_path(current_user.student_profile.id), :method => "get", :style => width %>
 		<% else %>
 			<%= button_to "Create Profile", new_student_profile_path, :method => "get", :style => width %>
 		<% end %>

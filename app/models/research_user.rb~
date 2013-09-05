@@ -10,8 +10,6 @@ class ResearchUser < ActiveRecord::Base
   # attr_accessible :title, :body
   
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+unm.edu)|unm.edu\Z/i, :message => "must be a valid UNM address."
-  
-  validates_uniqueness_of :email
-  
+    
   has_many :project_surveys
 end

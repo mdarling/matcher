@@ -50,7 +50,9 @@ class ProjectSurveysController < ApplicationController
   # GET /project_surveys/1/edit
   def edit
     @project_survey = ProjectSurvey.find(params[:id])
- 
+ 		if @project_survey != current_research_user.student_profile
+			redirect_to :home, notice: 'Access Denied.' 
+    end
   end
 
   # POST /project_surveys

@@ -2,7 +2,7 @@
 <% userType = request.path %>
 <div id="sign_upTable">
 <div id="sign_upWrap">
-<% if userType == "/research_users/sign_up" %>
+<% if userType == "/research_users/sign_up" || userType == "/research_users" %>
 	<h1>Researcher Sign Up</h1>
 <% else %>
 	<h1>Student Sign Up </h1>
@@ -11,7 +11,7 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 <div id="sign_upLeft" >
-	<% if userType == "/research_users/sign_up" %>
+	<% if userType == "/research_users/sign_up" || userType == "/research_users" %>
 		<div><%= f.label "First Name" %><br />
   	<%= f.text_field :first_name %></div>
    
@@ -39,10 +39,10 @@
 
 
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-		<div><%= f.label :email %><br />
+		<div style="background-color:white;	"><%= f.label :email %><br />
 		<%= f.email_field :email %></div>
 
-		<div><%= f.label :password %><br />
+		<div style=""><%= f.label :password %><br />
 		<%= f.password_field :password %></div>
 
 		<% if devise_mapping.rememberable? -%>

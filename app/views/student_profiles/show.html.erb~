@@ -1,7 +1,5 @@
 <% breadcrumb :student_profile, @student_profile %>
 
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>First Name:</b>
   <%= @student_profile.first_name %>

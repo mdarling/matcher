@@ -1,4 +1,6 @@
 class StudentProfilesController < ApplicationController
+	
+
   # GET /student_profiles
   # GET /student_profiles.json
   def index
@@ -10,10 +12,13 @@ class StudentProfilesController < ApplicationController
   		@searched = params[:q]["department_cont"]
   	end
   	@departments = Department.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @student_profiles }
+		if research_user_signed_in? || admin_signed_in?
+    	respond_to do |format|
+      	format.html # index.html.erb
+      	format.json { render json: @student_profiles }
+    	end
+    else
+			redirect_to :home, notice: 'Access Denied.' 
     end
   end
 
@@ -21,27 +26,44 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/1.json
   def show
     @student_profile = StudentProfile.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @student_profile }
-    end
+		  	if user_signed_in?
+  		if @student_profile != current_user.student_profile
+				redirect_to :home, notice: 'Access Denied.' 
+    	end
+    
+    elsif research_user_signed_in? || admin_signed_in?
+			respond_to do |format|
+    	  format.html # show.html.erb
+    	  format.json { render json: @student_profile }
+    	end
+		else
+			redirect_to :home, alert: 'You must sign in to continue.' 
+		end 
   end
 
   # GET /student_profiles/new
   # GET /student_profiles/new.json
   def new
-    @student_profile = StudentProfile.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @student_profile }
+  	if user_signed_in?
+  		if current_user.student_profile == nil 
+   			@student_profile = StudentProfile.new
+		
+  		  respond_to do |format|
+  	    format.html # new.html.erb
+    	  format.json { render json: @student_profile }
+    	  end
+   		else
+    		redirect_to :home, alert: 'You already have a profile.'
+    	end
+    else
+    	redirect_to :home, alert: 'You must be signed in as a student to continue.'
     end
   end
 
   # GET /student_profiles/1/edit
   def edit
     @student_profile = StudentProfile.find(params[:id])
+		check_edit_access
   end
 
   # POST /student_profiles
@@ -81,12 +103,26 @@ class StudentProfilesController < ApplicationController
   # DELETE /student_profiles/1
   # DELETE /student_profiles/1.json
   def destroy
-    current_user.student_profile.destroy
-    
-
-    respond_to do |format|
-      format.html { redirect_to student_profiles_url }
-      format.json { head :no_content }
-    end
+  	if admin_signed_in?
+   	 current_user.student_profile.destroy
+   
+   	 respond_to do |format|
+   	   format.html { redirect_to student_profiles_url }
+   	   format.json { head :no_content }
+   	 end
+   	else
+			redirect_to :home, notice: 'Access Denied.' 
+   	end
   end
+  
+  def check_edit_access
+  	    if user_signed_in? 
+  	  if @student_profile != current_user.student_profile
+				redirect_to :home, notice: 'Access Denied.' 
+   	 	end
+   	else
+   		redirect_to :home, notice: 'Access Denied.'
+   	end
+  end
+  
 end

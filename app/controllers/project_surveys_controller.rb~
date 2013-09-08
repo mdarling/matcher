@@ -26,32 +26,44 @@ class ProjectSurveysController < ApplicationController
 			@paid_undergrad_position = PaidUndergradPosition.where( :project_survey_id => @project_survey.id).first
 		end
 		
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @project_survey }
+		if signed_in?
+   		respond_to do |format|
+    	  format.html # show.html.erb
+    	  format.json { render json: @project_survey }
+    	end
+    else
+    	redirect_to :home, notice: 'Please sign in to view project details.'
     end
   end
 
   # GET /project_surveys/new
   # GET /project_surveys/new.json
   def new
-    @project_survey = ProjectSurvey.new
-		#@paid_undergrad_position = PaidUndergradPosition.new
-		#@unpaid_undergrad_position = UnpaidUndergradPosition.new
+  	if research_user_signed_in?
+   		@project_survey = ProjectSurvey.new
+			#@paid_undergrad_position = PaidUndergradPosition.new
+			#@unpaid_undergrad_position = UnpaidUndergradPosition.new
 		
-		unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build	
-		paid_undergrad_position = @project_survey.paid_undergrad_positions.build
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @project_survey }
-    end
+			unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build	
+			paid_undergrad_position = @project_survey.paid_undergrad_positions.build
+    	respond_to do |format|
+    	  format.html # new.html.erb
+    	  format.json { render json: @project_survey }
+   		end
+   	else
+   		redirect_to :home, notice: 'Access Denied'
+   	end
   end
 
   # GET /project_surveys/1/edit
   def edit
     @project_survey = ProjectSurvey.find(params[:id])
- 		if @project_survey != current_research_user.student_profile
-			redirect_to :home, notice: 'Access Denied.' 
+    if research_user_signed_in?
+ 			if !current_research_user.project_surveys.include?(@project_survey)
+				redirect_to :home, notice: 'Access Denied.' 
+    	end
+    else
+    	redirect_to :home, notice: 'Access Denied.' 
     end
   end
 

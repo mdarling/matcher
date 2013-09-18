@@ -45,7 +45,7 @@
 </div>
 <div id="page">
   <div id="dept_header">
-    <div id="dept_logo"><%= link_to image_tag('unm-logo.gif'), 'http://		uresearch.unm.edu' %></div>  
+    <div id="dept_logo"><%= link_to image_tag('unm-logo.gif'), 'http://uresearch.unm.edu' %></div>  
   </div>
   <div class="col2" id="container">
     <div id="primary_aside">
@@ -54,6 +54,7 @@
       <div id="primary_aside_2" ></div>
       <div id="primary_aside_3" ></div>
       <div id="primary_aside_4"><div class="vcard leftnav_contact"><a class="fn organization-unit url" href="http://uresearch.unm.edu">Undergraduate Research</a><p class="adr"><span class="extended-address">MSC06 3680</span><br /><span class="extended-address">University Advisement &amp; Enrichment Center, University College Suite 180</span><br /><span class="street-address">1 University of New Mexico</span><br /><span class="locality">Albuquerque</span>, <abbr class="region" title="New Mexico">NM</abbr> <span class="postal-code">87131</span></p><p><span class="tel"><span class="type hidden">Work</span> Phone: <span class="value">505-277-0428</span><br /></span><span><a class="email" href="mailto:uresearch@unm.edu">uresearch@unm.edu</a></span></p></div></div>
+<div id="primary_aside_5"><div class="vcard leftnav_contact"><a class="fn organization-unit url" href="http://grad.unm.edu/graduate-programs/research.html">Graduate Research</a><p class="adr"><span class="extended-address">MSC 03 2180</span><br /><span class="extended-address">Humanities Bldg, Suite 107</span><br /><span class="street-address">1 University of New Mexico</span><br /><span class="locality">Albuquerque</span>, <abbr class="region" title="New Mexico">NM</abbr> <span class="postal-code">87131-0001</span></p><p><span class="tel"><span class="type hidden">Work</span> Phone: <span class="value">(505) 277-2711</span><br /></span><span class="tel"><span class="type hidden">Fax</span> Fax: <span class="value">(505) 277-7405</span><br /></span><span><a class="email" href="mailto:grad@unm.edu">grad@unm.edu</a></span></p></div></div>
     </div>
     </div>
     

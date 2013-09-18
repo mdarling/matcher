@@ -100,7 +100,7 @@ class ProjectSurveysController < ApplicationController
       end
     end
   end
-
+	#test
   # DELETE /project_surveys/1
   # DELETE /project_surveys/1.json
   def destroy

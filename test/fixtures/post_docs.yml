@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  desired_skills: 
+  job_description: 
+  position_title: 
+  posting_number: 
+  project_survey_id: 
+  record_begin: 
+  record_end: 
+  unm_jobs: 
+  weekly_time_commitment: 
+  work_period: MyString
+
+two:
+  desired_skills: 
+  job_description: 
+  position_title: 
+  posting_number: 
+  project_survey_id: 
+  record_begin: 
+  record_end: 
+  unm_jobs: 
+  weekly_time_commitment: 
+  work_period: MyString

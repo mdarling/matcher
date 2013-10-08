@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130904215345) do
+ActiveRecord::Schema.define(:version => 20130920070901) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -47,21 +47,21 @@ ActiveRecord::Schema.define(:version => 20130904215345) do
   end
 
   create_table "paid_grad_positions", :force => true do |t|
-    t.string   "unmJobs"
-    t.string   "postingNumber"
-    t.string   "positionTitle"
-    t.string   "workPeriod"
-    t.string   "weeklyTimeCommitment"
-    t.text     "deliverables"
-    t.text     "desiredSkills"
-    t.text     "desiredClasses"
-    t.datetime "recordBegin"
-    t.datetime "recordEnd"
-    t.string   "minimumGPA"
-    t.string   "academicLevel"
-    t.text     "jobDescription"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.string   "academic_level"
+    t.text     "desired_classes"
+    t.text     "desired_skills"
+    t.text     "job_description"
+    t.string   "minimum_gpa"
+    t.string   "position_title"
+    t.string   "posting_number"
+    t.date     "record_begin"
+    t.date     "record_end"
+    t.string   "unm_jobs"
+    t.string   "weekly_time_commitment"
+    t.string   "work_period"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "project_survey_id"
   end
 
   create_table "paid_undergrad_positions", :force => true do |t|
@@ -81,6 +81,21 @@ ActiveRecord::Schema.define(:version => 20130904215345) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.integer  "project_survey_id"
+  end
+
+  create_table "post_docs", :force => true do |t|
+    t.text     "desired_skills"
+    t.text     "job_description"
+    t.string   "position_title"
+    t.string   "posting_number"
+    t.integer  "project_survey_id"
+    t.date     "record_begin"
+    t.date     "record_end"
+    t.string   "unm_jobs"
+    t.string   "weekly_time_commitment"
+    t.string   "work_period"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "project_profiles", :force => true do |t|
@@ -120,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20130904215345) do
     t.string   "paid_grads_needed"
     t.string   "lead_researcher"
     t.integer  "research_user_id"
+    t.string   "post_docs_needed"
   end
 
   create_table "projects", :force => true do |t|
@@ -171,18 +187,19 @@ ActiveRecord::Schema.define(:version => 20130904215345) do
   end
 
   create_table "unpaid_grad_positions", :force => true do |t|
-    t.string   "workPeriod"
-    t.string   "weeklyTimeCommitment"
-    t.text     "deliverables"
-    t.text     "desiredSkills"
-    t.text     "desiredClasses"
-    t.datetime "recordBegin"
-    t.datetime "recordEnd"
-    t.string   "minimumGPA"
-    t.string   "academicLevel"
-    t.text     "jobDescription"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.string   "academic_level"
+    t.text     "desired_classes"
+    t.text     "job_description"
+    t.string   "minimum_gpa"
+    t.date     "record_begin"
+    t.date     "record_end"
+    t.string   "weekly_time_commitment"
+    t.string   "work_period"
+    t.integer  "project_survey_id"
+    t.string   "academic_credit"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "desired_skills"
   end
 
   create_table "unpaid_undergrad_positions", :force => true do |t|

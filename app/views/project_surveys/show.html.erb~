@@ -1,8 +1,5 @@
-<% breadcrumb :project_surveys, @project_survey %>
+<% breadcrumb :project_survey, @project_survey %>
 <div id="projectWrap">
-	<% if notice %>
-<div id="notice"><%= notice %></div><br />
-<% end %>
 
 	<div id="nav">
 		<h1><%= @project_survey.project_title %></h1>
@@ -53,7 +50,7 @@
 	
 	<div id="volunteerPostion">
 		<% if @project_survey.unpaid_undergrads_needed == "1" %>
-			<h1 style="font-size:130%;">Unpaid Position Available</h1>
+			<h1 style="font-size:130%;">Unpaid Undergraduate Position</h1>
 			<p>
 				<b>Work Period:</b>
 				<%= @unpaid_undergrad_position.work_period %>
@@ -100,10 +97,10 @@
 			</p>
 
 		</div>
-	
+	<% end %>
 		<div id="workPosition">
 			<% if @project_survey.paid_undergrads_needed != "0" %>
-				<h1 style="font-size:130%;">Paid Position Available</h1>
+				<h1 style="font-size:130%;">Paid Undergraduate Position</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
 					<%= @paid_undergrad_position.unm_jobs %>
@@ -166,68 +163,191 @@
 
 			</div>
 		<% end %>
-	<% else %>
-		<div id="projectMain" %>
-			<h1 style="font-size:120%;">Paid Position Available</h1>
-			<p>
-				<b>UNM Jobs Posting Number:</b>
-				<%= @paid_undergrad_position.posting_number %>
-			</p>
-
-			<p>
-				<b>Position Title:</b>
-				<%= @paid_undergrad_position.position_title %>
-			</p>
-
+	
+	
+</div> <br />
+<div id="projectBaja">
+	<br /><br />
+	<div id="volunteerPostion">
+		<% if @project_survey.unpaid_grads_needed == "1" %>
+			<h1 style="font-size:130%;">Unpaid Graduate Position</h1>
 			<p>
 				<b>Work Period:</b>
-				<%= @paid_undergrad_position.work_period %>
+				<%= @unpaid_grad_position.work_period %>
 			</p>
 
 			<p>
 				<b>Weekly Time Commitment:</b>
-				<%= @paid_undergrad_position.weekly_time_commitment %>
+				<%= @unpaid_grad_position.weekly_time_commitment %>
 			</p>
 
 			<p>
 				<b>Desired Skills:</b>
-				<%= @paid_undergrad_position.desired_skills %>
+				<%= @unpaid_grad_position.desired_skills %>
 			</p>
 
 			<p>
 				<b>Desired Classes:</b>
-				<%= @paid_undergrad_position.desired_classes %>
+				<%= @unpaid_grad_position.desired_classes %>
 			</p>
 
 			<p>
-				<b>Position Posted On:</b>
-				<%= @paid_undergrad_position.record_begin.strftime("%m-%d-%Y") %>
+				<b>Position Posted On: </b>
+				<%= @unpaid_grad_position.record_begin.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Application Deadline:</b>
-				<%= @paid_undergrad_position.record_end.strftime("%m-%d-%Y") %>
+				<%= @unpaid_grad_position.record_end.strftime("%m-%d-%Y") %>
 			</p>
 
 			<p>
 				<b>Minimum GPA:</b>
-				<%= @paid_undergrad_position.minimum_gpa %>
+				<%= @unpaid_undergrad_position.minimum_gpa %>
 			</p>
 
 			<p>
 				<b>Academic Standing:</b>
-				<%= @paid_undergrad_position.academic_level %>
+				<%= @unpaid_grad_position.academic_level %>
 			</p>
 
 			<p>
 				<b>Job Description:</b>
-				<%= @paid_undergrad_position.job_description %>
+				<%= @unpaid_grad_position.job_description %>
 			</p>
 
+		</div>
+	<% end %>
+		<div id="workPosition">
+			<% if @project_survey.paid_grads_needed != "0" %>
+				<h1 style="font-size:130%;">Paid Graduate Position</h1>
+				<p>
+				 	<b>Position Listed on UNM Jobs?:</b>
+					<%= @paid_grad_position.unm_jobs %>
+				</p>
+				<p>
+					<b>UNM Jobs Posting Number:</b>
+					<%= @paid_grad_position.posting_number %>
+				</p>
 
-	<% end %> <!-- If unpaid position needed == 1 -->
+				<p>
+					<b>Position Title:</b>
+					<%= @paid_grad_position.position_title %>
+				</p>
+
+				<p>
+					<b>Work Period:</b>
+					<%= @paid_grad_position.work_period %>
+				</p>
+
+				<p>
+					<b>Weekly Time Commitment:</b>
+					<%= @paid_grad_position.weekly_time_commitment %>
+				</p
+
+				<p>
+					<b>Desired Skills:</b>
+					<%= @paid_grad_position.desired_skills %>
+				</p>
+
+				<p>
+					<b>Desired Classes:</b>
+					<%= @paid_grad_position.desired_classes %>
+				</p>
+
+				<p>
+					<b>Position Posted On:</b>
+					<%= @paid_grad_position.record_begin.strftime("%m-%d-%Y") %>
+				</p>
+
+				<p>
+					<b>Application Deadline:</b>
+					<%= @paid_grad_position.record_end.strftime("%m-%d-%Y") %>
+				</p>
+
+				<p>
+					<b>Minimum GPA:</b>
+					<%= @paid_grad_position.minimum_gpa %>
+				</p>
+
+				<p>
+					<b>Academic Standing:</b>
+					<%= @paid_grad_position.academic_level %>
+				</p>
+
+				<p>
+					<b>Job Description:</b>
+					<%= @paid_grad_position.job_description %>
+				</p>
+
+
+			</div>
+		<% end %>
+	
+	
+</div><br />
+
+<div id="projectBaja">
+	<br /><br />
+		<div id="volunteerPosition">
+			<% if @project_survey.paid_undergrads_needed != "0" %>
+				<h1 style="font-size:130%;">Postdoc Position</h1>
+				<p>
+				 	<b>Position Listed on UNM Jobs?:</b>
+					<%= @postdoc_position.unm_jobs %>
+				</p>
+				<p>
+					<b>UNM Jobs Posting Number:</b>
+					<%= @postdoc_position.posting_number %>
+				</p>
+
+				<p>
+					<b>Position Title:</b>
+					<%= @postdoc_position.position_title %>
+				</p>
+
+				<p>
+					<b>Work Period:</b>
+					<%= @postdoc_position.work_period %>
+				</p>
+
+				<p>
+					<b>Weekly Time Commitment:</b>
+					<%= @postdoc_position.weekly_time_commitment %>
+				</p
+
+				<p>
+					<b>Desired Skills:</b>
+					<%= @postdoc_position.desired_skills %>
+				</p>
+
+				<p>
+					<b>Position Posted On:</b>
+					<%= @postdoc_position.record_begin.strftime("%m-%d-%Y") %>
+				</p>
+
+				<p>
+					<b>Application Deadline:</b>
+					<%= @postdoc_position.record_end.strftime("%m-%d-%Y") %>
+				</p>
+
+				<p>
+					<b>Academic Standing:</b>
+					<%= @postdoc_position.academic_level %>
+				</p>
+
+				<p>
+					<b>Job Description:</b>
+					<%= @postdoc_position.job_description %>
+				</p>
+
+
+			</div>
+		<% end %>
+	
 	
 </div>
+
 <div id="projectBaja">
 <hr>
 <%= link_to "Back", home_path %>

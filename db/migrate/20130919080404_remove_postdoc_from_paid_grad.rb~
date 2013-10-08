@@ -1,0 +1,8 @@
+class RemovePostdocFromPaidGrad < ActiveRecord::Migration
+  def up
+  	remove_column :paid_grad_positions, :postdoc
+  end
+
+  def down
+  end
+end

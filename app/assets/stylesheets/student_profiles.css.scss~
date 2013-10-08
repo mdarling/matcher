@@ -62,7 +62,7 @@ html
 
 #bottom 
 {
-	width:600px;
+	width:550px;
 	//margin: 0 auto;
 	//background:#000
 	clear:both;
@@ -80,13 +80,15 @@ html
   clear:both;
 }
 
-#paidUnderGrad
+#paidGrad, #paidUnderGrad, 
+#postdoc, #unpaidGrad, #unpaidUnderGrad
 {
-float:right;
-display:none;
-//border-left:solid;
-//border-color:gray;
-//border-width:2px;
+float:left;
+#display:none;
+#border-left:solid;
+#border-color:gray;
+#border-width:2px;
+margin-right:20px;
 }
 
 #content
@@ -96,12 +98,6 @@ opacity:0;
 
 }
 
-#unpaidUnderGrad
-{
-float:left;
-display:none;
-
-}
 
 #baja
 {

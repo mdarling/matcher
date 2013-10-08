@@ -1,9 +1,9 @@
 class UnpaidGradPosition < ActiveRecord::Base
-  attr_accessible :academicLevel, :deliverables, :desiredClasses, 
-  :desiredSkills, :jobDescription, :minimumGPA, :recordBegin, :recordEnd, 
-  :weeklyTimeCommitment, :workPeriod, :project_survey_id
-  
+  attr_accessible :academic_credit, :academic_level, :desired_classes, 
+  :job_description, :minimum_gpa, :project_survey_id, :record_begin, :record_end,
+   :weekly_time_commitment, :work_period
+   
   belongs_to :project_survey
   belongs_to :project
   
-ends
+end

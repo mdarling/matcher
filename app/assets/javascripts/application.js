@@ -33,10 +33,21 @@ $(function(){  // $(document).ready shorthand
  		this.checked ? $('#paidUnderGrad').slideDown() : $('#paidUnderGrad').slideUp();
   });
   
-  $("#project_survey_paid_undergrads_needed").change(function()
+  $("#project_survey_unpaid_grads_needed").change(function()
   {
- 		this.checked ? $('#paidUnderGrad').slideDown() : $('#paidUnderGrad').slideUp();
+ 		this.checked ? $('#unpaidGrad').slideDown() : $('#unpaidGrad').slideUp();
   });
+  
+  $("#project_survey_paid_grads_needed").change(function()
+  {
+ 		this.checked ? $('#paidGrad').slideDown() : $('#paidGrad').slideUp();
+  });
+  
+   $("#project_survey_post_docs_needed").change(function()
+  {
+ 		this.checked ? $('#postdoc').slideDown() : $('#postdoc').slideUp();
+  });
+  
 	
  $('.projectTitle').click(function() {
     $('.editProjectSurvey').slideToggle();

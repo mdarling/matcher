@@ -1,0 +1,47 @@
+ <fieldset>
+  <div class="field">
+    <%= f.label "Is this position posted on UNM jobs?" %><br />
+    <%= f.text_field :unm_jobs,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "If so, what is the posting number?" %><br />
+    <%= f.text_field :posting_number,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "Position Title" %><br />
+    <%= f.text_field :position_title,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "Work Period" %><br />
+    <%= f.text_field :work_period,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "Hours per week" %><br />
+    <%= f.text_field :weekly_time_commitment,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "Desired Skills" %><br />
+    <%= f.text_area :desired_skills,:class => 'textArea' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "When should this position be posted?" %><br />
+    <%= f.date_select :record_begin %>
+  </div>
+  <div class="field">
+    <%= f.label "What is the application deadline?" %><br />
+    <%= f.date_select :record_end %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Desired Academic Standing" %><br />
+    <%= f.text_field :academic_level,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "General Job Description" %><br />
+    <%= f.text_area :job_description,:class => 'textArea' %>
+  </div>
+  <div class="actions">
+  
+  </div>
+</fieldset>

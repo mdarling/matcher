@@ -86,12 +86,20 @@
 		project?</h5>
   		<div class="field" >
 
-  	 			<%= f.check_box :unpaid_undergrads_needed, 	 {}, "1", "0" %>
-	  
-			<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergrad" )%>
-			<%= f.check_box :paid_undergrads_needed, 	 {}, '1', '0' %>
-
-			<%= f.label(:unpaid_undergrads_needed, "Paid Undergraduate") %>
+  	 		<%= f.check_box :unpaid_undergrads_needed, 	 {}, '1', '0' %>
+				<%= f.label(:unpaid_undergrads_needed, "Unpaid Undergrad" )%>
+			
+				<%= f.check_box :paid_undergrads_needed, 	 {}, '1', '0' %>
+				<%= f.label(:paid_undergrads_needed, "Paid Undergrad") %>
+				
+				<%= f.check_box :unpaid_grads_needed, 	 {}, '1', '0' %>
+				<%= f.label(:unpaid_grads_needed, "Unpaid Grad") %>
+				
+				<%= f.check_box :paid_grads_needed, 	 {}, '1', '0' %>
+				<%= f.label(:paid_grads_needed, "Paid Grad") %>
+				
+				<%= f.check_box :post_docs_needed, 	 {}, '1', '0' %>
+				<%= f.label(:post_docs_needed, "Postdoc") %>
   	</div>
   	
   	<div id="unpaidUnderGrad" >
@@ -109,6 +117,32 @@
   	  	<% end %>
   		
   	</div>
+  	
+  	<div id="unpaidGrad" style="padding-left:1.5px;" >
+  		<h5 style="padding:5px;">Unpaid Grad</h5>
+  		 	<%= f.fields_for :unpaid_grad_positions do |h| %>
+  	    	<%= render 'unpaid_grad_form', f: h %>
+  	  	<% end %>
+  		
+  	</div>
+  	
+  	<div id="paidGrad" style="padding-left:1.5px;" >
+  		<h5 style="padding:5px;">Paid Grad</h5>
+  		 	<%= f.fields_for :paid_grad_positions do |h| %>
+  	    	<%= render 'paid_grad_form', f: h %>
+  	  	<% end %>
+  		
+  	</div>
+  	
+  	<div id="postdoc" style="padding-left:1.5px;" >
+  		<h5 style="padding:5px;">Postdoc</h5>
+  		 	<%= f.fields_for :post_docs do |h| %>
+  	    	<%= render 'post_doc_form', f: h %>
+  	  	<% end %>
+  		
+  	</div>
+
+
   	<div id="lowerBottom"></div>
   		<% if @project_survey.unpaid_undergrads_needed == "1" %>
 				<%= javascript_tag do %>			  
@@ -132,6 +166,39 @@
 				 $("#project_survey_paid_undergrads_needed").prop("checked", false);
 				<% end %>
 			<% end %>
+			
+			<% if @project_survey.unpaid_grads_needed == "1" %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_unpaid_grads_needed").prop("checked", true);
+				 $('#unpaidGrad').slideDown(); 
+				<% end %>
+			<% else %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_unpaid_grads_needed").prop("checked", false);
+				<% end %>
+			<% end %>
+			
+			<% if @project_survey.paid_grads_needed == "1" %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_paid_grads_needed").prop("checked", true);
+				 $('#paidGrad').slideDown(); 
+				<% end %>
+			<% else %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_paid_grads_needed").prop("checked", false);
+				<% end %>
+			<% end %>
+			
+			<% if @project_survey.post_docs_needed == "1" %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_post_docs_needed").prop("checked", true);
+				 $('#paidUnderGrad').slideDown(); 
+				<% end %>
+			<% else %>
+				<%= javascript_tag do %>			  
+				 $("#project_survey_post_docs_needed").prop("checked", false);
+				<% end %>
+			<% end %>
 
   </div>
 			<div class="baja">
@@ -141,7 +208,7 @@
 </div>
 			<div id="actions" style="float:right;",  >
 				
-		  	<%= f.submit "Post this Project" %>
+		  	<%= f.submit "Post this Project", :onclick => "return validateForm()" %>
 		  </div>
 		</div>
 	

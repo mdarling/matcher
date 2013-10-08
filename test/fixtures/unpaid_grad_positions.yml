@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  workPeriod: MyString
-  weeklyTimeCommitment: MyString
-  deliverables: MyText
-  desiredSkills: MyText
-  desiredClasses: MyText
-  recordBegin: 2013-07-26 09:47:07
-  recordEnd: 2013-07-26 09:47:07
-  minimumGPA: MyString
-  academicLevel: MyString
-  jobDescription: MyText
+  academic_level: MyString
+  desired_classes: MyText
+  job_description: MyText
+  minimum_gpa: MyString
+  record_begin: 2013-09-18
+  record_end: 2013-09-18
+  weekly_time_commitment: MyString
+  work_period: MyString
+  project_survey_id: 1
+  academic_credit: MyString
 
 two:
-  workPeriod: MyString
-  weeklyTimeCommitment: MyString
-  deliverables: MyText
-  desiredSkills: MyText
-  desiredClasses: MyText
-  recordBegin: 2013-07-26 09:47:07
-  recordEnd: 2013-07-26 09:47:07
-  minimumGPA: MyString
-  academicLevel: MyString
-  jobDescription: MyText
+  academic_level: MyString
+  desired_classes: MyText
+  job_description: MyText
+  minimum_gpa: MyString
+  record_begin: 2013-09-18
+  record_end: 2013-09-18
+  weekly_time_commitment: MyString
+  work_period: MyString
+  project_survey_id: 1
+  academic_credit: MyString

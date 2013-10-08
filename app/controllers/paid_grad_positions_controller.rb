@@ -40,8 +40,8 @@ class PaidGradPositionsController < ApplicationController
   # POST /paid_grad_positions
   # POST /paid_grad_positions.json
   def create
-    @paid_grad_position = PaidGradPosition.new(params[:paid_grad_position])
-
+    @project_survey = ProjectSurvey.find(params[:project_survey_id])
+    @paid_grad_position = @project_survey.paid_grad_position.create!(params[:paid_grad_position])
     respond_to do |format|
       if @paid_grad_position.save
         format.html { redirect_to @paid_grad_position, notice: 'Paid grad position was successfully created.' }

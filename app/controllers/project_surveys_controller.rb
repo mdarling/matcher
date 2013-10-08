@@ -26,6 +26,18 @@ class ProjectSurveysController < ApplicationController
 			@paid_undergrad_position = PaidUndergradPosition.where( :project_survey_id => @project_survey.id).first
 		end
 		
+		if @project_survey.unpaid_grads_needed == "1"
+			@unpaid_grad_position = UnpaidGradPosition.where( :project_survey_id => @project_survey.id).first
+		end
+		
+		if @project_survey.paid_grads_needed == "1"
+			@paid_grad_position = PaidGradPosition.where( :project_survey_id => @project_survey.id).first
+		end
+		
+		if @project_survey.post_docs_needed == "1"
+			@postdoc_position = PostDoc.where( :project_survey_id => @project_survey.id).first
+		end
+		
 		if signed_in?
    		respond_to do |format|
     	  format.html # show.html.erb
@@ -46,6 +58,9 @@ class ProjectSurveysController < ApplicationController
 		
 			unpaid_undergrad_position = @project_survey.unpaid_undergrad_positions.build	
 			paid_undergrad_position = @project_survey.paid_undergrad_positions.build
+			unpaid_grad_position = @project_survey.unpaid_grad_positions.build
+			paid_grad_position = @project_survey.paid_grad_positions.build
+			post_doc = @project_survey.post_docs.build
     	respond_to do |format|
     	  format.html # new.html.erb
     	  format.json { render json: @project_survey }

@@ -117,13 +117,6 @@ if( $('#project_survey_unpaid_undergrads_needed').is(':not(:checked)') &&
   		errors = errors.concat( "<li>'Desired Skills' for Paid Position is a required field.</li>" );	  	 
   	}
 		
-		var x = document.forms[formName]			
-["project_survey_paid_undergrad_positions_attributes_0_desired_classes"].value;
-		if( x == null || x == "" )
-  	{
-  		errorCount += 1;
-  		errors = errors.concat( "<li>'Desired Classes' for Paid Position is a required field.</li>" );	  	 
-  	}
   	
   }//End if paid checkbox is checked
 /****************End Paid Position Validations**********************/	

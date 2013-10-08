@@ -1,0 +1,43 @@
+<fieldset>
+	<div class="field">
+		<%= f.label :workPeriod, "Work Period" %><br />
+   	<%= f.text_field :work_period,:class => 'textField' %>
+  <div class="field">
+    <%= f.label "Weekly Time Commitment" %><br />
+    <%= f.text_field :weekly_time_commitment,:class => 'textField' %>
+  </div>	
+  <div class="field">
+    <%= f.label "Desired Skills" %><br />
+    <%= f.text_area :desired_skills, :class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label "Desired Classes" %><br />
+    <%= f.text_area :desired_classes,:class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label "Minimum GPA" %><br />
+    <%= f.text_field :minimum_gpa,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "Desired Academic Standing" %><br />
+    <%= f.text_field :academic_level,:class => 'textField' %>
+  </div>
+  <div class="field">
+    <%= f.label "General Job Description" %><br />
+    <%= f.text_area :job_description,:class => 'textArea' %>
+  </div>
+  <div class="field">
+    <%= f.label "Will the student earn academic credit?" %><br />
+    <%= f.select :academic_credit, options_for_select([ "Yes", "No"]) %>
+  </div>
+  <div class="field">
+    <%= f.label "When Should this opening be Posted?" %><br />
+    <%= f.date_select :record_begin %>
+  </div>
+  <div class="field">
+    <%= f.label "When is the posting deadline?" %><br />
+    <%= f.date_select :record_end%>
+  </div>
+  
+</fieldset>
+  	  	

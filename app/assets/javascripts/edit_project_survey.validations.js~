@@ -136,8 +136,6 @@ if( $('#project_survey_unpaid_undergrads_needed').is(':not(:checked)') &&
   	 
   	// $('#submit_notice').slideDown(); 
   	 $('#error_explanation').slideDown(); 
-  	//alert(formName);
-  	//alert("Phone must be filled out");
   	return false;
   }
   	

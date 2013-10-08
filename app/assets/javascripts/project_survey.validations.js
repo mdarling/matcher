@@ -73,11 +73,14 @@ function validateForm()
   	}	
 
 if( $('#project_survey_unpaid_undergrads_needed').is(':not(:checked)') &&
-		$('#project_survey_paid_undergrads_needed').is(':not(:checked)') )
+		$('#project_survey_paid_undergrads_needed').is(':not(:checked)')  &&
+		$('#project_survey_unpaid_grads_needed').is(':not(:checked)')  &&
+		$('#project_survey_paid_grads_needed').is(':not(:checked)')  &&
+		$('#project_survey_post_docs_needed').is(':not(:checked)') ) 
 	{
 		errorCount += 1;
-		errors = errors.concat( "<li>You must select at least one type of undergrad position.</li>");
-	 	alert("You must select at least one type of undergrad position.");
+		errors = errors.concat( "<li>You must select at least one type of student position.</li>");
+	 	alert("You must select at least one type of student position.");
 	}
 /***************End Project Validations***************************/
 
@@ -98,6 +101,28 @@ if( $('#project_survey_unpaid_undergrads_needed').is(':not(:checked)') &&
 		
 		var x = document.forms[formName]			
 ["project_survey_unpaid_undergrad_positions_attributes_0_desired_classes"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Classes' for Unpaid Position is a required field.</li>" );	  	 
+  	}
+  	
+  }//End if unpaid checkbox is checked
+  
+  	if( $('#project_survey_unpaid_grads_needed').is(':checked') )
+	{
+	
+		
+		var x = document.forms[formName]			
+["project_survey_unpaid_grad_positions_attributes_0_desired_skills"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Skills' for Unpaid Position is a required field.</li>" );	  	 
+  	}
+		
+		var x = document.forms[formName]			
+["project_survey_unpaid_grad_positions_attributes_0_desired_classes"].value;
 		if( x == null || x == "" )
   	{
   		errorCount += 1;
@@ -128,6 +153,48 @@ if( $('#project_survey_unpaid_undergrads_needed').is(':not(:checked)') &&
   	}
   	
   }//End if paid checkbox is checked
+  
+ if( $('#project_survey_paid_grads_needed').is(':checked') )
+	{
+		var x = document.forms[formName]			
+["project_survey_paid_grad_positions_attributes_0_desired_skills"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Skills' for Paid Position is a required field.</li>" );	  	 
+  	}
+		
+		var x = document.forms[formName]			
+["project_survey_paid_grad_positions_attributes_0_desired_classes"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Classes' for Paid Position is a required field.</li>" );	  	 
+  	}
+  	
+  }//End if paid checkbox is checked
+  
+ if( $('#project_survey_post_docs_needed').is(':checked') )
+	{
+		var x = document.forms[formName]			
+["project_survey_post_doc_positions_attributes_0_desired_skills"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Skills' for Paid Position is a required field.</li>" );	  	 
+  	}
+		
+		var x = document.forms[formName]			
+["project_survey_post_doc_positions_attributes_0_desired_classes"].value;
+		if( x == null || x == "" )
+  	{
+  		errorCount += 1;
+  		errors = errors.concat( "<li>'Desired Classes' for Paid Position is a required field.</li>" );	  	 
+  	}
+  	
+  }//End if paid checkbox is checked
+  
+   
 /****************End Paid Position Validations**********************/	
 
   if( errors != "" )

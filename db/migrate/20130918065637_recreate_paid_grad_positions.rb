@@ -1,4 +1,4 @@
-class RecreatePaidGradPositions < ActiveRecord::Migration
+class CreatePaidGradPositions < ActiveRecord::Migration
   def change
     create_table :paid_grad_positions do |t|
       t.string :academic_level

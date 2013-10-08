@@ -1,4 +1,4 @@
-class CreatePaidGradPositions < ActiveRecord::Migration
+class RecreatePaidGradPositions < ActiveRecord::Migration
   def change
     create_table :paid_grad_positions do |t|
       t.string :academic_level
@@ -12,7 +12,7 @@ class CreatePaidGradPositions < ActiveRecord::Migration
       t.date :record_end
       t.string :unm_jobs
       t.string :weekly_time_commitment
-      t.sring :work_period
+      t.string :work_period
       t.string :project_survey_id
       t.string :post_doc
 

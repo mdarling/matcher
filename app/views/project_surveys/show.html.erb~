@@ -99,6 +99,7 @@
 		</div>
 	<% end %>
 		<div id="workPosition">
+		
 			<% if @project_survey.paid_undergrads_needed != "0" %>
 				<h1 style="font-size:130%;">Paid Undergraduate Position</h1>
 				<p>
@@ -169,6 +170,7 @@
 <div id="projectBaja">
 	<br /><br />
 	<div id="volunteerPostion">
+	
 		<% if @project_survey.unpaid_grads_needed == "1" %>
 			<h1 style="font-size:130%;">Unpaid Graduate Position</h1>
 			<p>
@@ -219,7 +221,7 @@
 		</div>
 	<% end %>
 		<div id="workPosition">
-			<% if @project_survey.paid_grads_needed != "0" %>
+			<% if @project_survey.paid_grads_needed == "1" %>
 				<h1 style="font-size:130%;">Paid Graduate Position</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
@@ -290,7 +292,7 @@
 <div id="projectBaja">
 	<br /><br />
 		<div id="volunteerPosition">
-			<% if @project_survey.paid_undergrads_needed != "0" %>
+			<% if @project_survey.postdocs_needed == "1" %>
 				<h1 style="font-size:130%;">Postdoc Position</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>
@@ -314,7 +316,7 @@
 				<p>
 					<b>Weekly Time Commitment:</b>
 					<%= @postdoc_position.weekly_time_commitment %>
-				</p
+				</p>
 
 				<p>
 					<b>Desired Skills:</b>
@@ -329,11 +331,6 @@
 				<p>
 					<b>Application Deadline:</b>
 					<%= @postdoc_position.record_end.strftime("%m-%d-%Y") %>
-				</p>
-
-				<p>
-					<b>Academic Standing:</b>
-					<%= @postdoc_position.academic_level %>
 				</p>
 
 				<p>

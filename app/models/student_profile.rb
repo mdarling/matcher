@@ -4,7 +4,7 @@ class StudentProfile < ActiveRecord::Base
 	:experience, :user_id
 
 	validates :academic_level, :expected_graduation, :first_name, 
-	:interests, :last_name, :major, :minor, :phone_number, :unm_id, :department, :user_id, :presence => true
+	:interests, :last_name, :major, :phone_number, :unm_id, :department, :user_id, :presence => true
 	
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 

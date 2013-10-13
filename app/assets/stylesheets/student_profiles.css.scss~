@@ -62,7 +62,7 @@ html
 
 #bottom 
 {
-	width:550px;
+	width:650px;
 	//margin: 0 auto;
 	//background:#000
 	clear:both;
@@ -84,7 +84,7 @@ html
 #postdoc, #unpaidGrad, #unpaidUnderGrad
 {
 float:left;
-#display:none;
+display:none;
 #border-left:solid;
 #border-color:gray;
 #border-width:2px;

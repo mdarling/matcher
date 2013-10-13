@@ -37,11 +37,12 @@
   <%= @student_profile.major %>
 </p>
 
+<% if @student_profile.minor != "" %>
 <p>
   <b>Minor:</b>
   <%= @student_profile.minor %>
 </p>
-
+<% end %>
 <p>
   <b>Expected Graduation:</b>
   <%= @student_profile.expected_graduation.strftime("%m-%d-%Y") %>

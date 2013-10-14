@@ -192,7 +192,7 @@
 			<% if @project_survey.post_docs_needed == "1" %>
 				<%= javascript_tag do %>			  
 				 $("#project_survey_post_docs_needed").prop("checked", true);
-				 $('#paidUnderGrad').slideDown(); 
+				 $('#postdoc').slideDown(); 
 				<% end %>
 			<% else %>
 				<%= javascript_tag do %>			  

@@ -44,6 +44,7 @@ class StudentProfilesController < ApplicationController
   # GET /student_profiles/new
   # GET /student_profiles/new.json
   def new
+
   	if user_signed_in?
   		if current_user.student_profile == nil 
    			@student_profile = StudentProfile.new
@@ -69,6 +70,7 @@ class StudentProfilesController < ApplicationController
   # POST /student_profiles
   # POST /student_profiles.json
   def create
+
   	@user = current_user
     @student_profile = StudentProfile.new(params[:student_profile])
     @student_profile.user_id = @user.id

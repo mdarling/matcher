@@ -1,6 +1,6 @@
  <fieldset>
   <div class="field">
-    <%= f.label "Is this position posted on UNM jobs?" %><br />
+    Is this position posted on UNM jobs?<%= f.label " " %><br />
     <%= f.text_field :unm_jobs,:class => 'textField' %>
   </div>
   <div class="field">
@@ -33,10 +33,7 @@
     <%= f.date_select :record_end %>
   </div>
 
-  <div class="field">
-    <%= f.label "Desired Academic Standing" %><br />
-    <%= f.text_field :academic_level,:class => 'textField' %>
-  </div>
+
   <div class="field">
     <%= f.label "General Job Description" %><br />
     <%= f.text_area :job_description,:class => 'textArea' %>

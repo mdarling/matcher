@@ -1,6 +1,6 @@
  <fieldset>
   <div class="field">
-    <%= f.label "Is this position posted on UNM jobs?" %><br />
+    Is this position posted on UNM jobs?<%= f.label " " %><br />
     <%= f.text_field :unm_jobs,:class => 'textField' %>
   </div>
   <div class="field">
@@ -27,6 +27,19 @@
     <%= f.label "Desired Classes" %><br />
     <%= f.text_area :desired_classes,:class => 'textArea' %>
   </div>
+    <div class="field">
+    Minimum GPA<%= f.label " " %><br />
+    <%= f.text_field :minimum_gpa,:class => 'textField' %>
+  </div>
+  <div class="field"> 
+ 		 	<%= f.label "Minimum Desired Academic Standing" %><br />
+  	  <%= f.select :academic_level, options_for_select([["Select One", ""], "Freshman", "Sophmore", "Junior", "Senior"], @project_survey.paid_undergrad_positions.first.academic_level
+) %>
+	</div>
+  <div class="field">
+    <%= f.label "General Job Description" %><br />
+    <%= f.text_area :job_description,:class => 'textArea' %>
+  </div>
   <div class="field">
     <%= f.label "When should this position be posted?" %><br />
     <%= f.date_select :record_begin %>
@@ -35,18 +48,7 @@
     <%= f.label "What is the application deadline?" %><br />
     <%= f.date_select :record_end %>
   </div>
-  <div class="field">
-    <%= f.label "Minimum GPA" %><br />
-    <%= f.text_field :minimum_gpa,:class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label "Desired Academic Standing" %><br />
-    <%= f.text_field :academic_level,:class => 'textField' %>
-  </div>
-  <div class="field">
-    <%= f.label "General Job Description" %><br />
-    <%= f.text_area :job_description,:class => 'textArea' %>
-  </div>
+
   <div class="actions">
   
   </div>

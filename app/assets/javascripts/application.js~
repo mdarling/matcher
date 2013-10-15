@@ -22,7 +22,11 @@ $(function(){  // $(document).ready shorthand
   //$('#content').css('visibility','visible').hide().fadeIn('slow');
 
  //$("#project_survey_paid_undergrads_needed").attr('checked', false)
-
+$("#project_survey_paid_undergrad_positions_attributes_0_unm_jobs").change(function()
+  {
+ 		this.checked ? $('#UNMJobs').slideDown() : $('#UNMJobs').slideUp();
+  });
+  
  $("#project_survey_unpaid_undergrads_needed").change(function()
   {
  		this.checked ? $('#unpaidUnderGrad').slideDown() : $('#unpaidUnderGrad').slideUp();
@@ -38,17 +42,22 @@ $(function(){  // $(document).ready shorthand
  		this.checked ? $('#unpaidGrad').slideDown() : $('#unpaidGrad').slideUp();
   });
   
-    $("#project_survey_paid_grads_needed").change(function()
+  $("#project_survey_paid_grads_needed").change(function()
   {
  		this.checked ? $('#paidGrad').slideDown() : $('#paidGrad').slideUp();
   });
   
-  
-  
-	
- $('.projectTitle').click(function() {
-    $('.editProjectSurvey').slideToggle();
-	});
+   $("#project_survey_post_docs_needed").change(function()
+  {
+ 		this.checked ? $('#postdoc').slideDown() : $('#postdoc').slideUp();
+  });
+    
+   $("#project_survey_paid_grad_positions_attributes_0_unm_jobs").change(function()
+  {
+ 		this.checked ? $('#jobs').slideDown() : $('#jobs').slideUp();
+  });
+    
+
 });
 
 

@@ -11,17 +11,19 @@
     <%= f.text_area :desired_skills, :class => 'textArea' %>
   </div>
   <div class="field">
-    <%= f.label "Desired Classes" %><br />
+    <%= f.label "Desired Completed Classes" %><br />
     <%= f.text_area :desired_classes,:class => 'textArea' %>
   </div>
   <div class="field">
-    <%= f.label "Minimum GPA" %><br />
+    Minimum GPA<%= f.label " " %><br />
     <%= f.text_field :minimum_gpa,:class => 'textField' %>
   </div>
-  <div class="field">
-    <%= f.label "Desired Academic Standing" %><br />
-    <%= f.text_field :academic_level,:class => 'textField' %>
-  </div>
+  <div class="field"> 
+ 		 	<%= f.label "Minimum Desired Academic Standing" %><br />
+  	  <%= f.select :academic_level, options_for_select([["Select One", ""], "Freshman", "Sophmore", "Junior", "Senior"], @project_survey.unpaid_undergrad_positions.first.academic_level
+) %>
+  	 
+		</div>
   <div class="field">
     <%= f.label "General Job Description" %><br />
     <%= f.text_area :job_description,:class => 'textArea' %>
@@ -35,7 +37,7 @@
     <%= f.date_select :record_begin %>
   </div>
   <div class="field">
-    <%= f.label "When is the posting deadline?" %><br />
+    <%= f.label "What is the posting deadline?" %><br />
     <%= f.date_select :record_end%>
   </div>
   

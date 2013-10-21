@@ -1,4 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  def match do
+		@projects = ProjectSurvey.all
+		@students = StudentProfiles.all
+		
+			
+	end
 end

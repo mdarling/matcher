@@ -1,10 +1,10 @@
-<% breadcrumb :project_survets %>
-<h1>Search for Available Research Positions</h1>
+<% breadcrumb :project_surveys %>
+<h1>earch for Available Research Positions</h1>
 
 	<%= search_form_for @search do |f| %>
 	<div class="field">
 		<%= f.label :department_cont, "Department" %><br />	
-		<%= f.select :department_cont, options_from_collection_for_select(Department.all, "name", "name", @searched), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
+		<%= f.select :department_cont, options_from_collection_for_select(Department.find(:all, :order => "name"), "name", "name", @searched), :style => "width:100px;", :include_blank => "All Departments" , :selected => nil %>
 
 	</div>
 	<div class="actions">

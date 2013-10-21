@@ -292,7 +292,7 @@
 <div id="projectBaja">
 	<br /><br />
 		<div id="volunteerPosition">
-			<% if @project_survey.postdocs_needed == "1" %>
+			<% if @project_survey.post_docs_needed == "1" %>
 				<h1 style="font-size:130%;">Postdoc Position</h1>
 				<p>
 				 	<b>Position Listed on UNM Jobs?:</b>

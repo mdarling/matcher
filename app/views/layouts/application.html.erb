@@ -22,7 +22,17 @@
 	<%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag 'jquery', 'application' %>
   <%= csrf_meta_tags %>
- 
+  
+ <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44955950-1', 'unm.edu');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
 <div id="unm_header">
@@ -50,7 +60,7 @@
   <div class="col2" id="container">
     <div id="primary_aside">
     <div class="content">
-      <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a href="http://uresearch.unm.edu/">Home</a></li><li><a class="active"  href="http://uresearch.unm.edu/research-database.html">Research Database</a></li><li><a href="http://uresearch.unm.edu/on-campus-opportunity.html">On-Campus Opportunity</a></li><li><a href="http://uresearch.unm.edu/off-campus-opportunity.html">Off-Campus Opportunity</a></li></ul></div>
+      <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a href="/home/index.html">Home</a></li><li><a href="/project_surveys">View Projects</a></li><li><a  href="/users/sign_in">Student Sign In</a></li><li><a href="/research_users/sign_in">Researcher Sign In</a></li></ul></div>
       <div id="primary_aside_2" ></div>
       <div id="primary_aside_3" ></div>
 			<div id="primary_aside_4"><div class="vcard leftnav_contact"><a class="fn organization-unit url" href="http://grad.unm.edu/graduate-programs/research.html">Graduate Research</a><p class="adr"><span class="extended-address">MSC 03 2180</span><br /><span class="extended-address">Humanities Bldg, Suite 107</span><br /><span class="street-address">1 University of New Mexico</span><br /><span class="locality">Albuquerque</span>, <abbr class="region" title="New Mexico">NM</abbr> <span class="postal-code">87131-0001</span></p><p><span class="tel"><span class="type hidden">Work</span> Phone: <span class="value">(505) 277-2711</span><br /></span><span class="tel"><span class="type hidden">Fax</span> Fax: <span class="value">(505) 277-7405</span><br /></span><span><a class="email" href="mailto:grad@unm.edu">grad@unm.edu</a></span></p></div></div>

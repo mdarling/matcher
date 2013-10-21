@@ -48,3 +48,6 @@ gem 'cancan'
 #For Breadcrumbs
 gem 'gretel'
 
+gem 'whenever', require:false 
+#According to railscast 164, we don't want to use the whenever gem #directly in the application, we want to keep it on the server.
+

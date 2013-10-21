@@ -48,7 +48,7 @@
   	
     <div class="field">
       <%= f.label "Department" %><br />
-      <%= f.select :department,  options_from_collection_for_select(Department..find(:all, :order => "name"), "name", "name",  @student_profile.department), :style => "width:100px;", :include_blank => true , :selected => nil %>
+      <%= f.select :department,  options_from_collection_for_select(Department.find(:all, :order => "name"), "name", "name",  @student_profile.department), :style => "width:100px;", :include_blank => true , :selected => nil %>
 
     </div>
   	

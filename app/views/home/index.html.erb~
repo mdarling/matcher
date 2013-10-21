@@ -163,8 +163,8 @@
 		<h1>Welcome To UNM's Research Opportunity Database!</h1>
 		<h4>Connecting students to research opportunities.</h4>
 		<div id="lcell">
-		<%= button_to "Researcher Sign In", new_research_user_session_path, :method => "get", :style => width %>
-			<%= button_to "Student Sign In", new_user_session_path, :method => "get", :style => width %>
+		<%= button_to "Researcher Sign Up", new_research_user_registration_path, :method => "get", :style => width %>
+			<%= button_to "Student Sign Up", new_user_registration_path, :method => "get", :style => width %>
 			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
 		</div>
 				

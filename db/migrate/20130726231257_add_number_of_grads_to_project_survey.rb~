@@ -1,4 +1,0 @@
-class AddNumberOfGradsToProjectSurvey < ActiveRecord::Migration
-  def change
-  end
-end

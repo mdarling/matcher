@@ -1,8 +1,0 @@
-#!/bin/env ruby
-
-ENV['RAILS_ENV'] = "development" # Set to your desired Rails environment name
-require "#{path}/config/environment.rb"
-
-# After this point you have access to your models and other classes from your Rails application
-
-@projects = ProjectSurvey.all

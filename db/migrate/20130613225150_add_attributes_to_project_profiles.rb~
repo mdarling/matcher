@@ -1,8 +1,0 @@
-class AddAttributesToProjectProfiles < ActiveRecord::Migration
-  def change
-    add_column :project_profiles, :unpaid_undergrad, :boolean
-    add_column :project_profiles, :unpaid_undergrad, :boolean
-    add_column :project_profiles, :paid_grad, :boolean
-    add_column :project_profiles, :unpaid_grad, :boolean
-  end
-end

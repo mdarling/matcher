@@ -1,9 +1,0 @@
-<% breadcrumb :project_survey, @project_survey %>
-<h1>Editing <%= @project_survey.project_title %></h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @project_survey %> |
-<%= link_to 'Back', project_surveys_path %>
-
-

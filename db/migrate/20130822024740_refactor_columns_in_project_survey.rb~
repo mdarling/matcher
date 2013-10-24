@@ -1,9 +1,0 @@
-class RefactorColumnsInProjectSurvey < ActiveRecord::Migration
-  def up
-  rename_column :project_surveys, :researchArea, :research_area
-  rename_column :project_surveys, :projectDescription, :project_description
-  end
-
-  def down
-  end
-end

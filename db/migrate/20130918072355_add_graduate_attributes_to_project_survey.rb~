@@ -1,4 +1,0 @@
-class AddGraduateAttributesToProjectSurvey < ActiveRecord::Migration
-  def change
-  end
-end

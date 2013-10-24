@@ -1,6 +1,0 @@
-<!-- <h1>New Student Profile</h1> -->
-<% breadcrumb :student_profile, @student_profile %>
-	<%= render 'form' %>
-
-<% link_to 'Back', student_profiles_path %>
-

@@ -1,6 +1,0 @@
-
-  	    	<fieldset>
-   				  <%= f.label :workPeriod, "Work Period" %><br />
-   				  <%= f.text_field :workPeriod,:class => 'textField' %>
- 			  	</fieldset>
-  	  	

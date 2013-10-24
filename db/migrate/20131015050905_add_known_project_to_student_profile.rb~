@@ -1,5 +1,0 @@
-class AddKnownProjectToStudentProfile < ActiveRecord::Migration
-  def change
-  	add_column :student_profile, :known_project_ids, :string
-  end
-end

@@ -1,7 +1,0 @@
-class RefactorStudentProfileAttributes < ActiveRecord::Migration
- def change
-	rename_column :student_profiles, :academicLevel, :academic_level
-	rename_column :student_profiles, :firstName, :first_name
-  
- end
-end

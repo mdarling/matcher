@@ -1,9 +1,0 @@
-class RemoveAssistantsFromProjectsProfiles < ActiveRecord::Migration
-  def up
-    remove_column :projects_profiles, :assistants
-  end
-
-  def down
-    add_column :projects_profiles, :assistants, :string
-  end
-end

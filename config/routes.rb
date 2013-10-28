@@ -9,8 +9,10 @@ Matcher::Application.routes.draw do
 
 
   get "home/index"
-  
+
   get "home/researcher"
+
+  resources :departments, only: [:show], defaults: {format: :json}
 
   resources :paid_undergrad_positions
 

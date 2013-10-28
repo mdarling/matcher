@@ -1,12 +1,12 @@
 class ProjectSurvey < ActiveRecord::Base
-  attr_accessible :department, :email, :phone, :project_description, 
+  attr_accessible :department_id, :department, :email, :phone, :project_description, 
   :project_title, :research_area, :lead_researcher, :researcher, :unpaid_grads_needed, 
   :paid_grads_needed, :unpaid_undergrads_needed, :paid_undergrads_needed,
   :unpaid_undergrad_positions_attributes, :paid_undergrad_positions_attributes, 
   :lead_researcher, :research_user_id, :post_docs_needed,  :post_docs_attributes,
   :unpaid_grad_positions_attributes, :paid_grad_positions_attributes
   
-  validates :research_user_id, :lead_researcher, :project_title, :research_area, 
+  validates :department_id, :research_user_id, :lead_researcher, :project_title, :research_area, 
   :project_description, :email, :department, :presence => true
 	
 	belongs_to :research_user
@@ -15,7 +15,7 @@ class ProjectSurvey < ActiveRecord::Base
 	has_many :unpaid_grad_positions
 	has_many :paid_grad_positions
 	has_many :post_docs
-	has_many :departments
+	belongs_to :departments
 	
 	accepts_nested_attributes_for :unpaid_undergrad_positions, 
 																:paid_undergrad_positions,

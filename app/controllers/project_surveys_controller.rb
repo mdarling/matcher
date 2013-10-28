@@ -88,6 +88,8 @@ class ProjectSurveysController < ApplicationController
    	@user = current_research_user
     @project_survey = ProjectSurvey.new(params[:project_survey])
 		@project_survey.research_user_id = @user.id
+		department = Department.where( :name => @project_survey.department )
+		@project_survey.department_id = department.first.id
 
     respond_to do |format|
       if @project_survey.save

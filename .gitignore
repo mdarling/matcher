@@ -6,7 +6,7 @@
 
 #ignore temp files
 ~*
-.~
+.~*
 *~
 
 # Ignore bundler config.
@@ -23,8 +23,6 @@ db/*.sqlite3-journal
 # Ignore all logfiles and tempfiles.
 log/*.log
 tmp
-
-artifacts/*.bak
 
 #Ignore aptanna build file
 .project

@@ -5,13 +5,37 @@ class DepartmentsController < ApplicationController
 	def show
 		@department = Department.find(params[:id])
 
-		@paid_grad_postions = @department.project_surveys.where("project_surveys.paid_grads_needed != ?","0")
-		@unpaid_grad_postions = @department.project_surveys.where("project_surveys.unpaid_grads_needed != ?","0")
-		@paid_grad_postions = @department.project_surveys.where("project_surveys.paid_undergrads_needed != ?","0")
-		@unpaid_grad_postions = @department.project_surveys.where("project_surveys.unpaid_undergrads_needed != ?","0")
-		@post_doc_postions = @department.project_surveys.where("project_surveys.post_docs_needed != ?","0")
-
-
+		@paid_grad_positions = []
+		@unpaid_grad_positions = []
+		@paid_undergrad_positions = []
+		@unpaid_undergrad_positions = []
+		@post_doc_positions = []
+		
+		all_project_surveys = ProjectSurvey.where(department: @department.name)
+		
+		all_project_surveys.each do |project_survey|
+			if project_survey.paid_grads_needed.to_i > 0
+				@paid_grad_positions << project_survey
+			end
+			
+			if project_survey.unpaid_grads_needed.to_i > 0
+				@unpaid_grad_positions << project_survey
+			end
+			
+			if project_survey.paid_undergrads_needed.to_i > 0
+				@paid_undergrad_positions << project_survey
+			end
+		
+			if project_survey.unpaid_undergrads_needed.to_i > 0
+				@unpaid_undergrad_positions << project_survey
+			end
+			
+			if project_survey.post_docs_needed.to_i > 0
+				@post_doc_positions << project_survey
+			end
+		end
+		
+		
 		# Department will now render json by default.
 		# In order to add html response, in config/routes.rb change the line:
 		#		resources :departments, only: [:show], defaults: {format: :json}

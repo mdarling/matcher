@@ -1,5 +1,13 @@
 <% breadcrumb :new_user_signup %>
 <% userType = request.path %>
+<% if userType == "/admins/sign_up" %>
+	<% if admin_signed_in? %>
+	<% else %>
+	<script type="text/javascript">
+    window.location.href="/home/index.html" 
+  </script>
+	<% end %>
+<% end %>
 <div id="sign_upTable">
 <div id="sign_upWrap">
 <% if userType == "/research_users/sign_up" || userType == "/research_users" %>

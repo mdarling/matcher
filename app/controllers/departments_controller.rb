@@ -4,7 +4,8 @@ class DepartmentsController < ApplicationController
 	# GET /departments/1.json
 	def show
 		@department = Department.find(params[:id])
-
+		@department_url = @department.get_url
+		
 		@paid_grad_positions = []
 		@unpaid_grad_positions = []
 		@paid_undergrad_positions = []

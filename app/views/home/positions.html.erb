@@ -1,0 +1,121 @@
+<% if @unpaid_undergrad_positions %>
+				
+				<h1>Unpaid Undergrad Positions:</h1>
+					<table>
+				<tr>
+					<th>Department</th>
+					<th>Lead Researcher</th>					
+					<th>Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @unpaid_undergrad_positions.each do |position| %>
+				<% if position.project_survey %>
+				<tr>
+					<td><%= position.project_survey.department %></td>
+					<td><%= position.project_survey.lead_researcher %></td>
+					<td><%= link_to 'Project',project_survey_path(position.project_survey) %></td>
+					<td> <%= link_to "Destroy", unpaid_undergrad_position_path(position), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+				<% end %>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+<br />
+<% if @paid_undergrad_positions %>
+				
+				<h1>Paid Undergrad Positions:</h1>
+					<table>
+				<tr>
+					<th>Department</th>
+					<th>Lead Researcher</th>					
+					<th>Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @paid_undergrad_positions.each do |position| %>
+				<% if position.project_survey %>
+				<tr>
+					<td><%= position.project_survey.department %></td>
+					<td><%= position.project_survey.lead_researcher %></td>
+					<td><%= link_to 'Project',project_survey_path(position.project_survey) %></td>
+					<td> <%= link_to "Destroy", paid_undergrad_position_path(position), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+				<% end %>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+<br />
+<% if @unpaid_grad_positions %>
+				
+				<h1>Unpaid Grad Positions:</h1>
+					<table>
+				<tr>
+					<th>Department</th>
+					<th>Lead Researcher</th>					
+					<th>Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @unpaid_grad_positions.each do |position| %>
+				<% if position.project_survey %>
+				<tr>
+					<td><%= position.project_survey.department %></td>
+					<td><%= position.project_survey.lead_researcher %></td>
+					<td><%= link_to 'Project',project_survey_path(position.project_survey) %></td>
+					<td> <%= link_to "Destroy", unpaid_grad_position_path(position), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+				<% end %>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+<br />
+<% if @paid_grad_positions %>
+				
+				<h1>Paid Grad Positions:</h1>
+					<table>
+				<tr>
+					<th>Department</th>
+					<th>Lead Researcher</th>					
+					<th>Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @paid_grad_positions.each do |position| %>
+				<% if position.project_survey %>
+				<tr>
+					<td><%= position.project_survey.department %></td>
+					<td><%= position.project_survey.lead_researcher %></td>
+					<td><%= link_to 'Project',project_survey_path(position.project_survey) %></td>
+					<td> <%= link_to "Destroy", paid_grad_position_path(position), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+				<% end %>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+<br />
+<% if @post_doc_positions %>
+				
+				<h1>Postdoc Positions:</h1>
+					<table>
+				<tr>
+					<th>Department</th>
+					<th>Lead Researcher</th>					
+					<th>Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @post_doc_positions.each do |position| %>
+				<% if position.project_survey %>
+				<tr>
+					<td><%= position.project_survey.department %></td>
+					<td><%= position.project_survey.lead_researcher %></td>
+					<td><%= link_to 'Project',project_survey_path(position.project_survey) %></td>
+					<td> <%= link_to "Destroy", post_doc_path(position), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+				<% end %>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+
+	

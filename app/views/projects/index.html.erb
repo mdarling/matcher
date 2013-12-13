@@ -16,7 +16,10 @@
 
 <% @project_surveys.each do |project| %>
 	<% if project.unpaid_undergrads_needed == "1" || 
-				project.paid_undergrads_needed == "1" %>
+				project.paid_undergrads_needed == "1" || 
+				project.unpaid_grads_needed == "1"|| 
+				project.paid_grads_needed == "1"|| 
+				project.post_docs_needed == "1"%>
 		<tr>
 		  <td><%= link_to 'Show', project %></td>
 		  <td><%= link_to 'Edit', edit_project_path(project) %></td>

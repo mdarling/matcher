@@ -10,7 +10,13 @@ Matcher::Application.routes.draw do
 
   get "home/index"
 
-  get "home/researcher"
+  get "home/researchers"
+  
+  get "home/students"
+  
+  get "home/projects"
+  
+  get "home/positions"
 
   resources :departments, only: [:show], defaults: {format: :json}
 
@@ -18,6 +24,13 @@ Matcher::Application.routes.draw do
 
 
   resources :unpaid_undergrad_positions
+  
+  resources :paid_grad_positions
+
+
+  resources :unpaid_grad_positions
+  
+  resources :post_doc
 
 
   resources :project_surveys do

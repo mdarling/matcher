@@ -6,14 +6,14 @@
 		<div id="main">
 			<%= button_to "View Projects", project_surveys_path, :method => "get", :style => width %>
 
-			<%= button_to "Projects Table", project_surveys_path, :method => "get", :style => width %>
-			<%= button_to "Positions Table", project_surveys_path, :method => "get", :style => width %>
+			<%= button_to "Projects Table", home_projects_path, :method => "get", :style => width %>
+			<%= button_to "Positions Table", home_positions_path, :method => "get", :style => width %>
 		</div><!--End of "main"> -->
 		
 		<div id="sidebar">
 			<%= button_to "View Scholars' Profiles", student_profiles_path, :method => "get", :style => width %>
-			<%= button_to "Students Table", student_profiles_path, :method => "get", :style => width %>
-			<%= button_to "Researchers Table", home_researcher_path, :method => "get", :style => width %>
+			<%= button_to "Students Table", home_students_path, :method => "get", :style => width %>
+			<%= button_to "Researchers Table", home_researchers_path, :method => "get", :style => width %>
 		</div> <!-- End of "sidebar" -->
 
 	

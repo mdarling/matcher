@@ -1,0 +1,23 @@
+<% if @projects %>
+				
+				<h1>Projects:</h1>
+					<table>
+				<tr>
+					<th>Lead Researcher</th>
+					<th>Department</th>
+					<th>View Project</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @projects.each do |project| %>
+				<tr>
+					<td><%= project.lead_researcher %></td>
+					<td><%= project.department %></td>
+					<td><%= link_to 'Project',project_survey_path(project) %></td>
+					<td> <%= link_to "Destroy", project_survey_path(project), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+
+	

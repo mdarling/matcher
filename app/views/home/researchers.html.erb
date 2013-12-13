@@ -1,0 +1,22 @@
+<% if @researchers %>
+				<h1>Researcher Accounts:</h1>
+					<table>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Number of Projects</th>
+					<th>Destroy</th>
+				</tr>
+
+			<% @researchers.each do |researcher| %>
+				<tr>
+					<td><%= researcher.first_name %></td>
+					<td><%= researcher.last_name %></td>
+					<td><%= researcher.project_surveys.size %></td>
+					<td> <%= link_to "Destroy", research_user_registration_path(researcher), :confirm => "Are you sure?", :method => :delete %></td>
+				</tr>
+	<% end %>
+		</table>
+<% end %><!-- If @ researchers -->
+
+	

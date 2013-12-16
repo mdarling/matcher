@@ -45,7 +45,10 @@
 			</p>
 				
 			<% if user_signed_in? || admin_signed_in? || research_user_signed_in? %>
-				<% if project_survey.unpaid_undergrads_needed == "1" || project_survey.paid_undergrads_needed == "1" %>
+				<% if project_survey.unpaid_undergrads_needed == "1" || project_survey.paid_undergrads_needed == "1"
+				|| project_survey.unpaid_grads_needed == "1"
+				|| project_survey.paid_grads_needed == "1"
+				|| project_survey.post_docs_needed == "1" %>
 
 					<%= link_to 'Project Information and Available Positions', project_survey_path(project_survey.id) %> <br />
 				<% end %>
